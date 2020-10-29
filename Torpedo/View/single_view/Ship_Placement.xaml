@@ -92,123 +92,127 @@
 
 
 
-        <Grid Grid.Row="0" Grid.Column="1" Name="A1"/>
-        <Grid Grid.Row="2" Grid.Column="1" Name="B1"/>
-        <Grid Grid.Row="1" Grid.Column="1" Name="C1"/>
-        <Grid Grid.Row="1" Grid.Column="1" Name="D1"/>
-        <Grid Grid.Row="1" Grid.Column="1" Name="E1"/>
-        <Grid Grid.Row="1" Grid.Column="1" Name="F1"/>
-        <Grid Grid.Row="1" Grid.Column="1" Name="G1"/>
-        <Grid Grid.Row="1" Grid.Column="1" Name="H1"/>
-        <Grid Grid.Row="1" Grid.Column="1" Name="I1"/>
-        <Grid Grid.Row="1" Grid.Column="1" Name="J1"/>
+        <Grid Grid.Row="0" Grid.Column="0" Name="A1" MouseDown="grid_pressed" >
+            <Rectangle MouseDown="grid_pressed"/>
+            <Path Name="cellA1" MouseDown="grid_pressed"></Path>
+        </Grid>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="0" Name="B1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="0" Name="C1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="0" Name="D1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="0" Name="E1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="0" Name="F1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="0" Name="G1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="0" Name="H1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="0" Name="I1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="0" Name="J1"/>
 
 
-        <Grid Grid.Row="1" Grid.Column="1" Name="A2"/>
-        <Grid Grid.Row="1" Grid.Column="1" Name="B2" />
-        <Grid Grid.Row="1" Grid.Column="3" Name="C2" />
-        <Grid Grid.Row="1" Grid.Column="3" Name="D2" />
-        <Grid Grid.Row="1" Grid.Column="5" Name="E2"/>
-        <Grid Grid.Row="1" Grid.Column="6" Name="F2"/>
-        <Grid Grid.Row="1" Grid.Column="6" Name="G2" />
-        <Grid Grid.Row="1" Grid.Column="8" Name="H2"/>
-        <Grid Grid.Row="1" Grid.Column="8" Name="I2" />
-        <Grid Grid.Row="1" Grid.Column="8" Name="J2"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="1" Name="A2"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="1" Name="B2" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="1" Name="C2" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="1" Name="D2" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="1" Name="E2"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="1" Name="F2"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="1" Name="G2" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="1" Name="H2"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="1" Name="I2" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="1" Name="J2"/>
 
 
-        <Grid Grid.Row="2" Grid.Column="1" Name="A3" />
-        <Grid Grid.Row="2" Grid.Column="1" Name="B3" />
-        <Grid Grid.Row="2" Grid.Column="3" Name="C3"/>
-        <Grid Grid.Row="2" Grid.Column="3" Name="D3"/>
-        <Grid Grid.Row="2" Grid.Column="5" Name="E3" />
-        <Grid Grid.Row="2" Grid.Column="6" Name="F3"/>
-        <Grid Grid.Row="2" Grid.Column="6" Name="G3"/>
-        <Grid Grid.Row="2" Grid.Column="8" Name="H3"/>
-        <Grid Grid.Row="2" Grid.Column="8" Name="I3" />
-        <Grid Grid.Row="2" Grid.Column="8" Name="J3"/>
-
-        <Grid Grid.Row="4" Grid.Column="1" Name="A4"/>
-        <Grid Grid.Row="4" Grid.Column="1" Name="B4" />
-        <Grid Grid.Row="4" Grid.Column="3" Name="C4" />
-        <Grid Grid.Row="4" Grid.Column="3" Name="D4" />
-        <Grid Grid.Row="4" Grid.Column="5" Name="E4"/>
-        <Grid Grid.Row="4" Grid.Column="6" Name="F4"/>
-        <Grid Grid.Row="4" Grid.Column="6" Name="G4" />
-        <Grid Grid.Row="4" Grid.Column="8" Name="H4" />
-        <Grid Grid.Row="4" Grid.Column="8" Name="I4" />
-        <Grid Grid.Row="4" Grid.Column="8" Name="J4"/>
-
-
-        <Grid Grid.Row="5" Grid.Column="1" Name="A5"/>
-        <Grid Grid.Row="5" Grid.Column="1" Name="B5"/>
-        <Grid Grid.Row="5" Grid.Column="3" Name="C5"/>
-        <Grid Grid.Row="5" Grid.Column="3" Name="D5"/>
-        <Grid Grid.Row="5" Grid.Column="5" Name="E5" />
-        <Grid Grid.Row="5" Grid.Column="6" Name="F5"/>
-        <Grid Grid.Row="5" Grid.Column="6" Name="G5"/>
-        <Grid Grid.Row="5" Grid.Column="8" Name="H5"/>
-        <Grid Grid.Row="5" Grid.Column="8" Name="I5" />
-        <Grid Grid.Row="5" Grid.Column="8" Name="J5" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="2" Name="A3" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="2" Name="B3" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="2" Name="C3"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="2" Name="D3"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="2" Name="E3" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="2" Name="F3"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="2" Name="G3"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="2" Name="H3"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="2" Name="I3" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="2" Name="J3"/>
+        
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="3" Name="A4"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="3" Name="B4" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="3" Name="C4" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="3" Name="D4" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="3" Name="E4"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="3" Name="F4"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="3" Name="G4" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="3" Name="H4" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="3" Name="I4" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="3" Name="J4"/>
 
 
-        <Grid Grid.Row="5" Grid.Column="1" Name="A6"/>
-        <Grid Grid.Row="5" Grid.Column="1" Name="B6"/>
-        <Grid Grid.Row="5" Grid.Column="3" Name="C6"/>
-        <Grid Grid.Row="5" Grid.Column="3" Name="D6"/>
-        <Grid Grid.Row="5" Grid.Column="5" Name="E6"/>
-        <Grid Grid.Row="5" Grid.Column="6" Name="F6"/>
-        <Grid Grid.Row="5" Grid.Column="6" Name="G6"/>
-        <Grid Grid.Row="5" Grid.Column="8" Name="H6"/>
-        <Grid Grid.Row="5" Grid.Column="8" Name="I6"/>
-        <Grid Grid.Row="5" Grid.Column="8" Name="J6"/>
-
-        <Grid Grid.Row="7" Grid.Column="1" Name="A7"/>
-        <Grid Grid.Row="7" Grid.Column="1" Name="B7"/>
-        <Grid Grid.Row="7" Grid.Column="3" Name="C7"/>
-        <Grid Grid.Row="7" Grid.Column="3" Name="D7"/>
-        <Grid Grid.Row="7" Grid.Column="5" Name="E7"/>
-        <Grid Grid.Row="7" Grid.Column="6" Name="F7"/>
-        <Grid Grid.Row="7" Grid.Column="6" Name="G7"/>
-        <Grid Grid.Row="7" Grid.Column="8" Name="H7"/>
-        <Grid Grid.Row="7" Grid.Column="8" Name="I7"/>
-        <Grid Grid.Row="7" Grid.Column="8" Name="J7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="4" Name="A5"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="4" Name="B5"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="4" Name="C5"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="4" Name="D5"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="4" Name="E5" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="4" Name="F5"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="4" Name="G5"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="4" Name="H5"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="4" Name="I5" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="4" Name="J5" />
 
 
-        <Grid Grid.Row="8" Grid.Column="1" Name="A8"/>
-        <Grid Grid.Row="8" Grid.Column="1" Name="B8"/>
-        <Grid Grid.Row="8" Grid.Column="3" Name="C8"/>
-        <Grid Grid.Row="8" Grid.Column="3" Name="D8"/>
-        <Grid Grid.Row="8" Grid.Column="5" Name="E8"/>
-        <Grid Grid.Row="8" Grid.Column="6" Name="F8"/>
-        <Grid Grid.Row="8" Grid.Column="6" Name="G8"/>
-        <Grid Grid.Row="8" Grid.Column="8" Name="H8"/>
-        <Grid Grid.Row="8" Grid.Column="8" Name="I8"/>
-        <Grid Grid.Row="8" Grid.Column="8" Name="J8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="5" Name="A6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="5" Name="B6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="5" Name="C6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="5" Name="D6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="5" Name="E6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="5" Name="F6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="5" Name="G6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="5" Name="H6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="5" Name="I6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="5" Name="J6"/>
+        
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="6" Name="A7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="6" Name="B7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="6" Name="C7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="6" Name="D7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="6" Name="E7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="6" Name="F7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="6" Name="G7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="6" Name="H7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="6" Name="I7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="6" Name="J7"/>
 
 
-        <Grid Grid.Row="8" Grid.Column="1" Name="A9"/>
-        <Grid Grid.Row="8" Grid.Column="1" Name="B9"/>
-        <Grid Grid.Row="8" Grid.Column="3" Name="C9"/>
-        <Grid Grid.Row="8" Grid.Column="3" Name="D9"/>
-        <Grid Grid.Row="8" Grid.Column="5" Name="E9"/>
-        <Grid Grid.Row="8" Grid.Column="6" Name="F9"/>
-        <Grid Grid.Row="8" Grid.Column="6" Name="G9"/>
-        <Grid Grid.Row="8" Grid.Column="8" Name="H9"/>
-        <Grid Grid.Row="8" Grid.Column="8" Name="I9"/>
-        <Grid Grid.Row="8" Grid.Column="8" Name="J9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="7" Name="A8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="7" Name="B8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="7" Name="C8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="7" Name="D8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="7" Name="E8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="7" Name="F8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="7" Name="G8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="7" Name="H8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="7" Name="I8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="7" Name="J8"/>
 
-        <Grid Grid.Row="8" Grid.Column="1" Name="A10" />
-        <Grid Grid.Row="8" Grid.Column="1" Name="B10" />
-        <Grid Grid.Row="8" Grid.Column="3" Name="C10" />
-        <Grid Grid.Row="8" Grid.Column="3" Name="D10" />
-        <Grid Grid.Row="8" Grid.Column="5" Name="E10" />
-        <Grid Grid.Row="8" Grid.Column="6" Name="F10"/>
-        <Grid Grid.Row="8" Grid.Column="6" Name="G10" />
-        <Grid Grid.Row="8" Grid.Column="8" Name="H10"/>
-        <Grid Grid.Row="8" Grid.Column="8" Name="I10" />
-        <Grid Grid.Row="8" Grid.Column="8" Name="J10"/>
 
-        <Canvas Grid.ColumnSpan="10" Margin="0,45,0,-180" Grid.Row="9" >
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="8" Name="A9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="8" Name="B9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="8" Name="C9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="8" Name="D9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="8" Name="E9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="8" Name="F9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="8" Name="G9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="8" Name="H9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="8" Name="I9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="8" Name="J9"/>
+
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="9" Name="A10" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="9" Name="B10" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="9" Name="C10" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="9" Name="D10" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="9" Name="E10" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="9" Name="F10"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="9" Name="G10" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="9" Name="H10"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="9" Name="I10" />
+        <Grid Grid.Row="9" Grid.Column="9" Name="J10" MouseDown="grid_pressed" >
+        </Grid>
+
+            <Canvas Grid.ColumnSpan="10" Margin="0,45,0,-180" Grid.Row="9" >
 
             <Canvas Width="422" Height="80">
 
@@ -309,7 +313,7 @@
             <Button Canvas.Left="10" Canvas.Top="117">
                 Randomize
             </Button>
-            <Button Canvas.Left="195" Canvas.Top="117" Width="57">
+            <Button Canvas.Left="195" Canvas.Top="117" Width="57" Click="Reset_clicked">
                 Reset
             </Button>
             <Button Canvas.Left="358" Canvas.Top="117" Width="46">
