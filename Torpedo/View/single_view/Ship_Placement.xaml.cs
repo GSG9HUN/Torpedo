@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
@@ -17,14 +18,15 @@ namespace Torpedo.View.single_view
     /// Interaction logic for Window1.xaml
     /// </summary>
     /// 
-    
+
     public partial class Ship_Placement : Window
     {
 
-
+        bool ballra_mehet = true;
+        bool jobbra_mehet = true;
         String irany { get; set; }
         String selected_ship { get; set; }
-
+        Path[] ships;
         Path lastship;
         Polygon lastarrow;
 
@@ -46,19 +48,24 @@ namespace Torpedo.View.single_view
                                 I1, I2, I3, I4, I5, I6, I7,I8,I9,I10,
                                 J1, J2, J3, J4, J5, J6, J7,J8,J9,J10 };
 
+            ships = new Path[] { cruiser, submarine, battleship, destroyer,carrier };
+
+
+
 
             set_Tags();
 
 
 
-
-
         }
+
+    
 
         private void set_Tags()
         {
             foreach (Grid field in fields) {
                 field.Tag = "empty";
+                field.Background = new SolidColorBrush(Colors.Black);
             }
         }
 
@@ -157,13 +164,326 @@ namespace Torpedo.View.single_view
             if (lastship != null)
                 lastship.Stroke = unselected;
 
+            foreach (var ship in ships) {
+
+                ship.IsEnabled = true;
+                ship.Stroke = unselected;
+                ship.Opacity = 1;
+            }
+
+            set_Tags();
+            selected_ship = null;
+
         }
 
         private void grid_pressed(object sender, MouseButtonEventArgs e)
         {
+            Grid clicked_grid = (Grid)sender;
+            if (selected_ship == null) {
+                MessageBox.Show("Válassz ki egy hajót");
+                return;
+            }
 
-            MessageBox.Show("grid megnyomva");
+            
+
+            int size = 0;
+            switch (selected_ship) {
+                case "destroyer":
+                    size = 2;
+                    break;
+                case "cruiser":
+                    size = 3;
+                    break;
+                case "submarine":
+                    size = 3;
+                    break;
+                case "battleship":
+                    size = 4;
+                    break;
+                case "carrier":
+                    size = 5;
+                    break;
+            }
+
+            int index = 0;
+            foreach (Grid field in fields) {
+                if (field.Name == clicked_grid.Name)
+                {
+                    break;
+
+                }
+                index++;
+            }
+
+            MessageBox.Show(index.ToString());
+           
+
+            switch (irany)
+            {
+
+                case "jobb": Jobbra(index, size,selected_ship); break;
+                case "bal": Ballra(index, size,selected_ship); break;
+                case "fel": Felfele(index, size); break;
+                case "le": lefele(index, size); break;
+
+            }
+
+
+            }
+
+
+        
+
+        private void Ballra(int honnan, int meddig, string selected_ship)
+        {
+            jobbra_mehet = true;
+            ballra_mehet = true;
+            if (honnan % 10 - meddig >= 0)
+            {
+                for (int i = honnan; i > honnan - meddig; i--)
+                {
+                    if (fields[i].Tag.ToString() == "ship")
+                    {
+                        ballra_mehet = false;
+                        break;
+
+                    }
+                }
+            }
+            else if (honnan % 10 + meddig <= 9)
+            {
+
+                ballra_mehet = false;
+
+                for (int i = honnan; i < honnan + meddig; i++)
+                {
+                    if (fields[i].Tag.ToString() == "ship")
+                    {
+                        jobbra_mehet = false;
+                        break;
+
+                    }
+                }
+                
+            }
+            else
+            {
+
+
+                jobbra_mehet = false;
+            }
+            if (ballra_mehet)
+            {
+                for (int i = honnan; i > honnan - meddig; i--)
+                {
+                    fields[i].Background = new SolidColorBrush(Colors.Green);
+                    fields[i].Tag = "ship";
+                }
+
+                foreach (var ship in ships) {
+                    if (ship.Name.ToString() == selected_ship)
+                    {
+                        ship.IsEnabled = false;
+                        ship.Opacity = 0.5;
+                    }
+                }
+                lastship.Stroke = unselected;
+                lastship = null;
+            }
+            else if (jobbra_mehet)
+            {
+                for (int i = honnan; i < honnan + meddig; i++)
+                {
+                    fields[i].Background = new SolidColorBrush(Colors.Green); ;
+                    fields[i].Tag = "ship";
+                }
+
+                foreach (var ship in ships)
+                {
+                    if (ship.Name.ToString() == selected_ship)
+                    {
+                        ship.IsEnabled = false;
+                        ship.Opacity = 0.5;
+                    }
+                }
+                lastship.Stroke = unselected;
+                lastship = null;
+            }
+           
+            else
+            {
+
+                MessageBox.Show("Ide nem helyezhető hajó");
+            }
+
+
+           
+
 
         }
+        private void Jobbra(int honnan, int meddig, string selected_ship)
+        {
+            jobbra_mehet = true;
+            ballra_mehet = true;
+
+
+            if (honnan < 10)
+            {
+                if (honnan + meddig <= 9)
+                {
+                    for (int i = honnan; i < honnan + meddig; i++)
+                    {
+                        if (fields[i].Tag.ToString() == "ship")
+                        {
+                            jobbra_mehet = false;
+                            break;
+
+                        }
+                    }
+                }
+                else if (honnan - meddig >= 0)
+                {
+
+                    jobbra_mehet = false;
+
+                    for (int i = honnan; i > honnan - meddig; i--)
+                    {
+                        if (fields[i].Tag.ToString() == "ship")
+                        {
+                            ballra_mehet = false;
+                            break;
+
+                        }
+                    }
+
+                }
+
+                if (honnan - meddig < 0) {
+                    ballra_mehet = false;
+                }
+
+                if (jobbra_mehet)
+                {
+                    for (int i = honnan; i < honnan + meddig; i++)
+                    {
+                        fields[i].Background = new SolidColorBrush(Colors.Green); ;
+                        fields[i].Tag = "ship";
+                    }
+
+                }
+                else if (ballra_mehet)
+                {
+                    for (int i = honnan; i > honnan - meddig; i--)
+                    {
+                        fields[i].Background = new SolidColorBrush(Colors.Green);
+                        fields[i].Tag = "ship";
+                    }
+
+                }
+                else
+                {
+
+                    MessageBox.Show("Ide nem helyezhető hajó");
+                }
+
+
+            }
+            else {
+                if (honnan % 10 + meddig <= 9)
+                {
+                    for (int i = honnan; i < honnan + meddig; i++)
+                    {
+                        if (fields[i].Tag.ToString() == "ship")
+                        {
+                            jobbra_mehet = false;
+                            break;
+
+                        }
+                    }
+                }
+                else if (honnan % 10 - meddig >= 0)
+                {
+
+                    jobbra_mehet = false;
+
+                    for (int i = honnan; i > honnan - meddig; i--)
+                    {
+                        if (fields[i].Tag.ToString() == "ship")
+                        {
+                            ballra_mehet = false;
+                            break;
+
+                        }
+                    }
+
+                }
+            
+
+                if (honnan % 10 - meddig < 0)
+                    ballra_mehet = false;
+
+                if (jobbra_mehet)
+                {
+                    for (int i = honnan; i < honnan + meddig; i++)
+                    {
+                        fields[i].Background = new SolidColorBrush(Colors.Green); ;
+                        fields[i].Tag = "ship";
+                    }
+
+                    foreach (var ship in ships)
+                    {
+                        if (ship.Name.ToString() == selected_ship)
+                        {
+                            ship.IsEnabled = false;
+                            ship.Opacity = 0.5;
+                        }
+                    }
+                    lastship.Stroke = unselected;
+                    lastship = null;
+                }
+                else if (ballra_mehet)
+                {
+                    for (int i = honnan; i > honnan - meddig; i--)
+                    {
+                       
+                        fields[i].Background = new SolidColorBrush(Colors.Green);
+                        fields[i].Tag = "ship";
+                    }
+                    foreach (var ship in ships)
+                    {
+                        if (ship.Name.ToString() == selected_ship)
+                        {
+                            ship.IsEnabled = false;
+                            ship.Opacity = 0.5;
+                        }
+                    }
+                    lastship.Stroke = unselected;
+                    lastship = null;
+                }
+                else
+                {
+
+                    MessageBox.Show("Ide nem helyezhető hajó");
+                }
+            }
+
+
+        
+        }
+
+        private void Felfele(int honnan, int meddig)
+        {
+
+        }
+
+        private void lefele(int honnan, int meddig) {
+        
+        
+        
+        }
+     
     }
+
+
+
 }
