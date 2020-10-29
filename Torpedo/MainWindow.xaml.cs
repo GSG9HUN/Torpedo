@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Torpedo.View.single_view;
 
 namespace Torpedo
 {
@@ -23,6 +24,18 @@ namespace Torpedo
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
+
+        private void Single_Click(object sender, RoutedEventArgs e)
+        {
+            Single_player single_player = new Single_player();
+            this.Close();
+            single_player.Show();
         }
     }
 }

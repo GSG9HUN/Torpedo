@@ -1,5 +1,5 @@
 ﻿Torpedo
-1.0.0.0
+
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\App.xaml
 3-1825471247
 
-8-1610799248
+6-1637009447
 1921654412462
 MainWindow.xaml;View\single_view\Ship_Placement.xaml;View\single_view\Single_player.xaml;
 
-True
+False
 
