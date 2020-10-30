@@ -310,7 +310,7 @@
 
 
 
-            <Button Canvas.Left="10" Canvas.Top="117">
+            <Button Canvas.Left="10" Canvas.Top="117" Click="Random_button">
                 Randomize
             </Button>
             <Button Canvas.Left="195" Canvas.Top="117" Width="57" Click="Reset_clicked">

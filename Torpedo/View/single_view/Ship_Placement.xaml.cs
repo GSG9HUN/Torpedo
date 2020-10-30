@@ -11,6 +11,7 @@ using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Torpedo.Modell.Single_modell;
 
 namespace Torpedo.View.single_view
 {
@@ -29,6 +30,7 @@ namespace Torpedo.View.single_view
         Path[] ships;
         Path lastship;
         Polygon lastarrow;
+        Dictionary<string, int> placed_ship = new Dictionary<string, int>();
 
         SolidColorBrush unselected = new SolidColorBrush(Colors.Black);
         SolidColorBrush selected = new SolidColorBrush(Colors.Green);
@@ -54,10 +56,16 @@ namespace Torpedo.View.single_view
 
             ships = new Path[] {cruiser, submarine, battleship, destroyer, carrier};
 
-
+            set_ships();
             set_Tags();
         }
 
+        private void set_ships()
+        {
+            foreach (var ship in ships) {
+                placed_ship.Add(ship.Name.ToString(), 0);
+            }
+        }
 
         private void set_Tags()
         {
@@ -159,37 +167,32 @@ namespace Torpedo.View.single_view
             selected_ship = null;
         }
 
-        private void grid_pressed(object sender, MouseButtonEventArgs e)
-        {
-            Grid clicked_grid = (Grid) sender;
-            if (selected_ship == null)
-            {
-                MessageBox.Show("Válassz ki egy hajót");
-                return;
-            }
+        private int check_ship(string name) {
 
-
-            int size = 0;
-            switch (selected_ship)
+            switch (name)
             {
                 case "destroyer":
-                    size = 2;
-                    break;
+                   return 2;
+
                 case "cruiser":
-                    size = 3;
-                    break;
+                   return 3;
+
                 case "submarine":
-                    size = 3;
-                    break;
+                    return 3;
+
                 case "battleship":
-                    size = 4;
-                    break;
+                    return 4;
+
                 case "carrier":
-                    size = 5;
-                    break;
+                    return 5;
             }
 
-            int index = 0;
+            return 0;
+        }
+
+
+        private int set_index(Grid clicked_grid) {
+            var value = 0;
             foreach (Grid field in fields)
             {
                 if (field.Name == clicked_grid.Name)
@@ -197,10 +200,14 @@ namespace Torpedo.View.single_view
                     break;
                 }
 
-                index++;
+                value++;
             }
 
+            return value;
 
+        }
+
+        private void call_my_function(string irany, int index, int size) {
             switch (irany)
             {
                 case "jobb":
@@ -216,86 +223,125 @@ namespace Torpedo.View.single_view
                     Lefele(index, size);
                     break;
             }
+
+        }
+        private void grid_pressed(object sender, MouseButtonEventArgs e)
+        {
+            Grid clicked_grid = (Grid) sender;
+            if (selected_ship == null)
+            {
+                MessageBox.Show("Válassz ki egy hajót");
+                return;
+            }
+
+
+            int size = check_ship(selected_ship);
+            int index = set_index(clicked_grid);
+
+            call_my_function(irany,index,size);
         }
 
 
-        private void Ballra(int honnan, int meddig)
-        {
-            jobbra_mehet = true;
-            ballra_mehet = true;
+        private bool check_if_i_can_go_left(int honnan, int meddig) {
             if (honnan % 10 - meddig >= 0)
             {
                 for (int i = honnan; i > honnan - meddig; i--)
                 {
                     if (fields[i].Tag.ToString() == "ship")
                     {
-                        ballra_mehet = false;
-                        break;
+                        return false;
+                        
                     }
                 }
             }
-            else {
-                ballra_mehet = false;
+            else
+            {
+                return false;
             }
+            return true;
+
+        }
+
+        private bool check_if_i_can_go_right(int honnan, int meddig) {
             if (honnan % 10 + meddig <= 9)
             {
                 for (int i = honnan; i < honnan + meddig; i++)
                 {
                     if (fields[i].Tag.ToString() == "ship")
                     {
-                        jobbra_mehet = false;
+                        return false;
                         break;
                     }
                 }
             }
             else
             {
-                jobbra_mehet = false;
+                return false;
             }
 
+            return true;
+        }
+
+        private void i_go_left(int honnan,int meddig) {
+            for (int i = honnan; i > honnan - meddig; i--)
+            {
+                fields[i].Background = new SolidColorBrush(Colors.Green);
+                fields[i].Tag = "ship";
+            }
+
+            foreach (var ship in ships)
+            {
+                if (ship.Name.ToString() == selected_ship)
+                {
+                    ship.IsEnabled = false;
+                    ship.Opacity = 0.5;
+                    if (lastship != null)
+                        lastship.Stroke = unselected;
+                    lastship = null;
+                    selected_ship = null;
+                    break;
+                }
+            }
+
+        }
+
+        private void i_go_right(int honnan, int meddig) {
+
+            for (int i = honnan; i < honnan + meddig; i++)
+            {
+                fields[i].Background = new SolidColorBrush(Colors.Green);
+                fields[i].Tag = "ship";
+            }
+
+            foreach (var ship in ships)
+            {
+                if (ship.Name.ToString() == selected_ship)
+                {
+                    ship.IsEnabled = false;
+                    ship.Opacity = 0.5;
+                    if (lastship != null)
+                        lastship.Stroke = unselected;
+                    lastship = null;
+                    selected_ship = null;
+                    break;
+                }
+            }
+
+        }
+
+
+        private void Ballra(int honnan, int meddig)
+        {
+            jobbra_mehet = check_if_i_can_go_right(honnan,meddig);
+            ballra_mehet = check_if_i_can_go_left(honnan, meddig);
+            
             if (ballra_mehet)
             {
-                for (int i = honnan; i > honnan - meddig; i--)
-                {
-                    fields[i].Background = new SolidColorBrush(Colors.Green);
-                    fields[i].Tag = "ship";
-                }
-
-                foreach (var ship in ships)
-                {
-                    if (ship.Name.ToString() == selected_ship)
-                    {
-                        ship.IsEnabled = false;
-                        ship.Opacity = 0.5;
-                        if (lastship != null)
-                            lastship.Stroke = unselected;
-                        lastship = null;
-                        selected_ship = null;
-                        break;
-                    }
-                }
+                i_go_left(honnan, meddig);
             }
             else if (jobbra_mehet)
             {
-                for (int i = honnan; i < honnan + meddig; i++)
-                {
-                    fields[i].Background = new SolidColorBrush(Colors.Green);
-                    fields[i].Tag = "ship";
-                }
-
-                foreach (var ship in ships)
-                {
-                    if (ship.Name.ToString() == selected_ship)
-                    {
-                        ship.IsEnabled = false;
-                        ship.Opacity = 0.5;
-                        if (lastship != null)
-                            lastship.Stroke = unselected;
-                        lastship = null;
-                        selected_ship = null;
-                        break;
-                    }
-                }
+                i_go_right(honnan,meddig);
 
             }
 
@@ -307,88 +353,17 @@ namespace Torpedo.View.single_view
 
         private void Jobbra(int honnan, int meddig)
         {
-            jobbra_mehet = true;
-            ballra_mehet = true;
+            jobbra_mehet = check_if_i_can_go_right(honnan,meddig);
+            ballra_mehet = check_if_i_can_go_left(honnan, meddig);
 
-
-            if (honnan % 10 + meddig <= 9)
-            {
-                for (int i = honnan; i < honnan + meddig; i++)
+            if (jobbra_mehet)
                 {
-                    if (fields[i].Tag.ToString() == "ship")
-                    {
-                        jobbra_mehet = false;
-                        break;
-                    }
-                }
-            }
-            else {
-                jobbra_mehet = false;
-            }
-                if (honnan % 10 - meddig >= 0)
-                {
-                    jobbra_mehet = false;
-
-                    for (int i = honnan; i > honnan - meddig; i--)
-                    {
-                        if (fields[i].Tag.ToString() == "ship")
-                        {
-                            ballra_mehet = false;
-                            break;
-                        }
-                    }
-                }
-                else {
-                    ballra_mehet = false;        
-                }
-
-
-
-                if (jobbra_mehet)
-                {
-                    for (int i = honnan; i < honnan + meddig; i++)
-                    { 
-                        fields[i].Background = new SolidColorBrush(Colors.Green);
-                        fields[i].Tag = "ship";
-                    }
-
-                  
-                    foreach (var ship in ships)
-                    {
-                        if (ship.Name.ToString() == selected_ship)
-                        {
-                            if (lastship != null)
-                                lastship.Stroke = unselected;
-                            lastship = null;
-                            ship.IsEnabled = false;
-                            ship.Opacity = 0.5;
-                            selected_ship = null;
-                            break;
-                        }
-                    }
+                i_go_right(honnan, meddig);
 
                 }
                 else if (ballra_mehet)
                 {
-                    for (int i = honnan; i > honnan - meddig; i--)
-                    {
-                        fields[i].Background = new SolidColorBrush(Colors.Green);
-                        fields[i].Tag = "ship";
-                    }
-
-                    foreach (var ship in ships)
-                    {
-                        if (ship.Name.ToString() == selected_ship)
-                        {
-                            if (lastship != null)
-                                lastship.Stroke = unselected;
-                            lastship = null;
-                            ship.IsEnabled = false;
-                            ship.Opacity = 0.5;
-                            selected_ship = null;
-                            break;
-                        }
-                    }
+                i_go_left(honnan, meddig);
                     
                 }
                 else
@@ -597,6 +572,19 @@ namespace Torpedo.View.single_view
             }
 
 
+        }
+
+        private void Random_button(object sender, RoutedEventArgs e)
+        {
+            foreach (var ship in ships) {
+                if (placed_ship[ship.Name.ToString()] == 0) {
+                    placed_ship[ship.Name.ToString()] = 1;
+                    selected_ship = ship.Name;
+
+
+                }
+            
+            }
         }
     }
 }
