@@ -30,7 +30,7 @@ namespace Torpedo
             String name = username.Text;
             if (name == "")
             {
-                MessageBox.Show("You must enter a name", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                msg("Be kell írnod egy felhasználónevet!");
             }
             else
             {
@@ -46,6 +46,12 @@ namespace Torpedo
             MainWindow mainwindow = new MainWindow();
             this.Close();
             mainwindow.Show();
+        }
+        private void msg(string szoveg)
+        {
+
+            MessageBox.Show(szoveg, "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+
         }
     }
 }

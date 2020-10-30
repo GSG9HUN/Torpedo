@@ -11,6 +11,7 @@ using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 using Torpedo.Modell.Single_modell;
 
 namespace Torpedo.View.single_view
@@ -28,9 +29,11 @@ namespace Torpedo.View.single_view
         String irany { get; set; }
         String selected_ship { get; set; }
         Path[] ships;
+        Polygon[] arrows;
         Path lastship;
         Polygon lastarrow;
         Dictionary<string, int> placed_ship = new Dictionary<string, int>();
+        
 
         SolidColorBrush unselected = new SolidColorBrush(Colors.Black);
         SolidColorBrush selected = new SolidColorBrush(Colors.Green);
@@ -55,6 +58,7 @@ namespace Torpedo.View.single_view
             };
 
             ships = new Path[] {cruiser, submarine, battleship, destroyer, carrier};
+            arrows = new Polygon[] { fel, le, bal, jobb };
 
             set_ships();
             set_Tags();
@@ -157,7 +161,26 @@ namespace Torpedo.View.single_view
             return "";
             }
 
-        
+        private void set_default_ships() {
+            foreach (var ship in ships)
+            {
+                ship.IsEnabled = true;
+                ship.Stroke = unselected;
+                ship.Opacity = 1;
+            }
+
+
+        }
+
+        private void set_default_arrows() {
+
+            foreach (var arrow in arrows)
+            {
+                arrow.Stroke = unselected;
+            }
+
+        }
+
 
         private void Reset_clicked(object sender, RoutedEventArgs e)
         {
@@ -166,13 +189,9 @@ namespace Torpedo.View.single_view
             if (lastship != null)
                 lastship.Stroke = unselected;
 
-            foreach (var ship in ships)
-            {
-                ship.IsEnabled = true;
-                ship.Stroke = unselected;
-                ship.Opacity = 1;
-            }
-
+            set_dictionary_default();
+            set_default_ships();
+            set_default_arrows();
             set_Tags();
             selected_ship = null;
         }
@@ -242,7 +261,7 @@ namespace Torpedo.View.single_view
             Grid clicked_grid = (Grid) sender;
             if (selected_ship == null)
             {
-                MessageBox.Show("Válassz ki egy hajót");
+                msg("Válassz ki egy hajót");
                 return;
             }
 
@@ -252,6 +271,13 @@ namespace Torpedo.View.single_view
             call_my_function(irany,index,size);
         }
 
+
+        private void msg(string szoveg)
+        {
+
+            MessageBox.Show(szoveg,"Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+        }
 
         private bool check_if_i_can_go_left(int honnan, int meddig) {
             if (honnan % 10 - meddig >= 0)
@@ -358,7 +384,7 @@ namespace Torpedo.View.single_view
 
             else
             {
-                MessageBox.Show("Ide nem helyezhető hajó");
+                msg("Ide nem helyezhető hajó");
             }
         }
 
@@ -379,7 +405,7 @@ namespace Torpedo.View.single_view
                 }
                 else
                 {
-                    MessageBox.Show("Ide nem helyezhető hajó");
+                    msg("Ide nem helyezhető hajó");
                 }
             }
 
@@ -499,7 +525,7 @@ namespace Torpedo.View.single_view
             }
             else
             {
-                MessageBox.Show("Ide nem helyezhető hajó");
+                msg("Ide nem helyezhető hajó");
             }
         }
 
@@ -521,7 +547,7 @@ namespace Torpedo.View.single_view
             }
             else
             {
-                MessageBox.Show("Ide nem helyezhető hajó");
+                msg("Ide nem helyezhető hajó");
             }
 
 
@@ -529,15 +555,116 @@ namespace Torpedo.View.single_view
 
         private void Random_button(object sender, RoutedEventArgs e)
         {
+
+            Reset_clicked(sender,e);
+            int placed_ships = 0;
             foreach (var ship in ships) {
+                set_default_arrows();
                 if (placed_ship[ship.Name.ToString()] == 0) {
-                    placed_ship[ship.Name.ToString()] = 1;
+                    
                     selected_ship = ship.Name;
+                    irany = set_random_irany(get_random_number(1, 4));
+                    lastarrow = get_poly(irany);
+                    placed_ships = 0;
+                    while (placed_ships != 5) {
+                        int random_grid = get_random_number(0, 99);
+                        if (get_can_i_go_to_irany(irany, random_grid, check_ship(selected_ship)))
+                        {
+                            placed_ships++;
+                            call_my_function(irany,random_grid,check_ship(selected_ship));
+                            placed_ship[ship.Name.ToString()] = 1;
 
 
+                        }
+
+
+                    }
+                    
+                   
+                    
+                    
                 }
             
             }
+        }
+
+        private void Start_button(object sender, RoutedEventArgs e)
+        {
+            
+            Game game = new Game();
+            this.Close();
+            game.Show();
+
+
+        }
+
+        private Polygon get_poly( string irany) {
+
+            switch (irany)
+            {
+
+                case "fel": return arrows[0];
+                case "le": return arrows[1];
+                case "jobb": return arrows[3];
+                case "bal": return arrows[2];
+
+
+            }
+            return arrows[0];        }
+
+        private bool get_can_i_go_to_irany(string irany,int honnan,int meddig) {
+
+
+            switch (irany) {
+
+                case "fel": return check_if_i_can_go_up(honnan,meddig);
+                case "le": return check_if_i_can_go_down(honnan, meddig);
+                case "jobb": return check_if_i_can_go_right(honnan, meddig);
+                case "bal": return check_if_i_can_go_left(honnan, meddig);
+
+
+            }
+
+            return false;
+        }
+
+
+        private string set_random_irany(int random_number) {
+            return get_random_irany(random_number);
+        }
+
+        private string get_random_irany(int number)
+        {
+            switch (number)
+            {
+                case 1:
+                    arrows[3].Stroke = selected;
+                    return "jobb";
+                case 2:
+                   arrows[2].Stroke = selected;
+                    return "bal";
+                case 3:
+                    arrows[0].Stroke = selected;
+                    return "fel";
+                case 4:
+                    arrows[1].Stroke = selected;
+                    return "le";
+            }
+            return "";
+        }
+
+        private void set_dictionary_default() {
+            foreach (var ship in ships)
+            {
+                    placed_ship[ship.Name.ToString()] = 0;  
+            }
+
+        }
+
+        private int get_random_number(int min, int max) {
+            Random rnd = new Random();
+            return rnd.Next(min, max + 1);
+        
         }
     }
 }

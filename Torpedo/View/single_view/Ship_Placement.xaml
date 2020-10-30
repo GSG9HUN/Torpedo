@@ -129,7 +129,7 @@
         <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="2" Name="H3"/>
         <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="2" Name="I3" />
         <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="2" Name="J3"/>
-        
+
         <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="3" Name="A4"/>
         <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="3" Name="B4" />
         <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="3" Name="C4" />
@@ -164,7 +164,7 @@
         <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="5" Name="H6"/>
         <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="5" Name="I6"/>
         <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="5" Name="J6"/>
-        
+
         <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="6" Name="A7"/>
         <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="6" Name="B7"/>
         <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="6" Name="C7"/>
@@ -316,7 +316,7 @@
             <Button Canvas.Left="195" Canvas.Top="117" Width="57" Click="Reset_clicked">
                 Reset
             </Button>
-            <Button Canvas.Left="358" Canvas.Top="117" Width="46">
+            <Button Canvas.Left="358" Canvas.Top="117" Width="46" Click="Start_button">
                 Start
             </Button>
         </Canvas>
