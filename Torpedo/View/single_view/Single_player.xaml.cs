@@ -13,17 +13,14 @@ using Torpedo.View.single_view;
 
 namespace Torpedo
 {
-
-    
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
     public partial class Single_player : Window
     {
+        String _username { set; get; }
 
-        String _username{ set; get; }
-       
-    public Single_player()
+        public Single_player()
         {
             InitializeComponent();
         }
@@ -31,7 +28,8 @@ namespace Torpedo
         private void Start_Click(object sender, RoutedEventArgs e)
         {
             String name = username.Text;
-            if (name == "") {
+            if (name == "")
+            {
                 MessageBox.Show("You must enter a name", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
@@ -41,12 +39,11 @@ namespace Torpedo
                 this.Close();
                 ship_placement.Show();
             }
-        
-
         }
+
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainwindow=new MainWindow();
+            MainWindow mainwindow = new MainWindow();
             this.Close();
             mainwindow.Show();
         }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\gsg9hun\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\gsg9hun\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Torpedo.1703229436.00" t="ExcludeRecursive" />
+    <e p="C:\Users\gsg9hun\source\repos\Torpedo" t="IncludeFlat">
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Torpedo" t="IncludeRecursive">
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="AssemblyInfo.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="Modell" t="Include">
+          <e p="Single_modell" t="Include">
+            <e p="Gamemodell.cs" t="Include" />
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="App.g.cs" t="Include" />
+              <e p="MainWindow.g.cs" t="Include" />
+              <e p="Torpedo.AssemblyInfo.cs" t="Include" />
+              <e p="View" t="Include">
+                <e p="single_view" t="Include">
+                  <e p="Ship_Placement.g.cs" t="Include" />
+                  <e p="Single_player.g.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Torpedo.csproj" t="IncludeRecursive" />
+        <e p="View" t="Include">
+          <e p="single_view" t="Include">
+            <e p="Ship_Placement.xaml" t="Include" />
+            <e p="Ship_Placement.xaml.cs" t="Include" />
+            <e p="Single_player.xaml" t="Include" />
+            <e p="Single_player.xaml.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Torpedo.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
