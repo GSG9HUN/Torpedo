@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Torpedo.View.single_view"
         mc:Ignorable="d"
-        Title="Game" Height="475" Width="1000">
+        Title="Game" Height="550" Width="1250">
 
 
 
 
-    <Grid>
+    <Grid Margin="0,6,10,-6">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="43*"/>
-            <ColumnDefinition Width="82*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid HorizontalAlignment="Left" Width="300" Height="300" 
               VerticalAlignment="Top" Margin="22,54,0,0" Name="CompGrid" ShowGridLines="True" Grid.Column="1">
@@ -36,7 +36,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition Height="30.4"/>
+                <RowDefinition />
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -242,17 +242,17 @@
             <Grid x:Name="J10" Grid.Row="9" Grid.Column="9" MouseLeftButtonDown="grid_pressed" Background="black">
             </Grid>
         </Grid>
-        <Label x:Name="lblTitle" Content="Battle" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="269" FontSize="25.333" FontFamily="Stencil" FontWeight="Bold" Margin="8,7,0,0"/>
-        <Label x:Name="lblVerticalA_Copy" Content="A" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Margin="323,61,182,0" Grid.Column="1"/>
-        <Label x:Name="lblVerticalB_Copy" Content="B" Margin="322,90,183,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalC_Copy" Content="C" Margin="322,122,183,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalD_Copy" Content="D" Margin="322,150,183,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalE_Copy" Content="E" Margin="322,181,183,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalF_Copy" Content="F" Margin="322,213,183,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalG_Copy" Content="G" Margin="322,240,183,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalH_Copy" Content="H" Margin="322,271,183,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalI_Copy" Content="I" Margin="322,298,183,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalJ_Copy" Content="J" Margin="322,330,183,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667" RenderTransformOrigin="8.609,0.198" Grid.Column="1"/>
+        <Label x:Name="lblTitle" Content="Battle" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="92" FontSize="25.333" FontFamily="Stencil" FontWeight="Bold" Margin="8,7,0,0"/>
+        <Label x:Name="lblVerticalA_Copy" Content="A" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Margin="323,61,124,0" Grid.Column="1"/>
+        <Label x:Name="lblVerticalB_Copy" Content="B" Margin="322,90,125,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalC_Copy" Content="C" Margin="322,122,125,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalD_Copy" Content="D" Margin="322,150,125,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy" Content="E" Margin="322,181,125,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalF_Copy" Content="F" Margin="322,213,125,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalG_Copy" Content="G" Margin="322,240,125,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalH_Copy" Content="H" Margin="322,271,125,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalI_Copy" Content="I" Margin="322,298,125,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalJ_Copy" Content="J" Margin="322,330,125,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667" RenderTransformOrigin="8.609,0.198" Grid.Column="1"/>
 
         <Grid HorizontalAlignment="Center" Width="300" Height="300" VerticalAlignment="Top" Margin="0,53,0,0" x:Name="PlayerGrid" ShowGridLines="True">
             <Grid.ColumnDefinitions>
@@ -385,6 +385,164 @@
         <TextBlock x:Name="txtBlockLosses" HorizontalAlignment="Left" Margin="514,90,0,303" Width="101" Text="Losses" TextAlignment="Center"  Foreground="Black" Background="White" Opacity="0.5" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
         <Label x:Name="lblScores" Content="Scores" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="242" FontSize="22.333" FontFamily="Stencil" FontWeight="Bold" Margin="375,51,0,0" Background="#FFBEE1F0" Opacity="0.8" Grid.Column="1"/>
         <Button x:Name="btnClear" Content="Clear List" HorizontalAlignment="Left" Height="30" Margin="396,303,0,0" VerticalAlignment="Top" Width="101" Click="btnClear_Click" FontWeight="Bold" Background="#FF5284C0" BorderBrush="#FFC1C0E8" Foreground ="White" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+
+        <Canvas Margin="29,367,46,0">
+
+            <Label Canvas.Left="210" Width="132" FontWeight="Bold" FontSize="20">
+                A Te flottád
+            </Label>
+
+            <Label Canvas.Left="287" Width="78" FontWeight="Bold" Content="Submarine" Canvas.Top="50"/>
+            <Label Canvas.Left="162" Width="90" FontWeight="Bold" FontSize="16" Content="Carrier" Canvas.Top="45" Height="30"/>
+            <Label  Width="132" FontWeight="Bold" FontSize="16" Content="Battleship" Canvas.Left="25" Canvas.Top="45"/>
+
+
+
+            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="488" Canvas.Top="78.24" Height="28.8" Stretch="Fill" Width="56.8"
+            		x:Name="destroyer" >
+                <Path.Data>
+                    <GeometryGroup>
+                        <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
+                        <LineGeometry StartPoint="110 110" EndPoint="110 -90" />
+                    </GeometryGroup>
+                </Path.Data>
+            </Path>
+            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="382.2" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
+                	x:Name="cruiser">
+                <Path.Data>
+                    <GeometryGroup>
+                        <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
+                        <LineGeometry StartPoint="140 90" EndPoint="140 -80" />
+                        <LineGeometry StartPoint="70 90" EndPoint="70 -80" />
+                    </GeometryGroup>
+                </Path.Data>
+            </Path>
+            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="290.5" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
+                	x:Name="submarine">
+                <Path.Data>
+                    <GeometryGroup>
+                        <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
+                        <LineGeometry StartPoint="140 90" EndPoint="140 -80" />
+                        <LineGeometry StartPoint="70 90" EndPoint="70 -80" />
+                    </GeometryGroup>
+                </Path.Data>
+            </Path>
+            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="10" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="116.8"
+                	x:Name="battleship">
+                <Path.Data>
+                    <GeometryGroup>
+                        <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
+                        <LineGeometry StartPoint="150 90" EndPoint="150 -80" />
+                        <LineGeometry StartPoint="100 90" EndPoint="100 -80" />
+                        <LineGeometry StartPoint="50 80" EndPoint="50 -70" />
+                    </GeometryGroup>
+                </Path.Data>
+            </Path>
+            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="133" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="148"
+                	x:Name="carrier"  >
+                <Path.Data>
+                    <GeometryGroup>
+                        <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
+                        <LineGeometry StartPoint="160 90" EndPoint="160 -80" />
+                        <LineGeometry StartPoint="120 90" EndPoint="120 -80" />
+                        <LineGeometry StartPoint="80 90" EndPoint="80 -80" />
+                        <LineGeometry StartPoint="50 80" EndPoint="50 -70" />
+                    </GeometryGroup>
+                </Path.Data>
+            </Path>
+            <Label Canvas.Left="393" Width="78" FontWeight="Bold" Content="Cruiser" Canvas.Top="50"/>
+            <Label Canvas.Left="477" Width="78" FontWeight="Bold" Content="Destroyer" Canvas.Top="50"/>
+
+        </Canvas>
+        <Canvas Margin="0,362,75,5" Grid.Column="1">
+
+            <Label Canvas.Left="210" Width="143" FontWeight="Bold" FontSize="20" Content="A Gép flottája"/>
+
+            <Label Canvas.Left="287" Width="78" FontWeight="Bold" Content="Submarine" Canvas.Top="50"/>
+            <Label Canvas.Left="162" Width="90" FontWeight="Bold" FontSize="16" Content="Carrier" Canvas.Top="45" Height="30"/>
+            <Label  Width="132" FontWeight="Bold" FontSize="16" Content="Battleship" Canvas.Left="25" Canvas.Top="45"/>
+
+
+
+            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="488" Canvas.Top="78.24" Height="28.8" Stretch="Fill" Width="56.8"
+                x:Name="destroyer1" >
+                <Path.Data>
+                    <GeometryGroup>
+                        <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
+                        <LineGeometry StartPoint="110 110" EndPoint="110 -90" />
+                    </GeometryGroup>
+                </Path.Data>
+            </Path>
+            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="382.2" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
+                x:Name="cruiser1" >
+                <Path.Data>
+                    <GeometryGroup>
+                        <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
+                        <LineGeometry StartPoint="140 90" EndPoint="140 -80" />
+                        <LineGeometry StartPoint="70 90" EndPoint="70 -80" />
+                    </GeometryGroup>
+                </Path.Data>
+            </Path>
+            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="290.5" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
+                x:Name="submarine1" >
+                <Path.Data>
+                    <GeometryGroup>
+                        <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
+                        <LineGeometry StartPoint="140 90" EndPoint="140 -80" />
+                        <LineGeometry StartPoint="70 90" EndPoint="70 -80" />
+                    </GeometryGroup>
+                </Path.Data>
+            </Path>
+            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="10" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="116.8"
+                x:Name="battleship1" >
+                <Path.Data>
+                    <GeometryGroup>
+                        <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
+                        <LineGeometry StartPoint="150 90" EndPoint="150 -80" />
+                        <LineGeometry StartPoint="100 90" EndPoint="100 -80" />
+                        <LineGeometry StartPoint="50 80" EndPoint="50 -70" />
+                    </GeometryGroup>
+                </Path.Data>
+            </Path>
+            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="133" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="148"
+                x:Name="carrier1">
+                <Path.Data>
+                    <GeometryGroup>
+                        <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
+                        <LineGeometry StartPoint="160 90" EndPoint="160 -80" />
+                        <LineGeometry StartPoint="120 90" EndPoint="120 -80" />
+                        <LineGeometry StartPoint="80 90" EndPoint="80 -80" />
+                        <LineGeometry StartPoint="50 80" EndPoint="50 -70" />
+                    </GeometryGroup>
+                </Path.Data>
+            </Path>
+            <Label Canvas.Left="393" Width="78" FontWeight="Bold" Content="Cruiser" Canvas.Top="50"/>
+            <Label Canvas.Left="477" Width="78" FontWeight="Bold" Content="Destroyer" Canvas.Top="50"/>
+
+        </Canvas>
+        <Label x:Name="lblVerticalE_Copy1" Content="1" Margin="160,25,434,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy2" Content="5" Margin="284,25,310,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy3" Content="4" Margin="254,25,341,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy4" Content="3" Margin="221,25,370,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy5" Content="2" Margin="191,25,404,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy6" Content="8" Margin="376,25,215,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy7" Content="7" Margin="345,25,244,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy8" Content="6" Margin="314,25,280,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy9" Content="9" Margin="405,25,185,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy10" Content="10" Margin="435,25,150,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy11" Content="8" Margin="237,25,358,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy12" Content="2" Margin="52,25,541,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy13" Content="7" Margin="207,25,388,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy14" Content="6" Margin="177,25,418,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy15" Content="5" Margin="147,25,448,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy16" Content="4" Margin="120,25,474,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy17" Content="3" Margin="84,25,511,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy18" Content="9" Margin="267,25,328,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy19" Content="10" Margin="292,25,292,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy20" Content="1" Margin="27,25,568,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+
     </Grid>
+
+
 
 </Window>

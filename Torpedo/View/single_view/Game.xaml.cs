@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,17 +21,31 @@ namespace Torpedo.View.single_view
     public partial class Game : Window
     {
 
-        Grid[] ai_grids,my_grids;
+        Grid[] ai_grids, my_grids;
         Gamemodell game;
-        
-        public Game(ref Grid[] fields)
+        Ship[] player_ships;
+        Path[] en_flotam, gep_flotaja;
+
+        public Game(ref Grid[] fields, Ship[] ships_class)
         {
+            player_ships = ships_class;
             InitializeComponent();
             set_my_grids(fields);
             set_ai_grids();
-            game = new Gamemodell(ref ai_grids,this);
-            
+            set_flottak();
+            game = new Gamemodell(ref ai_grids, ref my_grids, player_ships);
+
         }
+
+        private void set_flottak()
+        {
+            en_flotam = new Path[]  { cruiser, submarine, battleship, destroyer, carrier };
+            gep_flotaja = new Path[] { cruiser1, submarine1, battleship1, destroyer1, carrier1 };
+
+           
+
+        }
+
         private void set_ai_grids()
         {
             ai_grids = new Grid[] { A1, A2, A3, A4, A5, A6, A7, A8, A9, A10,
@@ -44,7 +59,7 @@ namespace Torpedo.View.single_view
                                     I1, I2, I3, I4, I5, I6, I7, I8, I9, I10,
                                     J1, J2, J3, J4, J5, J6, J7, J8, J9, J10};
         }
-            private void set_my_grids(Grid[] placed_ships_on_grids) {
+        private void set_my_grids(Grid[] placed_ships_on_grids) {
             my_grids = new Grid[] { gridA1, gridA2, gridA3, gridA4, gridA5, gridA6, gridA7, gridA8, gridA9, gridA10,
                                     gridB1, gridB2, gridB3, gridB4, gridB5, gridB6, gridB7, gridB8, gridB9, gridB10,
                                     gridC1, gridC2, gridC3, gridC4, gridC5, gridC6, gridC7, gridC8, gridC9, gridC10,
@@ -68,15 +83,117 @@ namespace Torpedo.View.single_view
                 }
                 index++;
             }
-        
-        
+
+
+        }
+
+        bool fel(int honnan,int meddig) {
+
+            for(int i=honnan; i >= meddig; i -= 10)
+            {
+                if (ai_grids[i].Tag.ToString()=="ship") {
+                    return false;                
+                }
+
+            }
+            return true;
+        }
+        bool le(int honnan, int meddig)
+        {
+
+            for (int i = honnan; i <= meddig; i += 10)
+            {
+                if (ai_grids[i].Tag.ToString() == "ship")
+                {
+                    return false;
+                }
+
+            }
+            return true;
+        }
+
+        bool bal(int honnan, int meddig)
+        {
+
+            for (int i = honnan; i >= meddig; i--)
+            {
+                if (ai_grids[i].Tag.ToString() == "ship")
+                {
+                    return false;
+                }
+
+            }
+            return true;
+        }
+        bool jobb(int honnan, int meddig)
+        {
+
+            for (int i = honnan; i <= meddig; i++)
+            {
+                if (ai_grids[i].Tag.ToString() == "ship")
+                {
+                    return false;
+                }
+
+            }
+            return true;
+        }
+
+
+        public bool check_if_the_ship_sank(string irany, int honnan, int meddig){
+
+            switch (irany) {
+                case "fel":  return fel(honnan,meddig);
+                case "le":   return le(honnan,meddig);
+                case "jobb": return jobb(honnan,meddig);
+                case "bal":  return bal(honnan,meddig);
+            
+            }
+
+
+            return false;
         }
 
         private void grid_pressed(object sender, MouseButtonEventArgs e)
         {
 
-            Grid asd = (Grid)sender;
-            msg(asd.Name.ToString());
+            Grid clicked_grid = (Grid)sender;
+            if (clicked_grid.Tag.ToString() != "Clicked")
+            {
+                if (game.check_if_heres_ship(ref clicked_grid)) {
+
+                    foreach(Ship p in game.ai_ships)
+                    {
+                        if (!p.elsulyedt) {
+                            if (check_if_the_ship_sank(p.irany, p.kezdet, p.veg)) {
+                                p.elsulyedt = true;
+                               for(int i = 0; i < 5; i++)
+                                {
+                                   
+                                    if (en_flotam[i].Name.ToString() == p.nev)
+                                    {
+                                        gep_flotaja[i].Stroke = Brushes.Red;
+                                        gep_flotaja[i].Opacity = 0.5;
+                                        msg(p.nev + "elsülyedt");
+                                    }
+                                }
+                                
+                            }
+                            
+
+                        }
+
+                    }
+                    
+                
+                }
+                game.ai_tip();
+            }
+            else {
+                msg("Ide már klikkeltél egyszer");
+            
+            }
+           
 
         }
 

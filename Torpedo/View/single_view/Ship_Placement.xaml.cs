@@ -20,7 +20,7 @@ namespace Torpedo.View.single_view
     /// Interaction logic for Window1.xaml
     /// </summary>
     /// 
-    public partial class Ship_Placement : Window
+    public partial class Ship_Placement : Window,check_if,i_go
     {
         bool ballra_mehet = true;
         bool jobbra_mehet = true;
@@ -28,11 +28,13 @@ namespace Torpedo.View.single_view
         bool lefele_mehet = true;
         String irany { get; set; }
         String selected_ship { get; set; }
+        Ship[] ships_class;
         Path[] ships;
         Polygon[] arrows;
         Path lastship;
         Polygon lastarrow;
         Dictionary<string, int> placed_ship = new Dictionary<string, int>();
+
         
 
         SolidColorBrush unselected = new SolidColorBrush(Colors.Black);
@@ -41,6 +43,7 @@ namespace Torpedo.View.single_view
 
         public Ship_Placement()
         {
+            ships_class = new Ship[5];
             InitializeComponent();
             irany = "fel";
             fields = new Grid[]
@@ -62,6 +65,9 @@ namespace Torpedo.View.single_view
 
             set_ships();
             set_Tags();
+
+
+
         }
 
         private void set_ships()
@@ -196,7 +202,7 @@ namespace Torpedo.View.single_view
             selected_ship = null;
         }
 
-        private int check_ship(string name) {
+        public int check_ship(string name) {
 
             switch (name)
             {
@@ -279,7 +285,7 @@ namespace Torpedo.View.single_view
 
         }
 
-        private bool check_if_i_can_go_left(int honnan, int meddig) {
+        public bool check_if_i_can_go_left(int honnan, int meddig) {
             if (honnan % 10 - meddig >= 0)
             {
                 for (int i = honnan; i > honnan - meddig; i--)
@@ -299,7 +305,7 @@ namespace Torpedo.View.single_view
 
         }
 
-        private bool check_if_i_can_go_right(int honnan, int meddig) {
+        public bool check_if_i_can_go_right(int honnan, int meddig) {
             if (honnan % 10 + meddig <= 9)
             {
                 for (int i = honnan; i < honnan + meddig; i++)
@@ -319,7 +325,7 @@ namespace Torpedo.View.single_view
             return true;
         }
 
-        private void i_go_left(int honnan,int meddig) {
+        public void i_go_left(int honnan,int meddig) {
             for (int i = honnan; i > honnan - meddig; i--)
             {
                 fields[i].Background = new SolidColorBrush(Colors.Green);
@@ -342,7 +348,7 @@ namespace Torpedo.View.single_view
 
         }
 
-        private void i_go_right(int honnan, int meddig) {
+        public void i_go_right(int honnan, int meddig) {
 
             for (int i = honnan; i < honnan + meddig; i++)
             {
@@ -411,7 +417,7 @@ namespace Torpedo.View.single_view
 
 
 
-        private bool check_if_i_can_go_up(int honnan, int meddig) {
+        public bool check_if_i_can_go_up(int honnan, int meddig) {
 
             if ((int)honnan / 10 - meddig >= 0)
             {
@@ -435,7 +441,7 @@ namespace Torpedo.View.single_view
             return true;
         }
 
-        private bool check_if_i_can_go_down(int honnan, int meddig)
+        public bool check_if_i_can_go_down(int honnan, int meddig)
         {
 
             if ((int)honnan / 10 + meddig <= 9)
@@ -458,7 +464,7 @@ namespace Torpedo.View.single_view
             return true;
         }
 
-        private void i_go_up(int honnan, int meddig) {
+        public void i_go_up(int honnan, int meddig) {
             for (int i = honnan; (int)i / 10 > (int)honnan / 10 - meddig; i -= 10)
             {
                 fields[i].Background = new SolidColorBrush(Colors.Green);
@@ -482,7 +488,7 @@ namespace Torpedo.View.single_view
 
         }
 
-        private void i_go_down(int honnan, int meddig) {
+        public void i_go_down(int honnan, int meddig) {
 
             for (int i = honnan; (int)i / 10 < (int)honnan / 10 + meddig; i += 10)
             {
@@ -553,11 +559,23 @@ namespace Torpedo.View.single_view
 
         }
 
+        private int ship_ending(String irany,int kezdet,int hossz) {
+
+            switch (irany) {
+                case "fel": return kezdet - ((hossz-1)*10);
+                case "le": return kezdet + ((hossz-1)*10);
+                case "bal": return kezdet -(hossz-1);
+                case "jobb": return kezdet+(hossz-1);
+            }
+
+            return 0;
+        }
+
         private void Random_button(object sender, RoutedEventArgs e)
         {
 
-            Reset_clicked(sender,e);
-            int placed_ships = 0;
+            Reset_clicked(sender, e);
+            int counter = 0;
             foreach (var ship in ships) {
                 set_default_arrows();
                 if (placed_ship[ship.Name.ToString()] == 0) {
@@ -565,12 +583,11 @@ namespace Torpedo.View.single_view
                     selected_ship = ship.Name;
                     irany = set_random_irany(get_random_number(1, 4));
                     lastarrow = get_poly(irany);
-                    placed_ships = 0;
-                    while (placed_ships != 5) {
+                    while (placed_ship[ship.Name.ToString()]!=1) {
                         int random_grid = get_random_number(0, 99);
                         if (get_can_i_go_to_irany(irany, random_grid, check_ship(selected_ship)))
                         {
-                            placed_ships++;
+                            ships_class[counter] = new Ship(selected_ship,irany, random_grid,ship_ending(irany,random_grid,check_ship(selected_ship)),false);
                             call_my_function(irany,random_grid,check_ship(selected_ship));
                             placed_ship[ship.Name.ToString()] = 1;
 
@@ -578,17 +595,17 @@ namespace Torpedo.View.single_view
                         }
 
 
-                    }                             
-                    
+                    }
+                    counter++;
                 }
-            
+                
             }
         }
 
         private void Start_button(object sender, RoutedEventArgs e)
         {
-            
-            Game game = new Game(ref fields);
+
+            Game game = new Game(ref fields, ships_class) ;
             this.Close();
             game.Show();
 
@@ -663,5 +680,7 @@ namespace Torpedo.View.single_view
             return rnd.Next(min, max + 1);
         
         }
+
+       
     }
 }

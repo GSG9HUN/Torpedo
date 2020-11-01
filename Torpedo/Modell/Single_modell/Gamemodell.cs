@@ -1,22 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using Torpedo.View.single_view;
 
 namespace Torpedo.Modell.Single_modell
 {
-    class Gamemodell
+    class Gamemodell : check_if,i_go
     {
         private enum Irany { fel, le, bal, jobb }
         Dictionary<String, int> placed_ships;
         String[] ships;
-        SolidColorBrush miss = new SolidColorBrush(Colors.Black);
-        SolidColorBrush direct_hit = new SolidColorBrush(Colors.Green);
-        Grid[] AI_grids;
-        public Gamemodell(ref Grid[] AI_grids, View.single_view.Game game)
+        SolidColorBrush miss = new SolidColorBrush(Colors.Gray);
+        SolidColorBrush direct_hit = new SolidColorBrush(Colors.Red);
+        Grid[] AI_grids { get; set; }
+           Grid[] my_grids;
+        Ship[] player_ships;
+        public Ship[] ai_ships { get; set; }
+        public Gamemodell(ref Grid[] AI_grids, ref Grid[] my_grids, Ship[] player_ships)
         {
             this.AI_grids = AI_grids;
+            this.my_grids = my_grids;
+            ai_ships = new Ship[5];
+            this.player_ships = player_ships;
+
             set_Dictionary();
             set_ai_grids_tags();
             Randomize_for_Ai();
@@ -81,6 +91,19 @@ namespace Torpedo.Modell.Single_modell
         
         }
 
+        private int ship_ending(String irany, int kezdet, int hossz)
+        {
+
+            switch (irany)
+            {
+                case "fel": return kezdet - ((hossz - 1) * 10);
+                case "le": return kezdet + ((hossz - 1) * 10);
+                case "bal": return kezdet - (hossz - 1);
+                case "jobb": return kezdet + (hossz - 1);
+            }
+
+            return 0;
+        }
         public void Randomize_for_Ai()
         {
             int size;
@@ -91,6 +114,7 @@ namespace Torpedo.Modell.Single_modell
             bool i_can_go_down = false;
             string irany;
             int honnan;
+            int counter = 0;
 
             foreach (string s in ships) {
                 size = check_ship(s);
@@ -112,27 +136,80 @@ namespace Torpedo.Modell.Single_modell
                 if (i_can_go_left)
                 {
                     i_go_left(honnan,size);
+                    ai_ships[counter] = new Ship(s,irany, honnan, ship_ending(irany, honnan,size),false);
+
                 }
                 else if (i_can_go_right)
                 {
                     i_go_right(honnan,size);
+                    ai_ships[counter] = new Ship(s, irany, honnan, ship_ending(irany, honnan, size), false);
                 }
                 else if (i_can_go_up)
                 {
                     i_go_up(honnan, size);
+                    ai_ships[counter] = new Ship(s, irany, honnan, ship_ending(irany, honnan, size), false);
                 }
                 else if(i_can_go_down)
                 {
                     i_go_down(honnan, size);
+                    ai_ships[counter] = new Ship(s, irany, honnan, ship_ending(irany, honnan, size), false);
                 }
 
-            
-            
-            
+
+
+                counter++;
             }
         }
 
-        private int check_ship(String ship) {
+        internal void ai_tip()
+        {
+            Random random = new Random();
+            int tip = random.Next(0, 100);
+            bool empty_tip = false;
+
+            do {
+                tip = random.Next(0, 100);
+                if (my_grids[tip].Tag.ToString() == "empty")
+                {
+                    my_grids[tip].Background = miss;
+                    my_grids[tip].Tag = "Clicked";
+                    empty_tip = true;
+                }
+                else if (my_grids[tip].Tag.ToString() == "ship") {
+                    my_grids[tip].Background = direct_hit;
+                    my_grids[tip].Tag = "Clicked";
+                    empty_tip = true;
+                    //check if my ship sank
+                }
+            
+            
+            } while (empty_tip == false);
+
+
+
+
+        }
+
+        public bool check_if_heres_ship( ref Grid clicked_grid)
+        {
+
+            if (clicked_grid.Tag.ToString() == "ship")
+            {
+                clicked_grid.Background = direct_hit;
+                clicked_grid.Tag = "Clicked";
+                return true;
+                
+            }
+            else {
+
+                clicked_grid.Background = miss;
+                clicked_grid.Tag = "Clicked";
+                return false;
+
+            }
+        }
+
+        public int check_ship(String ship) {
 
             switch (ship) {
 
@@ -150,7 +227,7 @@ namespace Torpedo.Modell.Single_modell
             }
         }
 
-        private bool check_if_i_can_go_left(int honnan, int meddig)
+        public bool check_if_i_can_go_left(int honnan, int meddig)
         {
             if (honnan % 10 - meddig >= 0)
             {
@@ -171,7 +248,7 @@ namespace Torpedo.Modell.Single_modell
 
         }
 
-        private bool check_if_i_can_go_right(int honnan, int meddig)
+        public bool check_if_i_can_go_right(int honnan, int meddig)
         {
             if (honnan % 10 + meddig <= 9)
             {
@@ -192,7 +269,7 @@ namespace Torpedo.Modell.Single_modell
             return true;
         }
 
-        private bool check_if_i_can_go_up(int honnan, int meddig)
+        public bool check_if_i_can_go_up(int honnan, int meddig)
         {
 
             if ((int)honnan / 10 - meddig >= 0)
@@ -217,7 +294,7 @@ namespace Torpedo.Modell.Single_modell
             return true;
         }
 
-        private bool check_if_i_can_go_down(int honnan, int meddig)
+        public bool check_if_i_can_go_down(int honnan, int meddig)
         {
 
             if ((int)honnan / 10 + meddig <= 9)
@@ -241,7 +318,7 @@ namespace Torpedo.Modell.Single_modell
         }
 
 
-        private void i_go_left(int honnan, int meddig)
+        public void i_go_left(int honnan, int meddig)
         {
             for (int i = honnan; i > honnan - meddig; i--)
             {
@@ -251,7 +328,7 @@ namespace Torpedo.Modell.Single_modell
 
         }
 
-        private void i_go_right(int honnan, int meddig)
+        public void i_go_right(int honnan, int meddig)
         {
 
             for (int i = honnan; i < honnan + meddig; i++)
@@ -264,7 +341,7 @@ namespace Torpedo.Modell.Single_modell
         }
 
 
-        private void i_go_up(int honnan, int meddig)
+        public void i_go_up(int honnan, int meddig)
         {
             for (int i = honnan; (int)i / 10 > (int)honnan / 10 - meddig; i -= 10)
             {
@@ -277,7 +354,7 @@ namespace Torpedo.Modell.Single_modell
 
         }
 
-        private void i_go_down(int honnan, int meddig)
+        public void i_go_down(int honnan, int meddig)
         {
 
             for (int i = honnan; (int)i / 10 < (int)honnan / 10 + meddig; i += 10)
