@@ -591,7 +591,7 @@ namespace Torpedo.View.single_view
         private void Start_button(object sender, RoutedEventArgs e)
         {
             
-            Game game = new Game();
+            Game game = new Game(fields);
             this.Close();
             game.Show();
 
