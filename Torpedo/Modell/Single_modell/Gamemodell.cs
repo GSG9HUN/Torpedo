@@ -23,7 +23,7 @@ namespace Torpedo.Modell.Single_modell
         SolidColorBrush miss = new SolidColorBrush(Colors.Gray);
         SolidColorBrush direct_hit = new SolidColorBrush(Colors.Red);
         bool last_tip_was_hit = false;
-        int last_tip_position = 0;
+        int last_tip_position = 0, temp_last_tip_pos=0;
         Grid[] AI_grids { get; set; }
            Grid[] my_grids;
         Ship[] player_ships;
@@ -246,8 +246,8 @@ namespace Torpedo.Modell.Single_modell
             switch (irany) {
                 case "fel": return check_if_i_have_grid_above(last_tip_position);
                 case "le": return check_if_i_have_grid_under(last_tip_position);
-                case "bal": return check_if_i_have_grid_next_right(last_tip_position);
-                case "jobb": return check_if_i_have_grid_next_left(last_tip_position);
+                case "bal": return check_if_i_have_grid_next_left(last_tip_position);
+                case "jobb": return check_if_i_have_grid_next_right(last_tip_position);
 
             }
 
@@ -260,7 +260,7 @@ namespace Torpedo.Modell.Single_modell
             {
                 return false;
             }
-            last_tip_position--;
+           temp_last_tip_pos--;
             return true;
         }
 
@@ -269,7 +269,7 @@ namespace Torpedo.Modell.Single_modell
             if (last_tip % 10 == 9) {
                 return false;
             }
-            last_tip_position++;
+            temp_last_tip_pos++;
             return true;
         }
 
@@ -279,19 +279,20 @@ namespace Torpedo.Modell.Single_modell
             {
                 return false;
             }
-            last_tip_position -= 10;
+            temp_last_tip_pos += 10;
             return true;
         }
 
         private bool check_if_i_have_grid_above(int last_tip)
         {
-            if (last_tip > 9)
+            if (last_tip <= 9)
             {
-                
-                last_tip_position += 10;
-                return true;
+                return false;
             }
-            return false;
+                temp_last_tip_pos -= 10;
+                return true;
+            
+            
         }
 
         internal void ai_tip(Game.AI_delegate hit_delegate, Game.AI_delegate miss_delegate)
@@ -299,23 +300,51 @@ namespace Torpedo.Modell.Single_modell
             Random random = new Random();
             int tip = random.Next(0, 100);
             bool empty_tip = false;
-            if (last_tip_was_hit)
-            {
-         
-                foreach(KeyValuePair<string,bool> valami in i_have_to_pick.ToArray()) {
-                    if (valami.Value) {
-                        if (checker(valami.Key)) {
-                            checker_tip(last_tip_position, ref empty_tip, miss_delegate, hit_delegate);
-                            i_have_to_pick[valami.Key]= false;
+            int false_counter = 0;
+
+            foreach (KeyValuePair<string, bool> iterator in i_have_to_pick.ToArray()) {
+                if (!i_have_to_pick[iterator.Key]) {
+                    false_counter++;
+                }
+            
+            }
+
+            if (false_counter == 4) {
+                last_tip_was_hit = false;
+                set_default();
+            }
+
+
+
+                if (last_tip_was_hit)
+            {   
+                
+
+                foreach(KeyValuePair<string,bool> iterator in i_have_to_pick.ToArray())
+                {
+                               
+                    if (iterator.Value) {
+                        temp_last_tip_pos = last_tip_position;
+                        if (checker(iterator.Key))
+                        {
+
+                            if (can_i_click_there(temp_last_tip_pos))
+                            {
+                                i_have_to_pick[iterator.Key] = false;
+                                checker_tip(temp_last_tip_pos, ref empty_tip, miss_delegate, hit_delegate);
+
+                                break;
+                            }
+
+                        }
+                        else {
+                            i_have_to_pick[iterator.Key] = false;
                         }
                     }
                 
                 
                 }
-                //check if i can go 1 for the irany
-
-
-
+          
 
             }
             else {
@@ -330,6 +359,24 @@ namespace Torpedo.Modell.Single_modell
 
         }
 
+        private void set_default() {
+
+            foreach (KeyValuePair<string, bool> it in i_have_to_pick.ToArray())
+            {
+                i_have_to_pick[it.Key] = true;
+            }
+
+
+            }
+
+        private bool can_i_click_there(int last_tip_position)
+        {
+           
+            if (my_grids[last_tip_position].Tag.ToString() == "Clicked")
+                return false;
+            return true;
+        }
+
         private void checker_tip(int tip, ref bool empty_tip, Game.AI_delegate miss_delegate, Game.AI_delegate hit_delegate)
         {
             if (my_grids[tip].Tag.ToString() == "empty")
@@ -339,7 +386,6 @@ namespace Torpedo.Modell.Single_modell
                 miss_delegate();
                 my_grids[tip].Tag = "Clicked";
                 empty_tip = true;
-                last_tip_position = tip;
             }
             else if (my_grids[tip].Tag.ToString() == "ship")
             {
@@ -350,6 +396,7 @@ namespace Torpedo.Modell.Single_modell
                 empty_tip = true;
                 last_tip_position = tip;
                 ship_sank();
+                set_default();
             }
 
         }

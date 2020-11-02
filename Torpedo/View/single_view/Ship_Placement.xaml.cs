@@ -26,6 +26,7 @@ namespace Torpedo.View.single_view
         bool jobbra_mehet = true;
         bool felfele_mehet = true;
         bool lefele_mehet = true;
+        int manual_counter = 0;
         String irany { get; set; }
         String selected_ship { get; set; }
         Ship[] ships_class;
@@ -262,20 +263,7 @@ namespace Torpedo.View.single_view
         }
 
 
-        private void grid_pressed(object sender, MouseButtonEventArgs e)
-        {
-            Grid clicked_grid = (Grid) sender;
-            if (selected_ship == null)
-            {
-                msg("Válassz ki egy hajót");
-                return;
-            }
-
-            int size = check_ship(selected_ship);
-            int index = set_index(clicked_grid);
-
-            call_my_function(irany,index,size);
-        }
+        
 
 
         private void msg(string szoveg)
@@ -381,10 +369,14 @@ namespace Torpedo.View.single_view
             if (ballra_mehet)
             {
                 i_go_left(honnan, meddig);
+                ships_class[manual_counter] = new Ship(selected_ship, "bal", honnan, ship_ending("bal", honnan, check_ship(selected_ship)), false);
+                manual_counter++;
             }
             else if (jobbra_mehet)
             {
                 i_go_right(honnan,meddig);
+                ships_class[manual_counter] = new Ship(selected_ship, "jobb", honnan, ship_ending("jobb", honnan, check_ship(selected_ship)), false);
+                manual_counter++;
 
             }
 
@@ -402,13 +394,17 @@ namespace Torpedo.View.single_view
             if (jobbra_mehet)
                 {
                 i_go_right(honnan, meddig);
+                ships_class[manual_counter] = new Ship(selected_ship, "jobb", honnan, ship_ending("jobb", honnan, check_ship(selected_ship)), false);
+                manual_counter++;
 
-                }
+            }
                 else if (ballra_mehet)
                 {
                 i_go_left(honnan, meddig);
-                    
-                }
+                ships_class[manual_counter] = new Ship(selected_ship, "bal", honnan, ship_ending("bal", honnan, check_ship(selected_ship)), false);
+                manual_counter++;
+
+            }
                 else
                 {
                     msg("Ide nem helyezhető hajó");
@@ -521,12 +517,16 @@ namespace Torpedo.View.single_view
 
             if (felfele_mehet)
             {
+                ships_class[manual_counter] = new Ship(selected_ship, "fel", honnan, ship_ending(irany, honnan, check_ship(selected_ship)), false);
                 i_go_up(honnan, meddig);
-                
+                manual_counter++;
+
             }
             else if (lefele_mehet)
             {
+                ships_class[manual_counter] = new Ship(selected_ship, "le", honnan, ship_ending("le", honnan, check_ship(selected_ship)), false);
                 i_go_down(honnan, meddig);
+                manual_counter++;
 
             }
             else
@@ -544,11 +544,14 @@ namespace Torpedo.View.single_view
             {
 
                 i_go_down(honnan, meddig);
+                ships_class[manual_counter] = new Ship(selected_ship, "le", honnan, ship_ending("le", honnan, check_ship(selected_ship)), false);
+                manual_counter++;
 
             }
             else if (felfele_mehet)
             {
-
+                ships_class[manual_counter] = new Ship(selected_ship, "le", honnan, ship_ending("le", honnan, check_ship(selected_ship)), false);
+                manual_counter++;
                 i_go_up(honnan, meddig);
             }
             else
@@ -570,6 +573,25 @@ namespace Torpedo.View.single_view
 
             return 0;
         }
+
+        private void grid_pressed(object sender, MouseButtonEventArgs e)
+        {
+            Grid clicked_grid = (Grid)sender;
+            if (selected_ship == null)
+            {
+                msg("Válassz ki egy hajót");
+                return;
+            }
+
+            int size = check_ship(selected_ship);
+            int index = set_index(clicked_grid);
+
+            
+            
+
+            call_my_function(irany, index, size);
+        }
+
 
         private void Random_button(object sender, RoutedEventArgs e)
         {
