@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Interop;
 using System.Windows.Media;
+using System.Windows.Shapes;
 using Torpedo.View.single_view;
 
 namespace Torpedo.Modell.Single_modell
@@ -13,24 +16,64 @@ namespace Torpedo.Modell.Single_modell
     {
         private enum Irany { fel, le, bal, jobb }
         Dictionary<String, int> placed_ships;
+        Dictionary<String, bool> i_have_to_pick;
+        int ship_sank_counter = 0;
+
         String[] ships;
         SolidColorBrush miss = new SolidColorBrush(Colors.Gray);
         SolidColorBrush direct_hit = new SolidColorBrush(Colors.Red);
+        bool last_tip_was_hit = false;
+        int last_tip_position = 0;
         Grid[] AI_grids { get; set; }
            Grid[] my_grids;
         Ship[] player_ships;
         public Ship[] ai_ships { get; set; }
-        public Gamemodell(ref Grid[] AI_grids, ref Grid[] my_grids, Ship[] player_ships)
+        public Path[] en_flotam;
+        public Gamemodell(ref Grid[] AI_grids, ref Grid[] my_grids, Ship[] player_ships, ref Path[] en_flotam)
         {
             this.AI_grids = AI_grids;
             this.my_grids = my_grids;
+            this.en_flotam = en_flotam;
             ai_ships = new Ship[5];
             this.player_ships = player_ships;
 
             set_Dictionary();
+            set_random_dict();
             set_ai_grids_tags();
             Randomize_for_Ai();
 
+        }
+
+        private void set_random_dict()
+        {
+            i_have_to_pick = new Dictionary<string, bool>();
+            while (i_have_to_pick.Count != 4) {
+                bool have = false;
+                string p = get_random_irany(get_ranom_number(1,5));
+                foreach (KeyValuePair<string, bool> entry in i_have_to_pick)
+                {
+                    if (entry.Key == p) {
+                        have = true;
+                    }
+                    if (have) {
+                        break;
+                    }
+                  
+                }
+
+                if (!have) {
+                    i_have_to_pick.Add(p,true);
+                
+                }
+
+            }
+        }
+
+        private int get_ranom_number(int min,int max)
+        {
+            Random rnd = new Random();
+            return rnd.Next(min, max);
+           
         }
 
         private void set_ai_grids_tags()
@@ -161,33 +204,228 @@ namespace Torpedo.Modell.Single_modell
             }
         }
 
-        internal void ai_tip()
+        private void ship_sank() {
+
+            foreach (Ship p in player_ships)
+            {
+
+                if (!p.elsulyedt)
+                {
+                    if (check_if_the_ship_sank(p.irany, p.kezdet, p.veg))
+                    {
+                        p.elsulyedt = true;
+                        ship_sank_counter++;
+                        for (int i = 0; i < 5; i++)
+                        {
+
+                            if (en_flotam[i].Name.ToString() == p.nev)
+                            {
+                                en_flotam[i].Stroke = Brushes.Red;
+                                en_flotam[i].Opacity = 0.5;
+                                en_flotam[i].IsEnabled = false;
+
+                                msg(p.nev + "elsülyedt");
+                                last_tip_was_hit = false;
+                                if (ship_sank_counter == 5)
+                                {
+                                    msg("Sajnos Vesztettél!");
+
+                                    //ha vesztett meghív egy kis ablakot
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+        private bool checker(string irany) {
+
+            switch (irany) {
+                case "fel": return check_if_i_have_grid_above(last_tip_position);
+                case "le": return check_if_i_have_grid_under(last_tip_position);
+                case "bal": return check_if_i_have_grid_next_right(last_tip_position);
+                case "jobb": return check_if_i_have_grid_next_left(last_tip_position);
+
+            }
+
+            return false;
+        }
+
+        private bool check_if_i_have_grid_next_left(int last_tip)
+        {
+            if (last_tip % 10 == 0)
+            {
+                return false;
+            }
+            last_tip_position--;
+            return true;
+        }
+
+        private bool check_if_i_have_grid_next_right(int last_tip)
+        {
+            if (last_tip % 10 == 9) {
+                return false;
+            }
+            last_tip_position++;
+            return true;
+        }
+
+        private bool check_if_i_have_grid_under(int last_tip)
+        {
+            if (last_tip > 89)
+            {
+                return false;
+            }
+            last_tip_position -= 10;
+            return true;
+        }
+
+        private bool check_if_i_have_grid_above(int last_tip)
+        {
+            if (last_tip > 9)
+            {
+                
+                last_tip_position += 10;
+                return true;
+            }
+            return false;
+        }
+
+        internal void ai_tip(Game.AI_delegate hit_delegate, Game.AI_delegate miss_delegate)
         {
             Random random = new Random();
             int tip = random.Next(0, 100);
             bool empty_tip = false;
+            if (last_tip_was_hit)
+            {
+         
+                foreach(KeyValuePair<string,bool> valami in i_have_to_pick.ToArray()) {
+                    if (valami.Value) {
+                        if (checker(valami.Key)) {
+                            checker_tip(last_tip_position, ref empty_tip, miss_delegate, hit_delegate);
+                            i_have_to_pick[valami.Key]= false;
+                        }
+                    }
+                
+                
+                }
+                //check if i can go 1 for the irany
 
-            do {
-                tip = random.Next(0, 100);
-                if (my_grids[tip].Tag.ToString() == "empty")
+
+
+
+            }
+            else {
+
+                do
                 {
-                    my_grids[tip].Background = miss;
-                    my_grids[tip].Tag = "Clicked";
-                    empty_tip = true;
+                    tip = random.Next(0, 100);
+                    checker_tip(tip,ref empty_tip ,miss_delegate,hit_delegate);
+
+                } while (empty_tip == false);
+            }
+
+        }
+
+        private void checker_tip(int tip, ref bool empty_tip, Game.AI_delegate miss_delegate, Game.AI_delegate hit_delegate)
+        {
+            if (my_grids[tip].Tag.ToString() == "empty")
+            {
+
+                my_grids[tip].Background = miss;
+                miss_delegate();
+                my_grids[tip].Tag = "Clicked";
+                empty_tip = true;
+                last_tip_position = tip;
+            }
+            else if (my_grids[tip].Tag.ToString() == "ship")
+            {
+                my_grids[tip].Background = direct_hit;
+                my_grids[tip].Tag = "Clicked";
+                last_tip_was_hit = true;
+                hit_delegate();
+                empty_tip = true;
+                last_tip_position = tip;
+                ship_sank();
+            }
+
+        }
+
+        bool fel(int honnan, int meddig)
+        {
+
+            for (int i = honnan; i >= meddig; i -= 10)
+            {
+                if (my_grids[i].Tag.ToString() == "ship")
+                {
+                    return false;
                 }
-                else if (my_grids[tip].Tag.ToString() == "ship") {
-                    my_grids[tip].Background = direct_hit;
-                    my_grids[tip].Tag = "Clicked";
-                    empty_tip = true;
-                    //check if my ship sank
+
+            }
+            return true;
+        }
+        bool le(int honnan, int meddig)
+        {
+
+            for (int i = honnan; i <= meddig; i += 10)
+            {
+                if (my_grids[i].Tag.ToString() == "ship")
+                {
+                    return false;
                 }
-            
-            
-            } while (empty_tip == false);
+
+            }
+            return true;
+        }
+
+        bool bal(int honnan, int meddig)
+        {
+
+            for (int i = honnan; i >= meddig; i--)
+            {
+                if (my_grids[i].Tag.ToString() == "ship")
+                {
+                    return false;
+                }
+
+            }
+            return true;
+        }
+        bool jobb(int honnan, int meddig)
+        {
+
+            for (int i = honnan; i <= meddig; i++)
+            {
+                if (my_grids[i].Tag.ToString() == "ship")
+                {
+                    return false;
+                }
+
+            }
+            return true;
+        }
+
+        private bool check_if_the_ship_sank(string irany, int honnan, int meddig)
+        {
+            switch (irany)
+            {
+                case "fel": return fel(honnan, meddig);
+                case "le": return le(honnan, meddig);
+                case "jobb": return jobb(honnan, meddig);
+                case "bal": return bal(honnan, meddig);
+
+            }
 
 
+            return false;
+        }
 
-
+        private void msg(string v)
+        {
+            MessageBox.Show(v,"Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
         public bool check_if_heres_ship( ref Grid clicked_grid)

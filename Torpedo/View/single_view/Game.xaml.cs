@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -11,6 +12,7 @@ using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using Torpedo.Modell.Single_modell;
 
 namespace Torpedo.View.single_view
@@ -25,6 +27,15 @@ namespace Torpedo.View.single_view
         Gamemodell game;
         Ship[] player_ships;
         Path[] en_flotam, gep_flotaja;
+        int ship_sank_counter = 0;
+        bool timer_started = false;
+        static TextBlock  timer;
+        static TextBlock ai_miss_tb, ai_hit_tb;
+
+
+        public delegate void AI_delegate();
+        AI_delegate miss = set_AI_miss_textblock;
+        AI_delegate hit = set_AI_hit_textblock;
 
         public Game(ref Grid[] fields, Ship[] ships_class)
         {
@@ -33,8 +44,52 @@ namespace Torpedo.View.single_view
             set_my_grids(fields);
             set_ai_grids();
             set_flottak();
-            game = new Gamemodell(ref ai_grids, ref my_grids, player_ships);
+            game = new Gamemodell(ref ai_grids, ref my_grids, player_ships,ref en_flotam);
+            set_labels();
+            
 
+        }
+
+
+        private void set_player_miss_textblock() {
+
+            int p = Int32.Parse(player_miss.Text);
+            p++;
+            player_miss.Text = p.ToString();
+        
+        }
+
+        private void set_player_hit_textblock()
+        {
+            int p = Int32.Parse(player_hit.Text);
+            p++;
+            player_hit.Text = p.ToString();
+        }
+
+        private static void SetTimer()
+        {
+
+            DispatcherTimer atimer = new DispatcherTimer();
+            atimer.Interval = TimeSpan.FromSeconds(1);
+            atimer.IsEnabled = true;
+            atimer.Tick += set_timert_textblock;
+        }
+
+        private static void set_timert_textblock(object sender, EventArgs e)
+        {
+          
+                int counter = Int32.Parse(timer.Text);
+                counter++;
+                timer.Text = counter.ToString();
+           
+        }
+
+        private void set_labels()
+        {
+            ai_hit_tb = ai_hit;
+            ai_miss_tb = ai_miss;
+            timer = Timer_counter;
+            
         }
 
         private void set_flottak()
@@ -157,37 +212,65 @@ namespace Torpedo.View.single_view
         private void grid_pressed(object sender, MouseButtonEventArgs e)
         {
 
+            if (!timer_started) {
+                SetTimer();
+                timer_started = !timer_started;
+            }
+
             Grid clicked_grid = (Grid)sender;
+            
             if (clicked_grid.Tag.ToString() != "Clicked")
             {
-                if (game.check_if_heres_ship(ref clicked_grid)) {
+                if (game.check_if_heres_ship(ref clicked_grid))
+                {
 
-                    foreach(Ship p in game.ai_ships)
+                    set_player_hit_textblock();
+
+                    foreach (Ship p in game.ai_ships)
                     {
-                        if (!p.elsulyedt) {
-                            if (check_if_the_ship_sank(p.irany, p.kezdet, p.veg)) {
+
+                        if (!p.elsulyedt)
+                        {
+                            if (check_if_the_ship_sank(p.irany, p.kezdet, p.veg))
+                            {
                                 p.elsulyedt = true;
-                               for(int i = 0; i < 5; i++)
+                                ship_sank_counter++;
+                                for (int i = 0; i < 5; i++)
                                 {
-                                   
+
                                     if (en_flotam[i].Name.ToString() == p.nev)
                                     {
                                         gep_flotaja[i].Stroke = Brushes.Red;
                                         gep_flotaja[i].Opacity = 0.5;
+                                        gep_flotaja[i].IsEnabled = false;
+
                                         msg(p.nev + "elsülyedt");
+                                        if (ship_sank_counter == 5)
+                                        {
+                                            msg("Gratulálok nyertél!");
+
+                                            // ha nyert akkor meghívja azt az kis ablakot amin rajta van az ujgame vagy nem tom;
+                                            //ugyan ez ha a gép nyer;
+                                        }
                                     }
                                 }
-                                
+
                             }
-                            
+
 
                         }
 
+
                     }
-                    
+
+
+                }
+                else {
+                    set_player_miss_textblock();
                 
                 }
-                game.ai_tip();
+
+                game.ai_tip(hit,miss);
             }
             else {
                 msg("Ide már klikkeltél egyszer");
@@ -195,6 +278,24 @@ namespace Torpedo.View.single_view
             }
            
 
+        }
+
+        
+
+        public  static void set_AI_miss_textblock()
+        {
+
+            int p = Int32.Parse(ai_miss_tb.Text);
+            p++;
+            ai_miss_tb.Text = p.ToString();
+
+        }
+
+        public static void set_AI_hit_textblock()
+        {
+            int p = Int32.Parse(ai_hit_tb.Text);
+            p++;
+            ai_hit_tb.Text = p.ToString();
         }
 
 
@@ -205,16 +306,6 @@ namespace Torpedo.View.single_view
 
         }
 
-        private void btnStartOver_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-        private void btnClear_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 
  

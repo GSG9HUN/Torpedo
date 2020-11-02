@@ -10,13 +10,13 @@
 
 
 
-    <Grid Margin="0,6,10,-6">
+    <Grid Margin="0,6,0,-6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid HorizontalAlignment="Left" Width="300" Height="300" 
-              VerticalAlignment="Top" Margin="22,54,0,0" Name="CompGrid" ShowGridLines="True" Grid.Column="1">
+              VerticalAlignment="Top" Margin="230,68,0,0" Name="CompGrid" ShowGridLines="True" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -242,19 +242,19 @@
             <Grid x:Name="J10" Grid.Row="9" Grid.Column="9" MouseLeftButtonDown="grid_pressed" Background="black">
             </Grid>
         </Grid>
-        <Label x:Name="lblTitle" Content="Battle" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="92" FontSize="25.333" FontFamily="Stencil" FontWeight="Bold" Margin="8,7,0,0"/>
-        <Label x:Name="lblVerticalA_Copy" Content="A" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Margin="323,61,124,0" Grid.Column="1"/>
-        <Label x:Name="lblVerticalB_Copy" Content="B" Margin="322,90,125,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalC_Copy" Content="C" Margin="322,122,125,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalD_Copy" Content="D" Margin="322,150,125,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalE_Copy" Content="E" Margin="322,181,125,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalF_Copy" Content="F" Margin="322,213,125,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalG_Copy" Content="G" Margin="322,240,125,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalH_Copy" Content="H" Margin="322,271,125,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalI_Copy" Content="I" Margin="322,298,125,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalJ_Copy" Content="J" Margin="322,330,125,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667" RenderTransformOrigin="8.609,0.198" Grid.Column="1"/>
+        <Label x:Name="lblTitle" Content="Battle" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="92" FontSize="25.333" FontFamily="Stencil" FontWeight="Bold" Margin="579,0,0,0" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblVerticalA_Copy" Content="A" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Margin="531,74,6,0" Grid.Column="1"/>
+        <Label x:Name="lblVerticalB_Copy" Content="B" Margin="530,104,6,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalC_Copy" Content="C" Margin="530,136,6,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalD_Copy" Content="D" Margin="530,164,6,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy" Content="E" Margin="530,194,6,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalF_Copy" Content="F" Margin="530,226,6,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalG_Copy" Content="G" Margin="530,0,6,0" VerticalAlignment="Center" Height="27" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalH_Copy" Content="H" Margin="530,284,6,0" VerticalAlignment="Top" Height="28" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalI_Copy" Content="I" Margin="530,312,6,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalJ_Copy" Content="J" Margin="530,344,6,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" RenderTransformOrigin="8.609,0.198" Grid.Column="1"/>
 
-        <Grid HorizontalAlignment="Center" Width="300" Height="300" VerticalAlignment="Top" Margin="0,53,0,0" x:Name="PlayerGrid" ShowGridLines="True">
+        <Grid HorizontalAlignment="Left" Width="300" Height="300" VerticalAlignment="Top" Margin="7,66,0,0" x:Name="PlayerGrid" ShowGridLines="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -380,15 +380,10 @@
             <Grid x:Name="gridJ9" Grid.Row="9" Grid.Column="8" Background="black"/>
             <Grid x:Name="gridJ10" Grid.Row="9" Grid.Column="9"  Background="black"/>
         </Grid>
-        <Button x:Name="btnStartOver" Content="Start Over" HorizontalAlignment="Left" Height="30" Margin="514,303,0,0" VerticalAlignment="Top" Width="101" Click="btnStartOver_Click"  FontWeight="Bold" Background="#FF5284C0" BorderBrush="#FFC1C0E8" Foreground ="White" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <TextBlock x:Name="txtBlockWins" HorizontalAlignment="Left" Margin="375,87,0,306" Width="121" Text="Wins" TextAlignment="Center" Foreground="Black" Background="White" Opacity="0.5" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <TextBlock x:Name="txtBlockLosses" HorizontalAlignment="Left" Margin="514,90,0,303" Width="101" Text="Losses" TextAlignment="Center"  Foreground="Black" Background="White" Opacity="0.5" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblScores" Content="Scores" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="242" FontSize="22.333" FontFamily="Stencil" FontWeight="Bold" Margin="375,51,0,0" Background="#FFBEE1F0" Opacity="0.8" Grid.Column="1"/>
-        <Button x:Name="btnClear" Content="Clear List" HorizontalAlignment="Left" Height="30" Margin="396,303,0,0" VerticalAlignment="Top" Width="101" Click="btnClear_Click" FontWeight="Bold" Background="#FF5284C0" BorderBrush="#FFC1C0E8" Foreground ="White" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
 
         <Canvas Margin="29,367,46,0">
 
-            <Label Canvas.Left="210" Width="132" FontWeight="Bold" FontSize="20">
+            <Label Canvas.Left="209" Width="132" FontWeight="Bold" FontSize="20" Canvas.Top="8">
                 A Te flottád
             </Label>
 
@@ -454,9 +449,20 @@
             <Label Canvas.Left="477" Width="78" FontWeight="Bold" Content="Destroyer" Canvas.Top="50"/>
 
         </Canvas>
-        <Canvas Margin="0,362,75,5" Grid.Column="1">
+        <Canvas Grid.ColumnSpan="2" Margin="357,52,421,218"/>
+        <Label Margin="512,50,512,420" Grid.ColumnSpan="2" FontSize="25">Idő:</Label>
+        <TextBlock x:Name="Timer_counter" Text="0" FontSize="25" Margin="572,57,616,410" Grid.ColumnSpan="2"/>
+        <Label FontSize="25" Margin="9,52,579,410" Content="s" Grid.Column="1"/>
+        <Label Margin="357,119,134,335" FontSize="25">Találataid:</Label>
+        <TextBlock Margin="575,127,0,313" x:Name="player_hit" Text="0" FontSize="25"/>
+        <Label Margin="3,119,463,339" Grid.Column="1" FontSize="25">Gép Találatai:</Label>
+        <TextBlock  x:Name="ai_hit" Text="0" Grid.Column="1" Margin="162,127,412,335" FontSize="25"/>
+        <Label Margin="357,225,22,232" FontSize="20" Content="Mellé lövések száma:"/>
+        <TextBlock Margin="575,233,0,239" x:Name="player_miss" Text="0" FontSize="20"/>
 
-            <Label Canvas.Left="210" Width="143" FontWeight="Bold" FontSize="20" Content="A Gép flottája"/>
+        <Canvas Margin="25,367,50,0" Grid.Column="1">
+
+            <Label Canvas.Left="204" Width="142" FontWeight="Bold" FontSize="20" Content="A Gép flottája" Canvas.Top="8"/>
 
             <Label Canvas.Left="287" Width="78" FontWeight="Bold" Content="Submarine" Canvas.Top="50"/>
             <Label Canvas.Left="162" Width="90" FontWeight="Bold" FontSize="16" Content="Carrier" Canvas.Top="45" Height="30"/>
@@ -520,26 +526,40 @@
             <Label Canvas.Left="477" Width="78" FontWeight="Bold" Content="Destroyer" Canvas.Top="50"/>
 
         </Canvas>
-        <Label x:Name="lblVerticalE_Copy1" Content="1" Margin="160,25,434,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
-        <Label x:Name="lblVerticalE_Copy2" Content="5" Margin="284,25,310,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
-        <Label x:Name="lblVerticalE_Copy3" Content="4" Margin="254,25,341,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
-        <Label x:Name="lblVerticalE_Copy4" Content="3" Margin="221,25,370,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
-        <Label x:Name="lblVerticalE_Copy5" Content="2" Margin="191,25,404,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
-        <Label x:Name="lblVerticalE_Copy6" Content="8" Margin="376,25,215,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
-        <Label x:Name="lblVerticalE_Copy7" Content="7" Margin="345,25,244,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
-        <Label x:Name="lblVerticalE_Copy8" Content="6" Margin="314,25,280,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
-        <Label x:Name="lblVerticalE_Copy9" Content="9" Margin="405,25,185,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
-        <Label x:Name="lblVerticalE_Copy10" Content="10" Margin="435,25,150,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
-        <Label x:Name="lblVerticalE_Copy11" Content="8" Margin="237,25,358,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalE_Copy12" Content="2" Margin="52,25,541,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalE_Copy13" Content="7" Margin="207,25,388,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalE_Copy14" Content="6" Margin="177,25,418,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalE_Copy15" Content="5" Margin="147,25,448,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalE_Copy16" Content="4" Margin="120,25,474,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalE_Copy17" Content="3" Margin="84,25,511,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalE_Copy18" Content="9" Margin="267,25,328,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalE_Copy19" Content="10" Margin="292,25,292,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
-        <Label x:Name="lblVerticalE_Copy20" Content="1" Margin="27,25,568,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy1" Content="1" Margin="4,38,589,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy2" Content="5" Margin="128,38,465,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy3" Content="4" Margin="98,38,497,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy4" Content="3" Margin="66,38,525,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy5" Content="2" Margin="36,38,559,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy6" Content="8" Margin="220,38,371,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy7" Content="7" Margin="190,38,399,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy8" Content="6" Margin="158,38,435,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy9" Content="9" Margin="250,38,341,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy10" Content="10" Margin="280,38,305,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy11" Content="8" Margin="445,38,150,0" VerticalAlignment="Top" Height="24" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy12" Content="2" Margin="260,38,333,0" VerticalAlignment="Top" Height="24" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy13" Content="7" Margin="415,38,180,0" VerticalAlignment="Top" Height="24" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy14" Content="6" Margin="385,38,210,0" VerticalAlignment="Top" Height="24" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy15" Content="5" Margin="355,38,240,0" VerticalAlignment="Top" Height="24" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy16" Content="4" Margin="328,38,266,0" VerticalAlignment="Top" Height="24" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy17" Content="3" Margin="292,38,303,0" VerticalAlignment="Top" Height="24" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy18" Content="9" Margin="475,38,120,0" VerticalAlignment="Top" Height="24" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy19" Content="10" Margin="500,38,84,0" VerticalAlignment="Top" Height="24" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalE_Copy20" Content="1" Margin="235,38,360,0" VerticalAlignment="Top" Height="24" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
+        <Label x:Name="lblVerticalA_Copy1" Content="A" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Margin="312,66,223,0"/>
+        <Label x:Name="lblVerticalB_Copy1" Content="B" Margin="312,95,223,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalC_Copy1" Content="C" Margin="312,127,223,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalD_Copy1" Content="D" Margin="312,155,223,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalE_Copy21" Content="E" Margin="312,186,223,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalF_Copy1" Content="F" Margin="312,218,223,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalG_Copy1" Content="G" Margin="312,245,223,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalH_Copy1" Content="H" Margin="312,276,223,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalI_Copy1" Content="I" Margin="312,303,223,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667"/>
+        <Label x:Name="lblVerticalJ_Copy1" Content="J" Margin="312,335,223,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667" RenderTransformOrigin="8.609,0.198"/>
+        <Label Margin="0,225,466,250" Grid.Column="1" FontSize="20" Content="AI mellé lövések:"/>
+        <TextBlock  x:Name="ai_miss" Text="0" Grid.Column="1" Margin="162,236,421,225" FontSize="20"/>
+
+
 
     </Grid>
 
