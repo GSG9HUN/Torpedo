@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\App.xaml
-4905000623
+6-909940676
 
-141648930782
+161876229506
 1931714954343
-MainWindow.xaml;View\single_view\Game.xaml;View\single_view\Ship_Placement.xaml;View\single_view\Single_player.xaml;
+MainWindow.xaml;View\single_view\Game.xaml;View\single_view\Loser.xaml;View\single_view\Ship_Placement.xaml;View\single_view\Single_player.xaml;View\single_view\Winner.xaml;
 
-False
+True
 

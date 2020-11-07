@@ -16,6 +16,9 @@
     <Compile Update="View\single_view\Ship_Placement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\single_view\Winner.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -28,6 +31,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\single_view\Ship_Placement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\single_view\Loser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\single_view\Winner.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

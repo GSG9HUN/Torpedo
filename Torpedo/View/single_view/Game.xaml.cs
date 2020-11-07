@@ -23,7 +23,8 @@ namespace Torpedo.View.single_view
     public partial class Game : Window
     {
 
-        Grid[] ai_grids, my_grids;
+        Grid[] ai_grids;
+        Grid[]my_grids;
         Gamemodell game;
         List<Ship> player_ships;
         Path[] en_flotam, gep_flotaja;
@@ -31,7 +32,8 @@ namespace Torpedo.View.single_view
         bool timer_started = false;
         static TextBlock  timer;
         static TextBlock ai_miss_tb, ai_hit_tb;
-        String username;
+        static DispatcherTimer atimer;
+        public String username { get; set; }
 
 
         public delegate void AI_delegate();
@@ -46,7 +48,7 @@ namespace Torpedo.View.single_view
             set_my_grids(fields);
             set_ai_grids();
             set_flottak();
-            game = new Gamemodell(ref ai_grids, ref my_grids, player_ships,ref en_flotam);
+            game = new Gamemodell(ref ai_grids, ref my_grids, player_ships,ref en_flotam,this);
             set_labels();
             FileWriter.ReadFromJSON();
             
@@ -72,7 +74,7 @@ namespace Torpedo.View.single_view
         private static void SetTimer()
         {
 
-            DispatcherTimer atimer = new DispatcherTimer();
+            atimer = new DispatcherTimer();
             atimer.Interval = TimeSpan.FromSeconds(1);
             atimer.IsEnabled = true;
             atimer.Tick += set_timert_textblock;
@@ -250,10 +252,13 @@ namespace Torpedo.View.single_view
                                         msg(p.nev + "elsülyedt");
                                         if (ship_sank_counter == 5)
                                         {
+                                            atimer.Stop();
                                             msg("Gratulálok nyertél!");
                                             Datas adatok = new Datas(username,"Győzőtt");
                                             FileWriter.WriteToJSON(adatok);
-                                            //ugyan ez ha a gép nyer;
+                                            new Winner(this).Show();
+                                            grids_disable();
+                                            return;
                                         }
                                     }
                                 }
@@ -283,7 +288,19 @@ namespace Torpedo.View.single_view
 
         }
 
-        
+        public void popup_loser_window()
+        {
+            Loser loser = new Loser(this);
+            loser.Show();
+        }
+
+
+        private void grids_disable() {
+            foreach (Grid q in ai_grids)
+            {
+                q.IsEnabled = false;
+            }
+        }
 
         public  static void set_AI_miss_textblock()
         {

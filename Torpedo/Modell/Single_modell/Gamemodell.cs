@@ -28,12 +28,14 @@ namespace Torpedo.Modell.Single_modell
         bool last_tip_was_hit = false;
         int last_tip_position = 0, temp_last_tip_pos=0;
         Grid[] AI_grids { get; set; }
-           Grid[] my_grids;
+        Grid[] my_grids;
         List<Ship> player_ships;
+        Game game;
         public Ship[] ai_ships { get; set; }
         public Path[] en_flotam;
-        public Gamemodell(ref Grid[] AI_grids, ref Grid[] my_grids, List<Ship> player_ships, ref Path[] en_flotam)
+        public Gamemodell(ref Grid[] AI_grids, ref Grid[] my_grids, List<Ship> player_ships, ref Path[] en_flotam,Game game)
         {
+            this.game = game;
             this.AI_grids = AI_grids;
             this.my_grids = my_grids;
             this.en_flotam = en_flotam;
@@ -236,12 +238,11 @@ namespace Torpedo.Modell.Single_modell
 
                                 if (ship_sank_counter == 5)
                                 {
-                                    msg("Sajnos Vesztettél!");
-
+                                    grids_disable();
+                                    msg("Sajnos Vesztettél!");                                 
                                     Datas adatok = new Datas("AI","Győzött");
                                     FileWriter.WriteToJSON(adatok);
-
-                                    //ha vesztett meghív egy kis ablakot
+                                    game.popup_loser_window();
                                 }
                             }
                         }
@@ -250,6 +251,12 @@ namespace Torpedo.Modell.Single_modell
 
             }
 
+        }
+
+        public void grids_disable() {
+            foreach (Grid p in AI_grids) {
+                p.IsEnabled = false;
+            }
         }
 
         private bool checker(string irany) {
