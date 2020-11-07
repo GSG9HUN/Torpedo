@@ -13,7 +13,6 @@ C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\MainWindow
 C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.g.resources
 C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.AssemblyInfoInputs.cache
 C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.AssemblyInfo.cs
-C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.csproj.CoreCompileInputs.cache
 C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.dll
 C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.pdb
 C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.genruntimeconfig.cache
@@ -23,3 +22,6 @@ C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\singl
 C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Single_player.baml
 C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Game.g.cs
 C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Game.baml
+C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.csproj.CoreCompileInputs.cache
+C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.csproj.CopyComplete

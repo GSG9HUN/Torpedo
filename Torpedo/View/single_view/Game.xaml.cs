@@ -31,16 +31,18 @@ namespace Torpedo.View.single_view
         bool timer_started = false;
         static TextBlock  timer;
         static TextBlock ai_miss_tb, ai_hit_tb;
+        String username;
 
 
         public delegate void AI_delegate();
         AI_delegate miss = set_AI_miss_textblock;
         AI_delegate hit = set_AI_hit_textblock;
 
-        public Game(ref Grid[] fields, Ship[] ships_class)
+        public Game(ref Grid[] fields, Ship[] ships_class,String name)
         {
             player_ships = ships_class;
             InitializeComponent();
+            username = name;
             set_my_grids(fields);
             set_ai_grids();
             set_flottak();
@@ -248,8 +250,8 @@ namespace Torpedo.View.single_view
                                         if (ship_sank_counter == 5)
                                         {
                                             msg("Gratulálok nyertél!");
-
-                                            // ha nyert akkor meghívja azt az kis ablakot amin rajta van az ujgame vagy nem tom;
+                                            Datas adatok = new Datas(username,"Győzőtt");
+                                            FileWriter.WriteToJSON(adatok);
                                             //ugyan ez ha a gép nyer;
                                         }
                                     }
@@ -270,7 +272,7 @@ namespace Torpedo.View.single_view
                 
                 }
 
-                game.ai_tip(hit,miss);
+                game.ai_tip(hit,miss,username);
             }
             else {
                 msg("Ide már klikkeltél egyszer");

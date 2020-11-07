@@ -18,8 +18,7 @@ namespace Torpedo
     /// </summary>
     public partial class Single_player : Window
     {
-        String _username { set; get; }
-
+      
         public Single_player()
         {
             InitializeComponent();
@@ -34,8 +33,7 @@ namespace Torpedo
             }
             else
             {
-                Ship_Placement ship_placement = new Ship_Placement();
-                _username = name;
+                Ship_Placement ship_placement = new Ship_Placement(name);
                 this.Close();
                 ship_placement.Show();
             }

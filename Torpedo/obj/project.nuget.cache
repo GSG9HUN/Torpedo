@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "CRD189M2mp1UX56KHf6YWbG5LkLorsp5wsKZ5WY954wQKv2y0uJosTMkd8yBCZ3cWsNNFQa7Si8mjPj6WteM/w==",
+  "dgSpecHash": "ww/z0VPr5azfZbqAJCmoZWMKjZxnN/Z7+tKLfANQSIts7zai/YFUHiZa4ckwmXHh/VxoI3sXJ2kRtod+llOmgQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\gsg9hun\\source\\repos\\Torpedo\\Torpedo\\Torpedo.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\gsg9hun\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -230,7 +230,8 @@ namespace Torpedo.Modell.Single_modell
                                 {
                                     msg("Sajnos Vesztettél!");
 
-                                    //file writer
+                                    Datas adatok = new Datas("AI","Győzött");
+                                    FileWriter.WriteToJSON(adatok);
 
                                     //ha vesztett meghív egy kis ablakot
                                 }
@@ -297,7 +298,7 @@ namespace Torpedo.Modell.Single_modell
             
         }
 
-        internal void ai_tip(Game.AI_delegate hit_delegate, Game.AI_delegate miss_delegate)
+        internal void ai_tip(Game.AI_delegate hit_delegate, Game.AI_delegate miss_delegate, string username)
         {
             Random random = new Random();
             int tip = random.Next(0, 100);

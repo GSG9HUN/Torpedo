@@ -35,6 +35,7 @@ namespace Torpedo.View.single_view
         Path lastship;
         Polygon lastarrow;
         Dictionary<string, int> placed_ship = new Dictionary<string, int>();
+        String name;
 
         
 
@@ -42,9 +43,10 @@ namespace Torpedo.View.single_view
         SolidColorBrush selected = new SolidColorBrush(Colors.Green);
         Grid[] fields;
 
-        public Ship_Placement()
+        public Ship_Placement(string name)
         {
             ships_class = new Ship[5];
+            this.name=name;
             InitializeComponent();
             irany = "fel";
             fields = new Grid[]
@@ -627,7 +629,7 @@ namespace Torpedo.View.single_view
         private void Start_button(object sender, RoutedEventArgs e)
         {
 
-            Game game = new Game(ref fields, ships_class) ;
+            Game game = new Game(ref fields, ships_class,name) ;
             this.Close();
             game.Show();
 
