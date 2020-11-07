@@ -25,7 +25,14 @@ namespace Torpedo
         }
         public static void ReadFromJSON()
         {
+            try {
+                string json = File.ReadAllText(filepath);
+                list_adatok = JsonConvert.DeserializeObject<List<Datas>>(json);
 
+            }
+            catch (Exception e) {
+            }
+            
         }
 
     }
