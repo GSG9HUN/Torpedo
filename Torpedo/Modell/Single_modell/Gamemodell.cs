@@ -230,6 +230,8 @@ namespace Torpedo.Modell.Single_modell
                                 {
                                     msg("Sajnos Vesztettél!");
 
+                                    //file writer
+
                                     //ha vesztett meghív egy kis ablakot
                                 }
                             }
