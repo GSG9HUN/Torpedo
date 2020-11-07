@@ -1,2 +1,2 @@
 # Torpedo
-# C# bedandó projekt
+C# bedandó projekt
