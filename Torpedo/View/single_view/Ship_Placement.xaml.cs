@@ -203,6 +203,9 @@ namespace Torpedo.View.single_view
             set_default_arrows();
             set_Tags();
             selected_ship = null;
+            lastarrow = null;
+            ships_class = new Ship[5];
+            manual_counter = 0;
         }
 
         public int check_ship(string name) {

@@ -211,10 +211,15 @@ namespace Torpedo.Modell.Single_modell
 
                 if (!p.elsulyedt)
                 {
+                    msg(p.nev);
+                    msg(p.irany);
+                    msg(p.kezdet.ToString());
+                    msg(p.veg.ToString());
                     if (check_if_the_ship_sank(p.irany, p.kezdet, p.veg))
                     {
                         p.elsulyedt = true;
                         ship_sank_counter++;
+                        last_tip_was_hit = false;
                         for (int i = 0; i < 5; i++)
                         {
 
@@ -225,7 +230,7 @@ namespace Torpedo.Modell.Single_modell
                                 en_flotam[i].IsEnabled = false;
 
                                 msg(p.nev + "elsülyedt");
-                                last_tip_was_hit = false;
+                                
                                 if (ship_sank_counter == 5)
                                 {
                                     msg("Sajnos Vesztettél!");
@@ -311,7 +316,6 @@ namespace Torpedo.Modell.Single_modell
                 }
             
             }
-
             if (false_counter == 4) {
                 last_tip_was_hit = false;
                 set_default();
@@ -325,6 +329,7 @@ namespace Torpedo.Modell.Single_modell
 
                 foreach(KeyValuePair<string,bool> iterator in i_have_to_pick.ToArray())
                 {
+                   
                                
                     if (iterator.Value) {
                         temp_last_tip_pos = last_tip_position;
@@ -338,6 +343,7 @@ namespace Torpedo.Modell.Single_modell
 
                                 break;
                             }
+                            i_have_to_pick[iterator.Key] = false;
 
                         }
                         else {
