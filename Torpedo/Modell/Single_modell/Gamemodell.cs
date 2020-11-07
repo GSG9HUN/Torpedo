@@ -18,6 +18,9 @@ namespace Torpedo.Modell.Single_modell
         Dictionary<String, int> placed_ships;
         Dictionary<String, bool> i_have_to_pick;
         int ship_sank_counter = 0;
+        int first_direct_hi_pos;
+        int first_tip_counter = 0;
+        bool i_clicked_there = true;
 
         String[] ships;
         SolidColorBrush miss = new SolidColorBrush(Colors.Gray);
@@ -36,11 +39,6 @@ namespace Torpedo.Modell.Single_modell
             this.en_flotam = en_flotam;
             ai_ships = new Ship[5];
             this.player_ships = player_ships;
-
-            foreach (Ship p in player_ships)
-                msg(p.nev);
-
-
             set_Dictionary();
             set_random_dict();
             set_ai_grids_tags();
@@ -215,7 +213,7 @@ namespace Torpedo.Modell.Single_modell
 
                 if (!p.elsulyedt)
                 {
-                    msg(p.nev.ToString());
+                   
                     if (check_if_the_ship_sank(p.irany, p.kezdet, p.veg))
                     {
                         p.elsulyedt = true;
@@ -231,7 +229,11 @@ namespace Torpedo.Modell.Single_modell
                                 en_flotam[i].IsEnabled = false;
 
                                 msg(p.nev + "elsülyedt");
-                                
+                                first_tip_counter = 0; 
+                                set_default();
+                               
+
+
                                 if (ship_sank_counter == 5)
                                 {
                                     msg("Sajnos Vesztettél!");
@@ -317,22 +319,23 @@ namespace Torpedo.Modell.Single_modell
                 }
             
             }
+
             if (false_counter == 4) {
-                last_tip_was_hit = false;
+                last_tip_position = first_direct_hi_pos;
                 set_default();
+            
             }
 
+            if (last_tip_was_hit)
+            {
 
 
-                if (last_tip_was_hit)
-            {   
-                
-
-                foreach(KeyValuePair<string,bool> iterator in i_have_to_pick.ToArray())
+                foreach (KeyValuePair<string, bool> iterator in i_have_to_pick.ToArray())
                 {
-                   
-                               
-                    if (iterator.Value) {
+
+
+                    if (iterator.Value)
+                    {
                         temp_last_tip_pos = last_tip_position;
                         if (checker(iterator.Key))
                         {
@@ -341,33 +344,74 @@ namespace Torpedo.Modell.Single_modell
                             {
                                 i_have_to_pick[iterator.Key] = false;
                                 checker_tip(temp_last_tip_pos, ref empty_tip, miss_delegate, hit_delegate);
-
+                                i_clicked_there = true;
                                 break;
                             }
                             i_have_to_pick[iterator.Key] = false;
+                            i_clicked_there = false;
 
                         }
-                        else {
+                        else
+                        {
                             i_have_to_pick[iterator.Key] = false;
                         }
                     }
-                
-                
-                }
-          
 
+
+                }
+
+                if (!i_clicked_there)
+                {
+                    last_tip_position = first_direct_hi_pos;
+
+                    foreach (KeyValuePair<string, bool> iterator in i_have_to_pick.ToArray())
+                    {
+
+
+                        if (iterator.Value)
+                        {
+                            temp_last_tip_pos = last_tip_position;
+                            if (checker(iterator.Key))
+                            {
+
+                                if (can_i_click_there(temp_last_tip_pos))
+                                {
+                                    i_have_to_pick[iterator.Key] = false;
+                                    checker_tip(temp_last_tip_pos, ref empty_tip, miss_delegate, hit_delegate);
+                                    i_clicked_there = true;
+                                    break;
+                                }
+                                i_have_to_pick[iterator.Key] = false;
+                                i_clicked_there = false;
+
+                            }
+                            else
+                            {
+                                i_have_to_pick[iterator.Key] = false;
+                            }
+                        }
+
+
+                    }
+
+                }
             }
-            else {
+            else
+            {
 
                 do
                 {
                     tip = random.Next(0, 100);
-                    checker_tip(tip,ref empty_tip ,miss_delegate,hit_delegate);
+                    checker_tip(tip, ref empty_tip, miss_delegate, hit_delegate);
 
                 } while (empty_tip == false);
+
+            
+            
+                }
             }
 
-        }
+        
 
         private void set_default() {
 
@@ -405,9 +449,13 @@ namespace Torpedo.Modell.Single_modell
                 hit_delegate();
                 empty_tip = true;
                 last_tip_position = tip;
+                if (first_tip_counter == 0) {
+                    first_direct_hi_pos = tip;
+                    first_tip_counter++;
+                }
                 ship_sank();
                 set_default();
-                msg(last_tip_position.ToString());
+               
             }
 
         }
