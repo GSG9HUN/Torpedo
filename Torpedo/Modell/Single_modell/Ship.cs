@@ -6,10 +6,10 @@ namespace Torpedo.Modell.Single_modell
 {
     public class Ship
     {
-        public String irany  { get; set; }
+        public String irany { get; set; }
 
         public String nev { get; set; }
-        
+
         public bool elsulyedt { get; set; }
         public int kezdet { get; set; }
         public int veg { get; set; }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,9 +28,11 @@ namespace Torpedo.View.single_view
         bool felfele_mehet = true;
         bool lefele_mehet = true;
         int manual_counter = 0;
+        bool contains = false;
         String irany { get; set; }
         String selected_ship { get; set; }
-        Ship[] ships_class;
+        List<Ship> ships_class = new List<Ship>();
+        //public Ship[] ships_class;
         Path[] ships;
         Polygon[] arrows;
         Path lastship;
@@ -45,7 +48,6 @@ namespace Torpedo.View.single_view
 
         public Ship_Placement(string name)
         {
-            ships_class = new Ship[5];
             this.name=name;
             InitializeComponent();
             irany = "fel";
@@ -204,7 +206,7 @@ namespace Torpedo.View.single_view
             set_Tags();
             selected_ship = null;
             lastarrow = null;
-            ships_class = new Ship[5];
+            ships_class = new List<Ship>();
             manual_counter = 0;
         }
 
@@ -266,10 +268,6 @@ namespace Torpedo.View.single_view
             }
 
         }
-
-
-        
-
 
         private void msg(string szoveg)
         {
@@ -373,15 +371,38 @@ namespace Torpedo.View.single_view
             
             if (ballra_mehet)
             {
+
+               
+                foreach(Ship p in ships_class) {
+                    if (p.nev == selected_ship)
+                        contains = true;
+                
+                }
+                if (!contains) {
+                    ships_class.Add(new Ship(selected_ship, "bal", honnan, ship_ending("bal", honnan, check_ship(selected_ship)), false));
+                }
+
                 i_go_left(honnan, meddig);
-                ships_class[manual_counter] = new Ship(selected_ship, "bal", honnan, ship_ending("bal", honnan, check_ship(selected_ship)), false);
                 manual_counter++;
+        
             }
             else if (jobbra_mehet)
             {
+
+                foreach (Ship p in ships_class)
+                {
+                    if (p.nev == selected_ship)
+                        contains = true;
+
+                }
+                if (!contains)
+                {
+                    ships_class.Add( new Ship(selected_ship, "jobb", honnan, ship_ending("jobb", honnan, check_ship(selected_ship)), false));
+                }
                 i_go_right(honnan,meddig);
-                ships_class[manual_counter] = new Ship(selected_ship, "jobb", honnan, ship_ending("jobb", honnan, check_ship(selected_ship)), false);
+               
                 manual_counter++;
+                
 
             }
 
@@ -398,15 +419,39 @@ namespace Torpedo.View.single_view
 
             if (jobbra_mehet)
                 {
+                foreach (Ship p in ships_class)
+                {
+                    if (p.nev == selected_ship)
+                        contains = true;
+
+                }
+                if (!contains)
+                {
+                    ships_class.Add(new Ship(selected_ship, "jobb", honnan, ship_ending("jobb", honnan, check_ship(selected_ship)), false));
+                }
+
                 i_go_right(honnan, meddig);
-                ships_class[manual_counter] = new Ship(selected_ship, "jobb", honnan, ship_ending("jobb", honnan, check_ship(selected_ship)), false);
+               
+                
                 manual_counter++;
 
             }
                 else if (ballra_mehet)
                 {
-                i_go_left(honnan, meddig);
-                ships_class[manual_counter] = new Ship(selected_ship, "bal", honnan, ship_ending("bal", honnan, check_ship(selected_ship)), false);
+
+                foreach (Ship p in ships_class)
+                {
+                    if (p.nev == selected_ship)
+                        contains = true;
+
+                }
+                if (!contains)
+                {
+                    ships_class.Add( new Ship(selected_ship, "bal", honnan, ship_ending("bal", honnan, check_ship(selected_ship)), false));
+                }
+                i_go_left(honnan, meddig); 
+             
+                
                 manual_counter++;
 
             }
@@ -522,15 +567,39 @@ namespace Torpedo.View.single_view
 
             if (felfele_mehet)
             {
-                ships_class[manual_counter] = new Ship(selected_ship, "fel", honnan, ship_ending(irany, honnan, check_ship(selected_ship)), false);
+
+                foreach (Ship p in ships_class)
+                {
+                    if (p.nev == selected_ship)
+                        contains = true;
+
+                }
+                if (!contains)
+                {
+                    ships_class.Add( new Ship(selected_ship, "fel", honnan, ship_ending(irany, honnan, check_ship(selected_ship)), false));
+                }
+
                 i_go_up(honnan, meddig);
+              
                 manual_counter++;
 
             }
             else if (lefele_mehet)
             {
-                ships_class[manual_counter] = new Ship(selected_ship, "le", honnan, ship_ending("le", honnan, check_ship(selected_ship)), false);
+                foreach (Ship p in ships_class)
+                {
+                    if (p.nev == selected_ship)
+                        contains = true;
+
+                }
+                if (!contains)
+                {
+                    ships_class.Add( new Ship(selected_ship, "le", honnan, ship_ending("le", honnan, check_ship(selected_ship)), false));
+                }
+
+                
                 i_go_down(honnan, meddig);
+             
                 manual_counter++;
 
             }
@@ -547,17 +616,37 @@ namespace Torpedo.View.single_view
             lefele_mehet = check_if_i_can_go_down(honnan,meddig);
             if (lefele_mehet)
             {
+                foreach (Ship p in ships_class)
+                {
+                    if (p.nev == selected_ship)
+                        contains = true;
 
-                i_go_down(honnan, meddig);
-                ships_class[manual_counter] = new Ship(selected_ship, "le", honnan, ship_ending("le", honnan, check_ship(selected_ship)), false);
+                }
+                if (!contains)
+                {
+                    ships_class.Add( new Ship(selected_ship, "le", honnan, ship_ending("le", honnan, check_ship(selected_ship)), false));
+                }
+                i_go_down(honnan, meddig);    
                 manual_counter++;
 
             }
             else if (felfele_mehet)
             {
-                ships_class[manual_counter] = new Ship(selected_ship, "le", honnan, ship_ending("le", honnan, check_ship(selected_ship)), false);
+
+                foreach (Ship p in ships_class)
+                {
+                    if (p.nev == selected_ship)
+                        contains = true;
+
+                }
+                if (!contains)
+                {
+                    ships_class.Add(new Ship(selected_ship, "le", honnan, ship_ending("le", honnan, check_ship(selected_ship)), false));
+                }
+
                 manual_counter++;
                 i_go_up(honnan, meddig);
+               
             }
             else
             {
@@ -602,7 +691,6 @@ namespace Torpedo.View.single_view
         {
 
             Reset_clicked(sender, e);
-            int counter = 0;
             foreach (var ship in ships) {
                 set_default_arrows();
                 if (placed_ship[ship.Name.ToString()] == 0) {
@@ -611,30 +699,43 @@ namespace Torpedo.View.single_view
                     irany = set_random_irany(get_random_number(1, 4));
                     lastarrow = get_poly(irany);
                     while (placed_ship[ship.Name.ToString()]!=1) {
+                        
                         int random_grid = get_random_number(0, 99);
+       
                         if (get_can_i_go_to_irany(irany, random_grid, check_ship(selected_ship)))
                         {
-                            ships_class[counter] = new Ship(selected_ship,irany, random_grid,ship_ending(irany,random_grid,check_ship(selected_ship)),false);
+
+                            ships_class.Add(new Ship(selected_ship, irany, random_grid, ship_ending(irany, random_grid, check_ship(selected_ship)), false));
                             call_my_function(irany,random_grid,check_ship(selected_ship));
                             placed_ship[ship.Name.ToString()] = 1;
 
 
                         }
+                        
 
 
                     }
-                    counter++;
+                    
                 }
                 
             }
+                
         }
 
         private void Start_button(object sender, RoutedEventArgs e)
         {
+            if (manual_counter != 5)
+            {
+                msg("Minden hajót el kell helyezni");
 
-            Game game = new Game(ref fields, ships_class,name) ;
-            this.Close();
-            game.Show();
+            }
+            else {
+
+                Game game = new Game(ref fields, ships_class, name);
+                this.Close();
+                game.Show();
+            }
+        
 
 
         }

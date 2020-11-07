@@ -25,7 +25,7 @@ namespace Torpedo.View.single_view
 
         Grid[] ai_grids, my_grids;
         Gamemodell game;
-        Ship[] player_ships;
+        List<Ship> player_ships;
         Path[] en_flotam, gep_flotaja;
         int ship_sank_counter = 0;
         bool timer_started = false;
@@ -38,7 +38,7 @@ namespace Torpedo.View.single_view
         AI_delegate miss = set_AI_miss_textblock;
         AI_delegate hit = set_AI_hit_textblock;
 
-        public Game(ref Grid[] fields, Ship[] ships_class,String name)
+        public Game(ref Grid[] fields, List<Ship> ships_class,String name)
         {
             player_ships = ships_class;
             InitializeComponent();

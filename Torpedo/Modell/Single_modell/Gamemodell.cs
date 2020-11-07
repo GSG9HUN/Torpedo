@@ -26,16 +26,20 @@ namespace Torpedo.Modell.Single_modell
         int last_tip_position = 0, temp_last_tip_pos=0;
         Grid[] AI_grids { get; set; }
            Grid[] my_grids;
-        Ship[] player_ships;
+        List<Ship> player_ships;
         public Ship[] ai_ships { get; set; }
         public Path[] en_flotam;
-        public Gamemodell(ref Grid[] AI_grids, ref Grid[] my_grids, Ship[] player_ships, ref Path[] en_flotam)
+        public Gamemodell(ref Grid[] AI_grids, ref Grid[] my_grids, List<Ship> player_ships, ref Path[] en_flotam)
         {
             this.AI_grids = AI_grids;
             this.my_grids = my_grids;
             this.en_flotam = en_flotam;
             ai_ships = new Ship[5];
             this.player_ships = player_ships;
+
+            foreach (Ship p in player_ships)
+                msg(p.nev);
+
 
             set_Dictionary();
             set_random_dict();
@@ -211,10 +215,7 @@ namespace Torpedo.Modell.Single_modell
 
                 if (!p.elsulyedt)
                 {
-                    msg(p.nev);
-                    msg(p.irany);
-                    msg(p.kezdet.ToString());
-                    msg(p.veg.ToString());
+                    msg(p.nev.ToString());
                     if (check_if_the_ship_sank(p.irany, p.kezdet, p.veg))
                     {
                         p.elsulyedt = true;
@@ -406,6 +407,7 @@ namespace Torpedo.Modell.Single_modell
                 last_tip_position = tip;
                 ship_sank();
                 set_default();
+                msg(last_tip_position.ToString());
             }
 
         }
