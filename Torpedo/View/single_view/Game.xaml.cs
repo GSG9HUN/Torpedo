@@ -33,6 +33,8 @@ namespace Torpedo.View.single_view
         static TextBlock  timer;
         static TextBlock ai_miss_tb, ai_hit_tb;
         static DispatcherTimer atimer;
+
+        public bool first_key_pressed { get; set; }
         public String username { get; set; }
 
 
@@ -43,6 +45,7 @@ namespace Torpedo.View.single_view
         public Game(ref Grid[] fields, List<Ship> ships_class,String name)
         {
             player_ships = ships_class;
+            first_key_pressed = false;
             InitializeComponent();
             username = name;
             set_my_grids(fields);
@@ -318,6 +321,27 @@ namespace Torpedo.View.single_view
             ai_hit_tb.Text = p.ToString();
         }
 
+
+        private void Cheating(object sender, KeyEventArgs e)
+        {
+
+            if (e.Key.ToString()==Key.LeftCtrl.ToString())
+            {
+                first_key_pressed = true;
+                return;
+            }
+            if (first_key_pressed) {
+                first_key_pressed = false;
+                if (e.Key.ToString()==Key.C.ToString()) {
+                    foreach (Grid p in ai_grids)
+                        if (p.Tag.ToString() == "ship") {
+                            p.Background = Brushes.Green;
+                        }
+                }
+            
+            }
+
+        }
 
         private void msg(string szoveg)
         {

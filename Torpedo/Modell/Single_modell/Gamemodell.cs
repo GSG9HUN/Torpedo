@@ -673,7 +673,6 @@ namespace Torpedo.Modell.Single_modell
         {
             for (int i = honnan; i > honnan - meddig; i--)
             {
-                AI_grids[i].Background = new SolidColorBrush(Colors.Green);
                 AI_grids[i].Tag = "ship";
             }
 
@@ -684,7 +683,7 @@ namespace Torpedo.Modell.Single_modell
 
             for (int i = honnan; i < honnan + meddig; i++)
             {
-                AI_grids[i].Background = new SolidColorBrush(Colors.Green);
+               
                 AI_grids[i].Tag = "ship";
             }
 
@@ -696,7 +695,7 @@ namespace Torpedo.Modell.Single_modell
         {
             for (int i = honnan; (int)i / 10 > (int)honnan / 10 - meddig; i -= 10)
             {
-                AI_grids[i].Background = new SolidColorBrush(Colors.Green);
+              
                 AI_grids[i].Tag = "ship";
             }
 
@@ -710,7 +709,7 @@ namespace Torpedo.Modell.Single_modell
 
             for (int i = honnan; (int)i / 10 < (int)honnan / 10 + meddig; i += 10)
             {
-                AI_grids[i].Background = new SolidColorBrush(Colors.Green);
+               
                 AI_grids[i].Tag = "ship";
             }
 
