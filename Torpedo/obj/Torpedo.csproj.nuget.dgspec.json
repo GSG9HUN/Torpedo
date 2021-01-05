@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gsg9hun\\source\\repos\\Torpedo\\Torpedo\\Torpedo.csproj": {}
+    "D:\\C#\\Torpedo\\Torpedo\\Torpedo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gsg9hun\\source\\repos\\Torpedo\\Torpedo\\Torpedo.csproj": {
+    "D:\\C#\\Torpedo\\Torpedo\\Torpedo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gsg9hun\\source\\repos\\Torpedo\\Torpedo\\Torpedo.csproj",
+        "projectUniqueName": "D:\\C#\\Torpedo\\Torpedo\\Torpedo.csproj",
         "projectName": "Torpedo",
-        "projectPath": "C:\\Users\\gsg9hun\\source\\repos\\Torpedo\\Torpedo\\Torpedo.csproj",
-        "packagesPath": "C:\\Users\\gsg9hun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gsg9hun\\source\\repos\\Torpedo\\Torpedo\\obj\\",
+        "projectPath": "D:\\C#\\Torpedo\\Torpedo\\Torpedo.csproj",
+        "packagesPath": "C:\\Users\\Stiegelmayer Máté\\.nuget\\packages\\",
+        "outputPath": "D:\\C#\\Torpedo\\Torpedo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\gsg9hun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Stiegelmayer Máté\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -61,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

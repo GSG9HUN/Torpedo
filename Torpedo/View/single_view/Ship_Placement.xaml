@@ -5,18 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Torpedo.View.single_view"
         mc:Ignorable="d"
-        Width="550" Height="800" ResizeMode="NoResize"
-      >
-
-
-
+        Title="Ship Placement" Width="550" Height="800" ResizeMode="NoResize" Background="Cornsilk">
     <Grid Background="black"
           Name="Fields" ShowGridLines="True" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="436" Height="486" RenderTransformOrigin="0.608,0.5" Margin="54,0,0,0">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition ></ColumnDefinition>
-            <ColumnDefinition  ></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -26,71 +22,44 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition ></RowDefinition>
-            <RowDefinition   ></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition ></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition ></RowDefinition>
-            <RowDefinition ></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition ></RowDefinition>
-            <RowDefinition ></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
         <Canvas Margin="-57,-150,0,55" Grid.ColumnSpan="9">
-            <Label FontSize="25">Ship Placement</Label>
-            <Label Canvas.Left="73" Canvas.Top="118">1</Label>
-            <Label Canvas.Left="115" Canvas.Top="118">2</Label>
-            <Label Canvas.Left="153" Canvas.Top="118" >3</Label>
-            <Label Canvas.Left="330" Canvas.Top="118">7</Label>
-            <Label Canvas.Left="289" Canvas.Top="118">6</Label>
-            <Label Canvas.Left="246" Canvas.Top="118">5</Label>
-            <Label Canvas.Left="200" Canvas.Top="118">4</Label>
-            <Label Canvas.Left="374" Canvas.Top="118">8</Label>
-            <Label Canvas.Left="417" Canvas.Top="118">9</Label>
-            <Label Canvas.Left="458" Canvas.Top="118">10</Label>
+            <TextBlock FontSize="35" Width="300" Foreground="DarkRed" Canvas.Left="125" Canvas.Top="20" TextAlignment="center" FontWeight="Bold">Set up your Army!</TextBlock>
+            <Label Canvas.Left="73" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">1</Label>
+            <Label Canvas.Left="115" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">2</Label>
+            <Label Canvas.Left="153" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">3</Label>
+            <Label Canvas.Left="200" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">4</Label>
+            <Label Canvas.Left="246" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">5</Label>
+            <Label Canvas.Left="289" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">6</Label>
+            <Label Canvas.Left="330" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">7</Label>
+            <Label Canvas.Left="374" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">8</Label>
+            <Label Canvas.Left="417" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">9</Label>
+            <Label Canvas.Left="458" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">10</Label>
         </Canvas>
 
         <Canvas Margin="-57,-1,49,0" Grid.RowSpan="10">
-            <Label Canvas.Left="33" Canvas.Top="13">
-                A
-            </Label>
-            <Label Canvas.Left="33" Canvas.Top="58">
-                B
-            </Label>
-            <Label Canvas.Left="32" Canvas.Top="109">
-                C
-            </Label>
-            <Label Canvas.Left="33" Canvas.Top="164">
-                D
-            </Label>
-            <Label Canvas.Top="205" Canvas.Left="33">
-                E
-            </Label>
-            <Label Canvas.Left="33" Canvas.Top="256">
-                F
-            </Label>
-            <Label Canvas.Left="32" Canvas.Top="302">
-                G
-            </Label>
-            <Label Canvas.Left="31" Canvas.Top="350">
-                H
-            </Label>
-            <Label Canvas.Left="34" Canvas.Top="403">
-                I
-            </Label>
-            <Label Canvas.Left="33" Canvas.Top="451">
-                J
-            </Label>
-
-
+            <Label Canvas.Left="33" Canvas.Top="13" Foreground="DarkRed" FontWeight="Bold">A</Label>
+            <Label Canvas.Left="33" Canvas.Top="58" Foreground="DarkRed" FontWeight="Bold">B</Label>
+            <Label Canvas.Left="32" Canvas.Top="109" Foreground="DarkRed" FontWeight="Bold">C</Label>
+            <Label Canvas.Left="33" Canvas.Top="164" Foreground="DarkRed" FontWeight="Bold">D</Label>
+            <Label Canvas.Top="205" Canvas.Left="33" Foreground="DarkRed" FontWeight="Bold">E</Label>
+            <Label Canvas.Left="33" Canvas.Top="256" Foreground="DarkRed" FontWeight="Bold">F</Label>
+            <Label Canvas.Left="32" Canvas.Top="302" Foreground="DarkRed" FontWeight="Bold">G</Label>
+            <Label Canvas.Left="31" Canvas.Top="350" Foreground="DarkRed" FontWeight="Bold">H</Label>
+            <Label Canvas.Left="34" Canvas.Top="403" Foreground="DarkRed" FontWeight="Bold">I</Label>
+            <Label Canvas.Left="33" Canvas.Top="451" Foreground="DarkRed" FontWeight="Bold">J</Label>
         </Canvas>
-
-
-
-
-
 
         <Grid Grid.Row="0" Grid.Column="0" Name="A1" MouseDown="grid_pressed" >
             <Rectangle MouseDown="grid_pressed"/>
@@ -305,20 +274,9 @@
                 </Polygon>
 
             </Canvas>
-
-
-
-
-
-            <Button Canvas.Left="10" Canvas.Top="117" Click="Random_button">
-                Randomize
-            </Button>
-            <Button Canvas.Left="195" Canvas.Top="117" Width="57" Click="Reset_clicked">
-                Reset
-            </Button>
-            <Button Canvas.Left="358" Canvas.Top="117" Width="46" Click="Start_button">
-                Start
-            </Button>
+            <Button Canvas.Left="10" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="Random_button">Randomize</Button>
+            <Button Canvas.Left="100" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="Reset_clicked">Reset</Button>
+            <Button Canvas.Left="335" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="Start_button">Start</Button>
         </Canvas>
     </Grid>
 

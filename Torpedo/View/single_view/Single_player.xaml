@@ -6,14 +6,12 @@
         xmlns:local="clr-namespace:Torpedo"
         mc:Ignorable="d"
         Title="Single_Player" Height="500" Width="500" ResizeMode="NoResize" >
-    <Canvas>
-        <Label Width="150"  Canvas.Left="175" Canvas.Top="200" >
-            Username
-        </Label>
-        <TextBox x:Name="username" Width="150"  Canvas.Left="175" Canvas.Top="224"></TextBox>
-        <Button Canvas.Top="301" Width="100" Canvas.Left="200" Click="Start_Click">Start</Button>
-        <Button Canvas.Top="368" Width="68" Canvas.Left="216" Click="Back_Click">Back</Button>
-
-
+    <Canvas Background="Cornsilk">
+        <TextBlock Width="500" Height="60" FontSize="30" Foreground="Darkred" Canvas.Left="0" Canvas.Top="25" TextAlignment="center" FontWeight="Bold">Welcome to game of Battleship!</TextBlock>
+        <TextBlock Width="500" Height="30" FontSize="15" Foreground="Darkred" Canvas.Left="0" Canvas.Top="165" TextAlignment="center" FontStyle="Italic">Please type your name!</TextBlock>
+        <TextBlock Width="200" FontSize="25" Foreground="DarkRed" FontWeight="Bold" TextAlignment="center" Canvas.Left="150" Canvas.Top="185" >Username:</TextBlock>
+        <TextBox x:Name="username" Width="200" Height="25" FontSize="18" Canvas.Left="150" Canvas.Top="225"></TextBox>
+        <Button Canvas.Top="300" Width="150" Canvas.Left="175" Height="40" FontSize="25" Foreground="Darkred" FontStyle="Italic" Click="Start_Click">Start</Button>
+        <Button Canvas.Top="380" Width="100" Height="30" FontSize="20" Foreground="Darkred" Canvas.Left="200" FontStyle="Italic" Click="Back_Click">Back</Button>
     </Canvas>
 </Window>
