@@ -1,20 +1,20 @@
 ﻿Torpedo
-1.0.0.0
+
 
 winexe
 C#
 .cs
-D:\C#\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\
+D:\C#\Torpedo\Torpedo\obj\Release\netcoreapp3.1\
 Torpedo
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1;
 D:\C#\Torpedo\Torpedo\App.xaml
 6-909940676
 
-161876229506
+141850019307
 193-862715026
 MainWindow.xaml;View\single_view\Game.xaml;View\single_view\Loser.xaml;View\single_view\Ship_Placement.xaml;View\single_view\Single_player.xaml;View\single_view\Winner.xaml;
 
-False
+True
 

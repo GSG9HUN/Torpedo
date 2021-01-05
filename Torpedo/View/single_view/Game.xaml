@@ -5,11 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Torpedo.View.single_view"
         mc:Ignorable="d"
-        Title="Game" Height="550" Width="1250" Keyboard.KeyDown="Cheating">
-
-
-
-
+        Title="Game" Height="550" Width="1250" Keyboard.KeyDown="Cheating" Background="Cornsilk">
     <Grid Margin="0,6,0,-6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -36,7 +32,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition />
+                <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -242,7 +238,7 @@
             <Grid x:Name="J10" Grid.Row="9" Grid.Column="9" MouseLeftButtonDown="grid_pressed" Background="black">
             </Grid>
         </Grid>
-        <Label x:Name="lblTitle" Content="Battle" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="92" FontSize="25.333" FontFamily="Stencil" FontWeight="Bold" Margin="579,0,0,0" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblTitle" Content="Battleship" HorizontalAlignment="Center" Height="60" VerticalAlignment="Top" HorizontalContentAlignment="Center" Foreground="DarkRed" Width="200" FontSize="35" FontWeight="Bold" Margin="0 0 0 0" Grid.ColumnSpan="2"/>
         <Label x:Name="lblVerticalA_Copy" Content="A" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Margin="531,74,6,0" Grid.Column="1"/>
         <Label x:Name="lblVerticalB_Copy" Content="B" Margin="530,104,6,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
         <Label x:Name="lblVerticalC_Copy" Content="C" Margin="530,136,6,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667" Grid.Column="1"/>
@@ -382,16 +378,10 @@
         </Grid>
 
         <Canvas Margin="29,367,46,0">
-
-            <Label Canvas.Left="209" Width="132" FontWeight="Bold" FontSize="20" Canvas.Top="8">
-                A Te flottád
-            </Label>
-
+            <Label Canvas.Left="209" Width="132" FontWeight="Bold" FontSize="20" Canvas.Top="8" Foreground="DarkRed">A Te flottád:</Label>
             <Label Canvas.Left="287" Width="78" FontWeight="Bold" Content="Submarine" Canvas.Top="50"/>
             <Label Canvas.Left="162" Width="90" FontWeight="Bold" FontSize="16" Content="Carrier" Canvas.Top="45" Height="30"/>
             <Label  Width="132" FontWeight="Bold" FontSize="16" Content="Battleship" Canvas.Left="25" Canvas.Top="45"/>
-
-
 
             <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="488" Canvas.Top="78.24" Height="28.8" Stretch="Fill" Width="56.8"
             		x:Name="destroyer" >
@@ -450,25 +440,21 @@
 
         </Canvas>
         <Canvas Grid.ColumnSpan="2" Margin="357,52,421,218"/>
-        <Label Margin="512,50,512,420" Grid.ColumnSpan="2" FontSize="25">Idő:</Label>
+        <Label Margin="512,50,512,420" Grid.ColumnSpan="2" FontSize="25" Foreground="DarkRed">Idő:</Label>
         <TextBlock x:Name="Timer_counter" Text="0" FontSize="25" Margin="572,57,616,410" Grid.ColumnSpan="2"/>
-        <Label FontSize="25" Margin="9,52,579,410" Content="s" Grid.Column="1"/>
-        <Label Margin="357,119,134,335" FontSize="25">Találataid:</Label>
+        <Label FontSize="25" Margin="9,52,579,410" Foreground="DarkRed" Content="s" Grid.Column="1"/>
+        <Label Margin="357,119,134,335" FontSize="25" Foreground="DarkRed">Találataid:</Label>
         <TextBlock Margin="575,127,0,313" x:Name="player_hit" Text="0" FontSize="25"/>
-        <Label Margin="3,119,463,339" Grid.Column="1" FontSize="25">Gép Találatai:</Label>
+        <Label Margin="3,119,463,339" Grid.Column="1" FontSize="25" Foreground="DarkRed">Gép Találatai:</Label>
         <TextBlock  x:Name="ai_hit" Text="0" Grid.Column="1" Margin="162,127,412,335" FontSize="25"/>
-        <Label Margin="357,225,22,232" FontSize="20" Content="Mellé lövések száma:"/>
+        <Label Margin="357,225,22,232" FontSize="20" Foreground="DarkRed" Content="Mellé lövések száma:"/>
         <TextBlock Margin="575,233,0,239" x:Name="player_miss" Text="0" FontSize="20"/>
 
         <Canvas Margin="25,367,50,0" Grid.Column="1">
-
-            <Label Canvas.Left="204" Width="142" FontWeight="Bold" FontSize="20" Content="A Gép flottája" Canvas.Top="8"/>
-
+            <Label Canvas.Left="204" Width="142" FontWeight="Bold" FontSize="20" Foreground="DarkRed" Content="A Gép flottája" Canvas.Top="8"/>
             <Label Canvas.Left="287" Width="78" FontWeight="Bold" Content="Submarine" Canvas.Top="50"/>
             <Label Canvas.Left="162" Width="90" FontWeight="Bold" FontSize="16" Content="Carrier" Canvas.Top="45" Height="30"/>
             <Label  Width="132" FontWeight="Bold" FontSize="16" Content="Battleship" Canvas.Left="25" Canvas.Top="45"/>
-
-
 
             <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="488" Canvas.Top="78.24" Height="28.8" Stretch="Fill" Width="56.8"
                 x:Name="destroyer1" >
@@ -556,13 +542,9 @@
         <Label x:Name="lblVerticalH_Copy1" Content="H" Margin="312,276,223,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667"/>
         <Label x:Name="lblVerticalI_Copy1" Content="I" Margin="312,303,223,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667"/>
         <Label x:Name="lblVerticalJ_Copy1" Content="J" Margin="312,335,223,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667" RenderTransformOrigin="8.609,0.198"/>
-        <Label Margin="0,225,466,250" Grid.Column="1" FontSize="20" Content="AI mellé lövések:"/>
+        <Label Margin="0,225,466,250" Grid.Column="1" FontSize="20" Foreground="DarkRed" Content="AI mellé lövések:"/>
         <TextBlock  x:Name="ai_miss" Text="0" Grid.Column="1" Margin="162,236,421,225" FontSize="20"/>
 
-
-
     </Grid>
-
-
-
+    
 </Window>
