@@ -230,7 +230,7 @@ namespace Torpedo.Modell.Single_modell
                                 en_flotam[i].Opacity = 0.5;
                                 en_flotam[i].IsEnabled = false;
 
-                                msg(p.nev + "elsülyedt");
+                                msg(p.nev + " elsülyedt");
                                 first_tip_counter = 0; 
                                 set_default();
                                
