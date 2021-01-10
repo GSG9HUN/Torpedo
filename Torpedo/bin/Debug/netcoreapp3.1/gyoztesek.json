@@ -66,5 +66,9 @@
   {
     "player_name": "AI",
     "message": "Győzött"
+  },
+  {
+    "player_name": "e",
+    "message": "Győzőtt"
   }
 ]

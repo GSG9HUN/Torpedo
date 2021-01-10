@@ -379,11 +379,11 @@
 
         <Canvas Margin="29,367,46,0">
             <Label Canvas.Left="209" Width="132" FontWeight="Bold" FontSize="20" Canvas.Top="8" Foreground="DarkRed">A Te flottád:</Label>
-            <Label Canvas.Left="287" Width="78" FontWeight="Bold" Content="Submarine" Canvas.Top="50"/>
-            <Label Canvas.Left="162" Width="90" FontWeight="Bold" FontSize="16" Content="Carrier" Canvas.Top="45" Height="30"/>
+            <Label Canvas.Left="289" Width="80" FontWeight="Bold" FontSize="14" Content="Submarine" Canvas.Top="50"/>
+            <Label Canvas.Left="180" Width="90" FontWeight="Bold" FontSize="16" Content="Carrier" Canvas.Top="45" Height="30"/>
             <Label  Width="132" FontWeight="Bold" FontSize="16" Content="Battleship" Canvas.Left="25" Canvas.Top="45"/>
 
-            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="488" Canvas.Top="78.24" Height="28.8" Stretch="Fill" Width="56.8"
+            <Path Stroke="Black" StrokeThickness="2" Fill="LightCoral" Canvas.Left="474" Canvas.Top="78.24" Height="28.8" Stretch="Fill" Width="56.8"
             		x:Name="destroyer" >
                 <Path.Data>
                     <GeometryGroup>
@@ -392,7 +392,7 @@
                     </GeometryGroup>
                 </Path.Data>
             </Path>
-            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="382.2" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
+            <Path Stroke="Black" StrokeThickness="2" Fill="LightCoral" Canvas.Left="382.2" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
                 	x:Name="cruiser">
                 <Path.Data>
                     <GeometryGroup>
@@ -402,7 +402,7 @@
                     </GeometryGroup>
                 </Path.Data>
             </Path>
-            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="290.5" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
+            <Path Stroke="Black" StrokeThickness="2" Fill="LightCoral" Canvas.Left="290.5" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
                 	x:Name="submarine">
                 <Path.Data>
                     <GeometryGroup>
@@ -412,7 +412,7 @@
                     </GeometryGroup>
                 </Path.Data>
             </Path>
-            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="10" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="116.8"
+            <Path Stroke="Black" StrokeThickness="2" Fill="LightCoral" Canvas.Left="10" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="116.8"
                 	x:Name="battleship">
                 <Path.Data>
                     <GeometryGroup>
@@ -423,7 +423,7 @@
                     </GeometryGroup>
                 </Path.Data>
             </Path>
-            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="133" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="148"
+            <Path Stroke="Black" StrokeThickness="2" Fill="LightCoral" Canvas.Left="133" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="148"
                 	x:Name="carrier"  >
                 <Path.Data>
                     <GeometryGroup>
@@ -435,8 +435,8 @@
                     </GeometryGroup>
                 </Path.Data>
             </Path>
-            <Label Canvas.Left="393" Width="78" FontWeight="Bold" Content="Cruiser" Canvas.Top="50"/>
-            <Label Canvas.Left="477" Width="78" FontWeight="Bold" Content="Destroyer" Canvas.Top="50"/>
+            <Label Canvas.Left="393" Width="80" FontSize="14" FontWeight="Bold" Content="Cruiser" Canvas.Top="50"/>
+            <Label Canvas.Left="470" Width="80" FontSize="14" FontWeight="Bold" Content="Destroyer" Canvas.Top="50"/>
 
         </Canvas>
         <Canvas Grid.ColumnSpan="2" Margin="357,52,421,218"/>
@@ -451,12 +451,12 @@
         <TextBlock Margin="575,232,0,239" x:Name="player_miss" Text="0" FontSize="20"/>
 
         <Canvas Margin="25,367,50,0" Grid.Column="1">
-            <Label Canvas.Left="204" Width="142" FontWeight="Bold" FontSize="20" Foreground="DarkRed" Content="A Gép flottája" Canvas.Top="8"/>
-            <Label Canvas.Left="287" Width="78" FontWeight="Bold" Content="Submarine" Canvas.Top="50"/>
-            <Label Canvas.Left="162" Width="90" FontWeight="Bold" FontSize="16" Content="Carrier" Canvas.Top="45" Height="30"/>
+            <Label Canvas.Left="204" Width="186" FontWeight="Bold" FontSize="20" Foreground="DarkRed" Content="Az Ellenfél flottája:" Canvas.Top="8"/>
+            <Label Canvas.Left="287" Width="80" FontWeight="Bold" FontSize="14" Content="Submarine" Canvas.Top="50"/>
+            <Label Canvas.Left="174" Width="90" FontWeight="Bold" FontSize="16" Content="Carrier" Canvas.Top="45" Height="30"/>
             <Label  Width="132" FontWeight="Bold" FontSize="16" Content="Battleship" Canvas.Left="25" Canvas.Top="45"/>
 
-            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="488" Canvas.Top="78.24" Height="28.8" Stretch="Fill" Width="56.8"
+            <Path Stroke="Black" StrokeThickness="2" Fill="RosyBrown" Canvas.Left="478" Canvas.Top="78.24" Height="28.8" Stretch="Fill" Width="56.8"
                 x:Name="destroyer1" >
                 <Path.Data>
                     <GeometryGroup>
@@ -465,7 +465,7 @@
                     </GeometryGroup>
                 </Path.Data>
             </Path>
-            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="382.2" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
+            <Path Stroke="Black" StrokeThickness="2" Fill="RosyBrown" Canvas.Left="382.2" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
                 x:Name="cruiser1" >
                 <Path.Data>
                     <GeometryGroup>
@@ -475,7 +475,7 @@
                     </GeometryGroup>
                 </Path.Data>
             </Path>
-            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="290.5" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
+            <Path Stroke="Black" StrokeThickness="2" Fill="RosyBrown" Canvas.Left="290.5" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
                 x:Name="submarine1" >
                 <Path.Data>
                     <GeometryGroup>
@@ -485,7 +485,7 @@
                     </GeometryGroup>
                 </Path.Data>
             </Path>
-            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="10" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="116.8"
+            <Path Stroke="Black" StrokeThickness="2" Fill="RosyBrown" Canvas.Left="10" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="116.8"
                 x:Name="battleship1" >
                 <Path.Data>
                     <GeometryGroup>
@@ -496,7 +496,7 @@
                     </GeometryGroup>
                 </Path.Data>
             </Path>
-            <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="133" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="148"
+            <Path Stroke="Black" StrokeThickness="2" Fill="RosyBrown" Canvas.Left="133" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="148"
                 x:Name="carrier1">
                 <Path.Data>
                     <GeometryGroup>
@@ -508,8 +508,8 @@
                     </GeometryGroup>
                 </Path.Data>
             </Path>
-            <Label Canvas.Left="393" Width="78" FontWeight="Bold" Content="Cruiser" Canvas.Top="50"/>
-            <Label Canvas.Left="477" Width="78" FontWeight="Bold" Content="Destroyer" Canvas.Top="50"/>
+            <Label Canvas.Left="393" Width="80" FontSize="14" FontWeight="Bold" Content="Cruiser" Canvas.Top="50"/>
+            <Label Canvas.Left="470" Width="80" FontSize="14" FontWeight="Bold" Content="Destroyer" Canvas.Top="50"/>
 
         </Canvas>
         <Label x:Name="lblVerticalE_Copy1" Content="1" Margin="4,38,589,0" VerticalAlignment="Top" Height="23" FontFamily="Stencil" Foreground="DarkRed" FontSize="15"/>
