@@ -11,12 +11,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="View\pvp_view\PvpGame.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\single_view\Loser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="View\pvp_view\PvpGame.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\single_view\Loser.xaml">
       <SubType>Designer</SubType>
     </Page>

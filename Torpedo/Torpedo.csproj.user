@@ -24,6 +24,9 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\pvp_view\PvpGame.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\single_view\Game.xaml">
       <SubType>Designer</SubType>
     </Page>

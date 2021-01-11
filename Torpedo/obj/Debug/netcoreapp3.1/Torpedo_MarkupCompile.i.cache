@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\
 Torpedo
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\App.xaml
-6-909940676
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\App.xaml
+7-267063332
 
-161876229506
-1931714954343
-MainWindow.xaml;View\single_view\Game.xaml;View\single_view\Loser.xaml;View\single_view\Ship_Placement.xaml;View\single_view\Single_player.xaml;View\single_view\Winner.xaml;
+19-1307509828
+1931531222088
+MainWindow.xaml;View\pvp_view\PvpGame.xaml;View\single_view\Game.xaml;View\single_view\Loser.xaml;View\single_view\Ship_Placement.xaml;View\single_view\Single_player.xaml;View\single_view\Winner.xaml;
 
 False
 

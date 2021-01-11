@@ -29,3 +29,35 @@ C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.ge
 C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.csprojAssemblyReference.cache
 C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Loser.g.cs
 C:\Users\gsg9hun\source\repos\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Loser.baml
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\bin\Debug\netcoreapp3.1\Torpedo.exe
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\bin\Debug\netcoreapp3.1\Torpedo.deps.json
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\bin\Debug\netcoreapp3.1\Torpedo.runtimeconfig.json
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\bin\Debug\netcoreapp3.1\Torpedo.runtimeconfig.dev.json
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\bin\Debug\netcoreapp3.1\Torpedo.dll
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\bin\Debug\netcoreapp3.1\Torpedo.pdb
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.csprojAssemblyReference.cache
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Game.g.cs
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Loser.g.cs
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Ship_Placement.g.cs
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Single_player.g.cs
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Winner.g.cs
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo_MarkupCompile.cache
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo_MarkupCompile.lref
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Game.baml
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Loser.baml
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Ship_Placement.baml
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Single_player.baml
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Winner.baml
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.g.resources
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.AssemblyInfoInputs.cache
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.AssemblyInfo.cs
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.csproj.CoreCompileInputs.cache
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.csproj.CopyComplete
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.dll
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.pdb
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.genruntimeconfig.cache
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\pvp_view\Game.g.cs
