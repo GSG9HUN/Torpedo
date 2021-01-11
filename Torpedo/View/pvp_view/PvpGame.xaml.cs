@@ -19,21 +19,21 @@ namespace Torpedo.View.pvp_view
 {
     public partial class PvpGame : Window
     {
-        Grid[] player1_grids;
-        Grid[] player1_enemy_view;
-        Grid[] player2_grids;
-        Grid[] player2_enemy_view;
+        Grid[] player1Grids;
+        Grid[] player1EnemyView;
+        Grid[] player2Grids;
+        Grid[] player2EnemyView;
         PvpGamemodell game;
         List<Ship> ships;
-        Path[] player1_fleet, player2_fleet;
-        int ship_san_counter = 0;
-        int current_player = 1;
+        Path[] player1Fleet, player2Fleet;
+        int shipSankCounter = 0;
+        int currentPlayer = 1;
         bool isTimerStarted = false;
         static TextBlock timer;
         //static TextBlock player1_miss_tb, player1_hit_tb, player2_miss_tb, player2_hit_tb;
         static DispatcherTimer atimer;
-        public String player1_name { get; set; }
-        public String player2_name { get; set; }
+        public String player1Name { get; set; }
+        public String player2Name { get; set; }
 
         public PvpGame(ref Grid[] fields, List<Ship> ships_class, String player1_name, String player2_name)
         {
@@ -41,11 +41,11 @@ namespace Torpedo.View.pvp_view
             InitializeComponent();
             player1_name = player1_name;
             player2_name = player2_name;
-            set_player1_grids(fields);
-            set_player2_grids();
-            set_fleets();
-            game = new PvpGamemodel(ref player1_grids, ref player2_grids, ref player1_enemy_view, ref player2_enemy_view, ships, ref player1_fleet, ref player2_fleet, this);
-            set_labels();
+            setPlayer1Grids(fields);
+            setPlayer2Grids();
+            setFleets();
+            game = new PvpGamemodel(ref player1Grids, ref player2Grids, ref player1EnemyView, ref player2EnemyView, ships, ref player1Fleet, ref player2Fleet, this);
+            setLabels();
             FileWriter.ReadFromJSON();
         }
 
@@ -54,30 +54,30 @@ namespace Torpedo.View.pvp_view
             atimer = new DispatcherTimer();
             atimer.Interval = TimeSpan.FromSeconds(1);
             atimer.IsEnabled = true;
-            atimer.Tick += set_timert_textblock;
+            atimer.Tick += setTimertTextblock;
         }
 
-        private static void set_timert_textblock(object sender, EventArgs e)
+        private static void setTimertTextblock(object sender, EventArgs e)
         {
             int counter = Int32.Parse(timer.Text);
             counter++;
             timer.Text = counter.ToString();
         }
 
-        private void set_labels()
+        private void setLabels()
         {
-            timer = Timer_counter;
+            timer = TimerCounter;
         }
 
-        private void set_fleets()
+        private void setFleets()
         {
-            player1_fleet = new Path[] { cruiser1, submarine1, battleship1, destroyer1, carrier1 };
-            player2_fleet = new Path[] { cruiser2, submarine2, battleship2, destroyer2, carrier2 };
+            player1Fleet = new Path[] { cruiser1, submarine1, battleship1, destroyer1, carrier1 };
+            player2Fleet = new Path[] { cruiser2, submarine2, battleship2, destroyer2, carrier2 };
         }
 
-        private void set_player1_grids(Grid[] placed_player1_ships_on_grids)
+        private void setPlayer1Grids(Grid[] placedPlayer1ShipsOnGrids)
         {
-            player1_grids = new Grid[] { gridA1, gridA2, gridA3, gridA4, gridA5, gridA6, gridA7, gridA8, gridA9, gridA10,
+            player1Grids = new Grid[] { gridA1, gridA2, gridA3, gridA4, gridA5, gridA6, gridA7, gridA8, gridA9, gridA10,
                                     gridB1, gridB2, gridB3, gridB4, gridB5, gridB6, gridB7, gridB8, gridB9, gridB10,
                                     gridC1, gridC2, gridC3, gridC4, gridC5, gridC6, gridC7, gridC8, gridC9, gridC10,
                                     gridD1, gridD2, gridD3, gridD4, gridD5, gridD6, gridD7, gridD8, gridD9, gridD10,
@@ -88,24 +88,24 @@ namespace Torpedo.View.pvp_view
                                     gridI1, gridI2, gridI3, gridI4, gridI5, gridI6, gridI7, gridI8, gridI9, gridI10,
                                     gridJ1, gridJ2, gridJ3, gridJ4, gridJ5, gridJ6, gridJ7, gridJ8, gridJ9, gridJ10};
             int index = 0;
-            foreach (Grid p in placed_player1_ships_on_grids)
+            foreach (Grid p in placedPlayer1ShipsOnGrids)
             {
                 if (p.Tag.ToString() != "empty")
                 {
-                    player1_grids[index].Tag = "ship";
-                    player1_grids[index].Background = Brushes.Green;
+                    player1Grids[index].Tag = "ship";
+                    player1Grids[index].Background = Brushes.Green;
                 }
                 else
                 {
-                    player1_grids[index].Tag = "empty";
+                    player1Grids[index].Tag = "empty";
                 }
                 index++;
             }
         }
 
-        private void set_player2_grids(Grid[] placed_player2_ships_on_grids)
+        private void setPlayer2Grids(Grid[] placedPlayer2ShipsOnGrids)
         {
-            player2_grids = new Grid[] { gridA1, gridA2, gridA3, gridA4, gridA5, gridA6, gridA7, gridA8, gridA9, gridA10,
+            player2Grids = new Grid[] { gridA1, gridA2, gridA3, gridA4, gridA5, gridA6, gridA7, gridA8, gridA9, gridA10,
                                     gridB1, gridB2, gridB3, gridB4, gridB5, gridB6, gridB7, gridB8, gridB9, gridB10,
                                     gridC1, gridC2, gridC3, gridC4, gridC5, gridC6, gridC7, gridC8, gridC9, gridC10,
                                     gridD1, gridD2, gridD3, gridD4, gridD5, gridD6, gridD7, gridD8, gridD9, gridD10,
@@ -116,24 +116,24 @@ namespace Torpedo.View.pvp_view
                                     gridI1, gridI2, gridI3, gridI4, gridI5, gridI6, gridI7, gridI8, gridI9, gridI10,
                                     gridJ1, gridJ2, gridJ3, gridJ4, gridJ5, gridJ6, gridJ7, gridJ8, gridJ9, gridJ10};
             int index = 0;
-            foreach (Grid p in placed_player2_ships_on_grids)
+            foreach (Grid p in placedPlayer2ShipsOnGrids)
             {
                 if (p.Tag.ToString() != "empty")
                 {
-                    player2_grids[index].Tag = "ship";
-                    player2_grids[index].Background = Brushes.Green;
+                    player2Grids[index].Tag = "ship";
+                    player2Grids[index].Background = Brushes.Green;
                 }
                 else
                 {
-                    player2_grids[index].Tag = "empty";
+                    player2Grids[index].Tag = "empty";
                 }
                 index++;
             }
         }
 
-        private void set_player1_enemy_view()
+        private void setPlayer1EnemyView()
         {
-            player1_enemy_view = new Grid[] { A1, A2, A3, A4, A5, A6, A7, A8, A9, A10,
+            player1EnemyView = new Grid[] { A1, A2, A3, A4, A5, A6, A7, A8, A9, A10,
                                     B1, B2, B3, B4, B5, B6, B7, B8, B9, B10,
                                     C1, C2, C3, C4, C5, C6, C7, C8, C9, C10,
                                     D1, D2, D3, D4, D5, D6, D7, D8, D9, D10,
@@ -145,9 +145,9 @@ namespace Torpedo.View.pvp_view
                                     J1, J2, J3, J4, J5, J6, J7, J8, J9, J10};
         }
 
-        private void set_player2_enemy_view()
+        private void setPlayer2EnemyView()
         {
-            player2_enemy_view = new Grid[] { A1, A2, A3, A4, A5, A6, A7, A8, A9, A10,
+            player2EnemyView = new Grid[] { A1, A2, A3, A4, A5, A6, A7, A8, A9, A10,
                                     B1, B2, B3, B4, B5, B6, B7, B8, B9, B10,
                                     C1, C2, C3, C4, C5, C6, C7, C8, C9, C10,
                                     D1, D2, D3, D4, D5, D6, D7, D8, D9, D10,
@@ -163,11 +163,11 @@ namespace Torpedo.View.pvp_view
 
         bool fel(int honnan, int meddig)
         {
-            if (current_player == 1)
+            if (currentPlayer == 1)
             {
                 for (int i = honnan; i >= meddig; i -= 10)
                 {
-                    if (player1_enemy_view[i].Tag.ToString() == "ship")
+                    if (player1EnemyView[i].Tag.ToString() == "ship")
                     {
                         return false;
                     }
@@ -178,7 +178,7 @@ namespace Torpedo.View.pvp_view
             {
                 for (int i = honnan; i >= meddig; i -= 10)
                 {
-                    if (player2_enemy_view[i].Tag.ToString() == "ship")
+                    if (player2EnemyView[i].Tag.ToString() == "ship")
                     {
                         return false;
                     }
@@ -190,11 +190,11 @@ namespace Torpedo.View.pvp_view
 
         bool le(int honnan, int meddig)
         {
-            if (current_player == 1)
+            if (currentPlayer == 1)
             {
                 for (int i = honnan; i <= meddig; i += 10)
                 {
-                    if (player1_enemy_view[i].Tag.ToString() == "ship")
+                    if (player1EnemyView[i].Tag.ToString() == "ship")
                     {
                         return false;
                     }
@@ -205,7 +205,7 @@ namespace Torpedo.View.pvp_view
             {
                 for (int i = honnan; i <= meddig; i += 10)
                 {
-                    if (player2_enemy_view[i].Tag.ToString() == "ship")
+                    if (player2EnemyView[i].Tag.ToString() == "ship")
                     {
                         return false;
                     }
@@ -216,11 +216,11 @@ namespace Torpedo.View.pvp_view
 
         bool bal(int honnan, int meddig)
         {
-            if (current_player == 1)
+            if (currentPlayer == 1)
             {
                 for (int i = honnan; i >= meddig; i--)
                 {
-                    if (player1_enemy_view[i].Tag.ToString() == "ship")
+                    if (player1EnemyView[i].Tag.ToString() == "ship")
                     {
                         return false;
                     }
@@ -231,7 +231,7 @@ namespace Torpedo.View.pvp_view
             {
                 for (int i = honnan; i >= meddig; i--)
                 {
-                    if (player2_enemy_view[i].Tag.ToString() == "ship")
+                    if (player2EnemyView[i].Tag.ToString() == "ship")
                     {
                         return false;
                     }
@@ -242,11 +242,11 @@ namespace Torpedo.View.pvp_view
 
         bool jobb(int honnan, int meddig)
         {
-            if (current_player == 1)
+            if (currentPlayer == 1)
             {
                 for (int i = honnan; i <= meddig; i++)
                 {
-                    if (player1_enemy_view[i].Tag.ToString() == "ship")
+                    if (player1EnemyView[i].Tag.ToString() == "ship")
                     {
                         return false;
                     }
@@ -257,7 +257,7 @@ namespace Torpedo.View.pvp_view
             {
                 for (int i = honnan; i <= meddig; i++)
                 {
-                    if (player2_enemy_view[i].Tag.ToString() == "ship")
+                    if (player2EnemyView[i].Tag.ToString() == "ship")
                     {
                         return false;
                     }
@@ -267,7 +267,7 @@ namespace Torpedo.View.pvp_view
         }
 
 
-        public bool check_if_the_ship_sank(string irany, int honnan, int meddig)
+        public bool checkIfTheShipSank(string irany, int honnan, int meddig)
         {
             switch (irany)
             {
@@ -282,7 +282,7 @@ namespace Torpedo.View.pvp_view
 
 
 
-        private void grid_pressed(object sender, MouseButtonEventArgs e)
+        private void gridPressed(object sender, MouseButtonEventArgs e)
         {
             if (!isTimerStarted)
             {
@@ -292,61 +292,78 @@ namespace Torpedo.View.pvp_view
 
             Grid clicked_grid = (Grid)sender;
 
-            if (clicked_grid.Tag.ToString() != "Clicked")
+            if(currentPlayer == 1)
             {
-                if (game.check_if_heres_ship(ref clicked_grid))
+                if (clicked_grid.Tag.ToString() != "Clicked")
                 {
-                    foreach (Ship p in game.ai_ships)
+                    if (game.checkIfHeresShip(ref clicked_grid))
                     {
-                        if (!p.isDestroyed)
+                        foreach (Ship p in game.ai_ships)
                         {
-                            if (check_if_the_ship_sank(p.irany, p.kezdet, p.veg))
+                            if (!p.isDestroyed)
                             {
-                                p.isDestroyed = true;
-                                //ship_sank_counter++;
-                                for (int i = 0; i < 5; i++)
+                                if (checkIfTheShipSank(p.shipAlign, p.shipStart, p.shipEnd))
                                 {
-                                    if (en_flotam[i].Name.ToString() == p.nev)
+                                    p.isDestroyed = true;
+                                    //ship_sank_counter++;
+                                    for (int i = 0; i < 5; i++)
                                     {
-                                        gep_flotaja[i].Stroke = Brushes.Red;
-                                        gep_flotaja[i].Opacity = 0.5;
-                                        gep_flotaja[i].IsEnabled = false;
-
-                                        msg(p.nev + "elsülyedt");
-                                        if (ship_sank_counter == 5)
+                                        if (player1Fleet[i].Name.ToString() == p.shipName)
                                         {
-                                            atimer.Stop();
-                                            msg("Gratulálok nyertél!");
-                                            Datas adatok = new Datas(username, "Győzőtt");
-                                            FileWriter.WriteToJSON(adatok);
-                                            new Winner(this).Show();
-                                            grids_disable();
-                                            return;
+                                            player2Fleet[i].Stroke = Brushes.Red;
+                                            player2Fleet[i].Opacity = 0.5;
+                                            player2Fleet[i].IsEnabled = false;
+
+                                            msg(p.shipName + "elsülyedt");
+                                            if (shipSankCounter == 5)
+                                            {
+                                                atimer.Stop();
+                                                msg("Gratulálok nyertél!");
+                                                Datas adatok = new Datas(username, "Győzőtt");
+                                                FileWriter.WriteToJSON(adatok);
+                                                new Winner(this).Show();
+                                                gridsDisable();
+                                                return;
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
                     }
+                    else
+                    {
+                        //set_player_miss_textblock();
+                    }
+                    game.ai_tip(hit, miss, username);
                 }
                 else
                 {
-                    //set_player_miss_textblock();
+                    msg("Ide már klikkeltél egyszer!");
                 }
-                game.ai_tip(hit, miss, username);
             }
             else
             {
-                msg("Ide már klikkeltél egyszer!");
+
             }
         }
 
 
-        private void grids_disable()
+        private void gridsDisable()
         {
-            foreach (Grid q in ai_grids)
+            if (currentPlayer == 1)
             {
-                q.IsEnabled = false;
+                foreach (Grid q in player1EnemyView)
+                {
+                    q.IsEnabled = false;
+                }
+            }
+            else
+            {
+                foreach (Grid q in player2EnemyView)
+                {
+                    q.IsEnabled = false;
+                }
             }
         }
 
