@@ -19,14 +19,12 @@ namespace Torpedo.View.pvp_view
 {
     public partial class PvpGame : Window
     {
-        Grid[] player1Grids;
-        Grid[] player1EnemyView;
-        Grid[] player2Grids;
-        Grid[] player2EnemyView;
+        Grid[] player1Grids, player2Grids;
+        Grid[] player1EnemyView, player2EnemyView;
         PvpGamemodell game;
         List<Ship> ships;
         Path[] player1Fleet, player2Fleet;
-        int shipSankCounter = 0;
+        int shipSankCounterByPlayer1 = 0, shipSankCounterByPlayer2 = 0;
         int currentPlayer = 1;
         bool isTimerStarted = false;
         static TextBlock timer;
@@ -281,7 +279,6 @@ namespace Torpedo.View.pvp_view
         }
 
 
-
         private void gridPressed(object sender, MouseButtonEventArgs e)
         {
             if (!isTimerStarted)
@@ -298,6 +295,7 @@ namespace Torpedo.View.pvp_view
                 {
                     if (game.checkIfHeresShip(ref clicked_grid))
                     {
+                        //set_player_hit_textblock();
                         foreach (Ship p in game.ai_ships)
                         {
                             if (!p.isDestroyed)
@@ -305,7 +303,7 @@ namespace Torpedo.View.pvp_view
                                 if (checkIfTheShipSank(p.shipAlign, p.shipStart, p.shipEnd))
                                 {
                                     p.isDestroyed = true;
-                                    //ship_sank_counter++;
+                                    shipSankCounterByPlayer1++;
                                     for (int i = 0; i < 5; i++)
                                     {
                                         if (player1Fleet[i].Name.ToString() == p.shipName)
@@ -315,13 +313,13 @@ namespace Torpedo.View.pvp_view
                                             player2Fleet[i].IsEnabled = false;
 
                                             msg(p.shipName + "elsülyedt");
-                                            if (shipSankCounter == 5)
+                                            if (shipSankCounterByPlayer1 == 5)
                                             {
                                                 atimer.Stop();
-                                                msg("Gratulálok nyertél!");
-                                                Datas adatok = new Datas(username, "Győzőtt");
-                                                FileWriter.WriteToJSON(adatok);
-                                                new Winner(this).Show();
+                                                msg(player1Name + " nyert!");
+                                                //Datas adatok = new Datas(username, "Győzőtt");
+                                                //FileWriter.WriteToJSON(adatok);
+                                                //new Winner(this).Show();
                                                 gridsDisable();
                                                 return;
                                             }
