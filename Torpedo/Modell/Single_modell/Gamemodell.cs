@@ -12,7 +12,7 @@ using Torpedo.View.single_view;
 
 namespace Torpedo.Modell.Single_modell
 {
-    class Gamemodell : check_if,i_go
+    public class Gamemodell : check_if,i_go
     {
         private enum Irany { fel, le, bal, jobb }
         Dictionary<String, int> placed_ships;
@@ -47,7 +47,7 @@ namespace Torpedo.Modell.Single_modell
             Randomize_for_Ai();
 
         }
-
+        public Gamemodell() { }
         private void set_random_dict()
         {
             i_have_to_pick = new Dictionary<string, bool>();
@@ -108,7 +108,7 @@ namespace Torpedo.Modell.Single_modell
             }
         }
 
-        private string get_random_irany(int number) {
+        public string get_random_irany(int number) {
 
             switch (number) {
                 case 1: return "fel";
@@ -138,7 +138,7 @@ namespace Torpedo.Modell.Single_modell
         
         }
 
-        private int ship_ending(String irany, int kezdet, int hossz)
+        public int ship_ending(String irany, int kezdet, int hossz)
         {
 
             switch (irany)
@@ -272,7 +272,7 @@ namespace Torpedo.Modell.Single_modell
             return false;
         }
 
-        private bool check_if_i_have_grid_next_left(int last_tip)
+        public bool check_if_i_have_grid_next_left(int last_tip)
         {
             if (last_tip % 10 == 0)
             {
@@ -282,7 +282,7 @@ namespace Torpedo.Modell.Single_modell
             return true;
         }
 
-        private bool check_if_i_have_grid_next_right(int last_tip)
+        public bool check_if_i_have_grid_next_right(int last_tip)
         {
             if (last_tip % 10 == 9) {
                 return false;
@@ -291,7 +291,7 @@ namespace Torpedo.Modell.Single_modell
             return true;
         }
 
-        private bool check_if_i_have_grid_under(int last_tip)
+        public bool check_if_i_have_grid_under(int last_tip)
         {
             if (last_tip > 89)
             {
@@ -301,7 +301,7 @@ namespace Torpedo.Modell.Single_modell
             return true;
         }
 
-        private bool check_if_i_have_grid_above(int last_tip)
+        public bool check_if_i_have_grid_above(int last_tip)
         {
             if (last_tip <= 9)
             {

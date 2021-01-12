@@ -6,12 +6,18 @@
       "version": "3.1.0"
     },
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "C:\\Users\\Stiegelmayer Máté\\.dotnet\\store\\|arch|\\|tfm|",
 <<<<<<< HEAD
       "C:\\Users\\gsg9hun\\.nuget\\packages"
 =======
       "C:\\Users\\Stiegelmayer Máté\\.nuget\\packages"
 >>>>>>> stigi
+=======
+      "C:\\Users\\GSG9HUN\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\GSG9HUN\\.nuget\\packages",
+      "D:\\Microsoft\\Xamarin\\NuGet"
+>>>>>>> a359dbb2ab6628509f3659633ea557478b16bdf1
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

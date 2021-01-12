@@ -4,17 +4,26 @@
 winexe
 C#
 .cs
-D:\C#\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\
+C:\Users\GSG9HUN\Documents\GitHub\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\
 Torpedo
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+<<<<<<< HEAD
 D:\C#\Torpedo\Torpedo\App.xaml
 71709042656
 
 15546885740
 193-862715026
 MainWindow.xaml;View\single_view\Game.xaml;View\single_view\Loser.xaml;View\single_view\Result.xaml;View\single_view\Ship_Placement.xaml;View\single_view\Single_player.xaml;View\single_view\Winner.xaml;
+=======
+C:\Users\GSG9HUN\Documents\GitHub\Torpedo\Torpedo\App.xaml
+6-909940676
+
+141850019307
+1931666766225
+MainWindow.xaml;View\single_view\Game.xaml;View\single_view\Loser.xaml;View\single_view\Ship_Placement.xaml;View\single_view\Single_player.xaml;View\single_view\Winner.xaml;
+>>>>>>> a359dbb2ab6628509f3659633ea557478b16bdf1
 
 False
 
