@@ -52,20 +52,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Stiegelmayer Máté\\.nuget\\packages\\": {}
+    "C:\\Users\\GSG9HUN\\.nuget\\packages\\": {},
+    "D:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#\\Torpedo\\Torpedo\\Torpedo.csproj",
+      "projectUniqueName": "C:\\Users\\GSG9HUN\\Documents\\GitHub\\Torpedo\\Torpedo\\Torpedo.csproj",
       "projectName": "Torpedo",
-      "projectPath": "D:\\C#\\Torpedo\\Torpedo\\Torpedo.csproj",
-      "packagesPath": "C:\\Users\\Stiegelmayer Máté\\.nuget\\packages\\",
-      "outputPath": "D:\\C#\\Torpedo\\Torpedo\\obj\\",
+      "projectPath": "C:\\Users\\GSG9HUN\\Documents\\GitHub\\Torpedo\\Torpedo\\Torpedo.csproj",
+      "packagesPath": "C:\\Users\\GSG9HUN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\GSG9HUN\\Documents\\GitHub\\Torpedo\\Torpedo\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Stiegelmayer Máté\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\GSG9HUN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
