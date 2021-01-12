@@ -7,7 +7,11 @@
     },
     "additionalProbingPaths": [
       "C:\\Users\\Stiegelmayer Máté\\.dotnet\\store\\|arch|\\|tfm|",
+<<<<<<< HEAD
       "C:\\Users\\gsg9hun\\.nuget\\packages"
+=======
+      "C:\\Users\\Stiegelmayer Máté\\.nuget\\packages"
+>>>>>>> stigi
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
