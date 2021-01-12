@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-D:\C#\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\
+D:\C#\Torpedo\Torpedo\obj\Release\netcoreapp3.1\
 Torpedo
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1;
 D:\C#\Torpedo\Torpedo\App.xaml
 6-909940676
 
