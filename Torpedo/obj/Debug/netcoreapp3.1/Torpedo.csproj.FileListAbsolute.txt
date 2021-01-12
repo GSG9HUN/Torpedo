@@ -60,6 +60,10 @@ D:\C#\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.csproj.CopyComplete
 D:\C#\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.dll
 D:\C#\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.pdb
 D:\C#\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.genruntimeconfig.cache
+<<<<<<< HEAD
+D:\C#\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Result.g.cs
+D:\C#\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Result.baml
+=======
 C:\Users\GSG9HUN\Documents\GitHub\Torpedo\Torpedo\bin\Debug\netcoreapp3.1\Torpedo.exe
 C:\Users\GSG9HUN\Documents\GitHub\Torpedo\Torpedo\bin\Debug\netcoreapp3.1\Torpedo.deps.json
 C:\Users\GSG9HUN\Documents\GitHub\Torpedo\Torpedo\bin\Debug\netcoreapp3.1\Torpedo.runtimeconfig.json
@@ -91,3 +95,4 @@ C:\Users\GSG9HUN\Documents\GitHub\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torped
 C:\Users\GSG9HUN\Documents\GitHub\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.dll
 C:\Users\GSG9HUN\Documents\GitHub\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.pdb
 C:\Users\GSG9HUN\Documents\GitHub\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.genruntimeconfig.cache
+>>>>>>> a359dbb2ab6628509f3659633ea557478b16bdf1

@@ -37,5 +37,12 @@ namespace Torpedo
             this.Close();
             single_player.Show();
         }
+
+        private void Result_Click(object sender, RoutedEventArgs e)
+        {
+            Result result = new Result();
+            this.Close();
+            result.Show();
+        }
     }
 }
