@@ -82,5 +82,9 @@
   {
     "player_name": "gsg9hun",
     "message": "Győzőtt"
+  },
+  {
+    "player_name": "AI",
+    "message": "Győzött"
   }
 ]

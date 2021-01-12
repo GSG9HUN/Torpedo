@@ -41,6 +41,7 @@ namespace Torpedo.View.single_view
         public delegate void AI_delegate();
         AI_delegate miss = set_AI_miss_textblock;
         AI_delegate hit = set_AI_hit_textblock;
+        Random random = new Random();
 
         public Game(ref Grid[] fields, List<Ship> ships_class,String name)
         {
@@ -54,6 +55,11 @@ namespace Torpedo.View.single_view
             game = new Gamemodell(ref ai_grids, ref my_grids, player_ships,ref en_flotam,this);
             set_labels();
             FileWriter.ReadFromJSON();
+
+            if (random.Next(0, 2) == 1)
+            {
+                game.ai_tip(hit, miss, username);
+            }
             
 
         }
@@ -252,7 +258,7 @@ namespace Torpedo.View.single_view
                                         gep_flotaja[i].Opacity = 0.5;
                                         gep_flotaja[i].IsEnabled = false;
 
-                                        msg(p.nev + "elsülyedt");
+                                        msg(p.nev + " elsülyedt");
                                         if (ship_sank_counter == 5)
                                         {
                                             atimer.Stop();
