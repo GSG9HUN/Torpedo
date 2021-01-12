@@ -60,3 +60,5 @@ D:\C#\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.csproj.CopyComplete
 D:\C#\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.dll
 D:\C#\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.pdb
 D:\C#\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.genruntimeconfig.cache
+D:\C#\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Result.g.cs
+D:\C#\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\single_view\Result.baml
