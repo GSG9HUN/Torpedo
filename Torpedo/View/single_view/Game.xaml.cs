@@ -54,7 +54,11 @@ namespace Torpedo.View.single_view
             set_flottak();
             game = new Gamemodell(ref ai_grids, ref my_grids, player_ships,ref en_flotam,this);
             set_labels();
-            FileWriter.ReadFromJSON();
+            if (FileWriter.list_adatok == null)
+            {
+                FileWriter.ReadFromJSON();
+            }
+         
 
             if (random.Next(0, 2) == 1)
             {
@@ -263,7 +267,7 @@ namespace Torpedo.View.single_view
                                         {
                                             atimer.Stop();
                                             msg("Gratulálok nyertél!");
-                                            Datas adatok = new Datas(username,"Győzőtt");
+                                            Datas adatok = new Datas(username,"Győzőtt","AI","Vesztett");
                                             FileWriter.WriteToJSON(adatok);
                                             new Winner(this).Show();
                                             grids_disable();

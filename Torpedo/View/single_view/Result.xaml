@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Torpedo.View.single_view"
         mc:Ignorable="d"
-        Title="Result" Height="500" Width="500">
+        Title="Result" Height="500" Width="500" ResizeMode="NoResize">
     <Canvas Background="Cornsilk">
         <TextBlock Width="300" Height="60" FontSize="35" Foreground="Darkred" Canvas.Left="100" Canvas.Top="10" TextAlignment="center" FontWeight="Bold">Results:</TextBlock>
         <Button x:Name="Back" Width="200" Height="60" FontSize="25" Foreground="Darkred" Canvas.Left="150" Canvas.Top="380" FontStyle="Italic" Click="Back_Click">Back</Button>

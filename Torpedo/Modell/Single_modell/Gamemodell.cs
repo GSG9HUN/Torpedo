@@ -208,7 +208,7 @@ namespace Torpedo.Modell.Single_modell
             }
         }
 
-        private void ship_sank() {
+        private void ship_sank(string username) {
 
             foreach (Ship p in player_ships)
             {
@@ -240,7 +240,7 @@ namespace Torpedo.Modell.Single_modell
                                 {
                                     grids_disable();
                                     msg("Sajnos Vesztettél!");                                 
-                                    Datas adatok = new Datas("AI","Győzött");
+                                    Datas adatok = new Datas("AI","Győzött",username,"Vesztett");
                                     FileWriter.WriteToJSON(adatok);
                                     game.popup_loser_window();
                                 }
@@ -350,7 +350,7 @@ namespace Torpedo.Modell.Single_modell
                             if (can_i_click_there(temp_last_tip_pos))
                             {
                                 i_have_to_pick[iterator.Key] = false;
-                                checker_tip(temp_last_tip_pos, ref empty_tip, miss_delegate, hit_delegate);
+                                checker_tip(temp_last_tip_pos, ref empty_tip, miss_delegate, hit_delegate,username);
                                 i_clicked_there = true;
                                 break;
                             }
@@ -384,7 +384,7 @@ namespace Torpedo.Modell.Single_modell
                                 if (can_i_click_there(temp_last_tip_pos))
                                 {
                                     i_have_to_pick[iterator.Key] = false;
-                                    checker_tip(temp_last_tip_pos, ref empty_tip, miss_delegate, hit_delegate);
+                                    checker_tip(temp_last_tip_pos, ref empty_tip, miss_delegate, hit_delegate,username);
                                     i_clicked_there = true;
                                     break;
                                 }
@@ -409,7 +409,7 @@ namespace Torpedo.Modell.Single_modell
                 do
                 {
                     tip = random.Next(0, 100);
-                    checker_tip(tip, ref empty_tip, miss_delegate, hit_delegate);
+                    checker_tip(tip, ref empty_tip, miss_delegate, hit_delegate,username);
 
                 } while (empty_tip == false);
 
@@ -438,7 +438,7 @@ namespace Torpedo.Modell.Single_modell
             return true;
         }
 
-        private void checker_tip(int tip, ref bool empty_tip, Game.AI_delegate miss_delegate, Game.AI_delegate hit_delegate)
+        private void checker_tip(int tip, ref bool empty_tip, Game.AI_delegate miss_delegate, Game.AI_delegate hit_delegate,string username)
         {
             if (my_grids[tip].Tag.ToString() == "empty")
             {
@@ -460,7 +460,7 @@ namespace Torpedo.Modell.Single_modell
                     first_direct_hi_pos = tip;
                     first_tip_counter++;
                 }
-                ship_sank();
+                ship_sank(username);
                 set_default();
                
             }

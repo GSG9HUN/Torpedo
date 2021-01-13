@@ -20,6 +20,7 @@ namespace Torpedo.View.single_view
         public Result()
         {
             InitializeComponent();
+            FileWriter.ReadFromJSON();
         }
         private void Back_Click(object sender, RoutedEventArgs e)
         {

@@ -14,7 +14,7 @@ namespace Torpedo
     
     class FileWriter
     {
-        static string filepath = "gyoztesek.json";
+        static string filepath = "results.json";
         public static List<Datas> list_adatok = new List<Datas>();
         public static void WriteToJSON(Datas adatok)
         {

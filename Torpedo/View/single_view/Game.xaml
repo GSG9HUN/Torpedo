@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Torpedo.View.single_view"
         mc:Ignorable="d"
-        Title="Game" Height="550" Width="1250" Keyboard.KeyDown="Cheating" Background="Cornsilk">
+        Title="Game" Height="550" Width="1250" Keyboard.KeyDown="Cheating" Background="Cornsilk" ResizeMode="NoResize">
     <Grid Margin="0,6,0,-6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
