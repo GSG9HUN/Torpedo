@@ -34,9 +34,9 @@ namespace Torpedo
             }
             else
             {
-                PvpShipPlacement pvpShipPlacement = new PvpShipPlacement(player1Name, player2Name);
+                Pvp1ShipPlacement pvp1ShipPlacement = new Pvp1ShipPlacement(player1Name, player2Name);
                 this.Close();
-                PvpShipPlacement.Show();
+                Pvp1ShipPlacement.Show();
             }
         }
 

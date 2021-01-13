@@ -11,11 +11,11 @@
         <Label Width="150"  Canvas.Left="175" Canvas.Top="200" >
             Player 1 name:
         </Label>
-        <TextBox x:Name="player1Name" Width="150"  Canvas.Left="175" Canvas.Top="224"></TextBox>
+        <TextBox x:Name="player1NameTB" Width="150"  Canvas.Left="175" Canvas.Top="224"></TextBox>
         <Label Width="150"  Canvas.Left="175" Canvas.Top="240" >
             Player 2 name:
         </Label>
-        <TextBox x:Name="player2Name" Width="150"  Canvas.Left="175" Canvas.Top="264"></TextBox>
+        <TextBox x:Name="player2NameTB" Width="150"  Canvas.Left="175" Canvas.Top="264"></TextBox>
         <Button Canvas.Top="301" Width="100" Canvas.Left="200" Click="StartClick">Start</Button>
         <Button Canvas.Top="368" Width="68" Canvas.Left="216" Click="BackClick">Back</Button>
     </Canvas>
