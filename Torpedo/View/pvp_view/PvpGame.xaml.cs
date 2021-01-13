@@ -22,7 +22,7 @@ namespace Torpedo.View.pvp_view
         Grid[] player1Grids, player2Grids;
         Grid[] player1EnemyView, player2EnemyView;
         PvpGamemodell game;
-        List<Ship> ships;
+        List<Ship> player1Ships, player2Ships;
         Path[] player1Fleet, player2Fleet;
         int shipSankCounterByPlayer1 = 0, shipSankCounterByPlayer2 = 0;
         int currentPlayer = 1;
@@ -33,16 +33,17 @@ namespace Torpedo.View.pvp_view
         public String player1Name { get; set; }
         public String player2Name { get; set; }
 
-        public PvpGame(ref Grid[] fields, List<Ship> ships_class, String player1_name, String player2_name)
+        public PvpGame(ref Grid[] player1Fields, ref Grid[] player2Fields, List<Ship> player1Ships, List<Ship> player2Ships, String player1Name, String player2Name)
         {
-            ships = ships_class;
+            setPlayer1Grids(player1Fields);
+            setPlayer2Grids(player2Fields);
+            player1Ships = player1Ships;
+            player2Ships = player2Ships;
             InitializeComponent();
-            player1_name = player1_name;
-            player2_name = player2_name;
-            setPlayer1Grids(fields);
-            setPlayer2Grids();
+            player1Name = player1Name;
+            player2Name = player2Name;
             setFleets();
-            game = new PvpGamemodel(ref player1Grids, ref player2Grids, ref player1EnemyView, ref player2EnemyView, ships, ref player1Fleet, ref player2Fleet, this);
+            game = new PvpGamemodell(ref player1Grids, ref player2Grids, player1Ships, player2Ships, ref player1Fleet, ref player2Fleet, this);
             setLabels();
             FileWriter.ReadFromJSON();
         }
@@ -331,9 +332,9 @@ namespace Torpedo.View.pvp_view
                     }
                     else
                     {
-                        //set_player_miss_textblock();
+                        //setPlayer1MissTextblock();
                     }
-                    game.ai_tip(hit, miss, username);
+                    currentPlayer = 2;
                 }
                 else
                 {

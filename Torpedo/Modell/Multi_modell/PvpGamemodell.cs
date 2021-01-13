@@ -49,5 +49,20 @@ namespace Torpedo.Modell.Multi_modell
             }
         }
 
+        public bool checkIfHeresShip(ref Grid clicked_grid)
+        {
+            if (clicked_grid.Tag.ToString() == "ship")
+            {
+                clicked_grid.Background = hit;
+                clicked_grid.Tag = "Clicked";
+                return true;
+            }
+            else
+            {
+                clicked_grid.Background = miss;
+                clicked_grid.Tag = "Clicked";
+                return false;
+            }
+        }
     }
 }
