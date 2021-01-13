@@ -1,0 +1,22 @@
+﻿<Window x:Class="Torpedo.MultiPlayer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:local="clr-namespace:Torpedo"
+      mc:Ignorable="d" 
+      Title="Multiplayer" Height="500" Width="500" ResizeMode="NoResize" >
+
+    <Canvas>
+        <Label Width="150"  Canvas.Left="175" Canvas.Top="200" >
+            Player 1 name:
+        </Label>
+        <TextBox x:Name="player1Name" Width="150"  Canvas.Left="175" Canvas.Top="224"></TextBox>
+        <Label Width="150"  Canvas.Left="175" Canvas.Top="240" >
+            Player 2 name:
+        </Label>
+        <TextBox x:Name="player2Name" Width="150"  Canvas.Left="175" Canvas.Top="264"></TextBox>
+        <Button Canvas.Top="301" Width="100" Canvas.Left="200" Click="StartClick">Start</Button>
+        <Button Canvas.Top="368" Width="68" Canvas.Left="216" Click="BackClick">Back</Button>
+    </Canvas>
+</Window>
