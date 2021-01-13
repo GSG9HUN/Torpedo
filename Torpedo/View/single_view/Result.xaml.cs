@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Torpedo.Modell.Single_modell;
 
 namespace Torpedo.View.single_view
 {
@@ -20,7 +21,17 @@ namespace Torpedo.View.single_view
         public Result()
         {
             InitializeComponent();
-            FileWriter.ReadFromJSON();
+            if (FileWriter.list_adatok.Count==0)
+            {
+                FileWriter.ReadFromJSON();
+            }  
+
+            foreach(Datas p in FileWriter.list_adatok){
+                listbox_winner.Items.Add(p.player_name);
+                listbox_loser.Items.Add(p.player_name2);
+               
+            }
+          
         }
         private void Back_Click(object sender, RoutedEventArgs e)
         {

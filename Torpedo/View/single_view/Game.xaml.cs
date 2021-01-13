@@ -54,7 +54,7 @@ namespace Torpedo.View.single_view
             set_flottak();
             game = new Gamemodell(ref ai_grids, ref my_grids, player_ships,ref en_flotam,this);
             set_labels();
-            if (FileWriter.list_adatok == null)
+            if (FileWriter.list_adatok.Count==0)
             {
                 FileWriter.ReadFromJSON();
             }
