@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\pvp_view\MultiPlayer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\pvp_view\Pvp1ShipPlacement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\single_view\Game.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -22,6 +28,12 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\pvp_view\MultiPlayer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\pvp_view\Pvp1ShipPlacement.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\pvp_view\PvpGame.xaml">

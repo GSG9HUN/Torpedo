@@ -714,9 +714,9 @@ namespace Torpedo.View.pvp_view
             }
             else
             {
-                //Game game = new Game(ref fields, ships_class, name);
+                Pvp2ShipPlacement pvp2ShipPlacement = new Pvp2ShipPlacement(ref fields, ships_class, player1Name, player2Name);
                 this.Close();
-                //game.Show();
+                Pvp2ShipPlacement.Show();
             }
         }
     }
