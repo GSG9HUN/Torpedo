@@ -32,6 +32,10 @@
     "message": "Győzött"
   },
   {
+    "player_name": "AI",
+    "message": "Győzött"
+  },
+  {
     "player_name": "gfhfgh",
     "message": "Győzőtt"
   },
@@ -76,11 +80,10 @@
     "message": "Győzőtt"
   },
   {
-    "player_name": "er",
+    "player_name": "gdxg",
     "message": "Győzőtt"
   },
   {
-<<<<<<< HEAD
     "player_name": "zsofula",
     "message": "Győzőtt"
   },
@@ -94,14 +97,14 @@
   },
   {
     "player_name": "stigi",
-    "message": "Győzőtt"
-=======
+    "message": "Győzőtt",
+  },
+  {
     "player_name": "gsg9hun",
     "message": "Győzőtt"
   },
   {
     "player_name": "AI",
-    "message": "Győzött"
->>>>>>> a359dbb2ab6628509f3659633ea557478b16bdf1
+    "message": "Győzött",
   }
 ]
