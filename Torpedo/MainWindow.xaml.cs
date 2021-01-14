@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Torpedo.View.single_view;
+using Torpedo.View.pvp_view;
 
 namespace Torpedo
 {
@@ -36,6 +37,13 @@ namespace Torpedo
             Single_player single_player = new Single_player();
             this.Close();
             single_player.Show();
+        }
+
+        private void PvpClick(object sender, RoutedEventArgs e)
+        {
+            MultiPlayer multiPlayer = new MultiPlayer();
+            this.Close();
+            multiPlayer.Show();
         }
     }
 }

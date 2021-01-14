@@ -8,7 +8,7 @@
         Title="Menu" Height="500" Width="500" ResizeMode="NoResize">
     <Canvas>
         <Button x:Name="Single" Width="150" Height="50" Canvas.Left="175" Canvas.Top="113" Click="Single_Click" >Single player</Button>
-        <Button x:Name="Multi" Width="150" Height="50" Canvas.Left="175" Canvas.Top="217">2 Players</Button>
+        <Button x:Name="Multi" Width="150" Height="50" Canvas.Left="175" Canvas.Top="217" Click="PvpClick">2 Players</Button>
         <Button x:Name="Exit" Width="100" Height="50" Canvas.Left="200" Canvas.Top="321" Click="Exit_Click">Exit</Button>
 
     </Canvas>
