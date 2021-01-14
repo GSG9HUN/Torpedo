@@ -297,7 +297,7 @@ namespace Torpedo.View.pvp_view
                     if (game.checkIfHeresShip(ref clicked_grid))
                     {
                         //set_player_hit_textblock();
-                        foreach (Ship p in game.player2_Ships)
+                        foreach (Ship p in player2Ships)
                         {
                             if (!p.isDestroyed)
                             {
