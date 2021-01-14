@@ -40,5 +40,11 @@
     "player_name2": "AI",
     "message": "Győzőtt",
     "message2": "Vesztett"
+  },
+  {
+    "player_name": "ss",
+    "player_name2": "AI",
+    "message": "Győzőtt",
+    "message2": "Vesztett"
   }
 ]

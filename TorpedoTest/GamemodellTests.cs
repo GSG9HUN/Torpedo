@@ -21,6 +21,8 @@ namespace TorpedoTest
             Assert.AreEqual("", game.get_random_irany(0));
             
             Assert.AreEqual("", game.get_random_irany(1456498));
+
+            Assert.AreEqual("", game.get_random_irany(-2347));
         }
         [TestMethod]
         public void ship_ending_tests()
@@ -49,6 +51,8 @@ namespace TorpedoTest
             
             Assert.AreEqual(false, game.check_if_i_have_grid_next_left(10));
 
+            Assert.AreEqual(false, game.check_if_i_have_grid_next_left(-10));
+
         }
 
         [TestMethod]
@@ -64,6 +68,7 @@ namespace TorpedoTest
             
             Assert.AreEqual(false, game.check_if_i_have_grid_next_right(29));
 
+            Assert.AreEqual(false, game.check_if_i_have_grid_next_right(39));
 
         }
 
@@ -79,6 +84,8 @@ namespace TorpedoTest
             Assert.AreEqual(true, game.check_if_i_have_grid_above(98));
             
             Assert.AreEqual(false, game.check_if_i_have_grid_above(5));
+
+            Assert.AreEqual(false, game.check_if_i_have_grid_above(-10));
         }
         [TestMethod]
         public void check_if_i_have_grid_next_under_tests()
@@ -92,6 +99,9 @@ namespace TorpedoTest
             Assert.AreEqual(true, game.check_if_i_have_grid_under(0));
             
             Assert.AreEqual(false, game.check_if_i_have_grid_under(90));
+
+            Assert.AreEqual(false, game.check_if_i_have_grid_under(180));
+
         }
 
         [TestMethod]
@@ -111,7 +121,7 @@ namespace TorpedoTest
             
             Assert.AreEqual(0, game.check_ship(""));
 
-
+            Assert.AreEqual(0, game.check_ship("5"));
         }
     }
 
