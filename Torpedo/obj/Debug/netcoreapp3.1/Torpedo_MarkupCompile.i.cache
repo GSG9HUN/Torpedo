@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\App.xaml
-9307814013
+10-1320630684
 
-211097445307
+221942794375
 1931531222088
-MainWindow.xaml;View\pvp_view\MultiPlayer.xaml;View\pvp_view\Pvp1ShipPlacement.xaml;View\pvp_view\PvpGame.xaml;View\single_view\Game.xaml;View\single_view\Loser.xaml;View\single_view\Ship_Placement.xaml;View\single_view\Single_player.xaml;View\single_view\Winner.xaml;
+MainWindow.xaml;View\pvp_view\MultiPlayer.xaml;View\pvp_view\Pvp1ShipPlacement.xaml;View\pvp_view\Pvp2ShipPlacement.xaml;View\pvp_view\PvpGame.xaml;View\single_view\Game.xaml;View\single_view\Loser.xaml;View\single_view\Ship_Placement.xaml;View\single_view\Single_player.xaml;View\single_view\Winner.xaml;
 
-True
+False
 

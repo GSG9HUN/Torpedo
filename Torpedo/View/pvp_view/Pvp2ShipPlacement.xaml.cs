@@ -18,9 +18,9 @@ using Torpedo.Modell.Multi_modell;
 namespace Torpedo.View.pvp_view
 {
     /// <summary>
-    /// Interaction logic for Pvp1ShipPlacement.xaml
+    /// Interaction logic for Pvp2ShipPlacement.xaml
     /// </summary>
-    public partial class Pvp1ShipPlacement : Window
+    public partial class Pvp2ShipPlacement : Window
     {
         bool ballra_mehet = true;
         bool jobbra_mehet = true;
@@ -31,21 +31,24 @@ namespace Torpedo.View.pvp_view
         String irany { get; set; }
         String selected_ship { get; set; }
         List<Ship> ships_class = new List<Ship>();
+        List<Ship> player1Ships = new List<Ship>();
         //public Ship[] ships_class;
         Path[] ships;
         Polygon[] arrows;
         Path lastship;
         Polygon lastarrow;
         Dictionary<string, int> placed_ship = new Dictionary<string, int>();
-        String name, player2Name;
+        String name, player1Name;
         SolidColorBrush unselected = new SolidColorBrush(Colors.Black);
         SolidColorBrush selected = new SolidColorBrush(Colors.Green);
-        Grid[] fields;
+        Grid[] fields, player1Fields;
 
-        public Pvp1ShipPlacement(string player1Name, string player2Name)
+        public Pvp2ShipPlacement(ref Grid[] player1Fields, List<Ship> player1Ships, string player1Name, string player2Name)
         {
-            this.name = player1Name;
-            this.player2Name = player2Name;
+            this.name = player2Name;
+            this.player1Name = player1Name;
+            this.player1Fields = player1Fields;
+            this.player1Ships = player1Ships;
             InitializeComponent();
             irany = "fel";
             fields = new Grid[]
@@ -577,7 +580,7 @@ namespace Torpedo.View.pvp_view
                 }
                 if (!contains)
                 {
-                    ships_class.Add(new Ship(selected_ship, honnan,  ship_ending("le", honnan, check_ship(selected_ship)), "le", false));
+                    ships_class.Add(new Ship(selected_ship, honnan, ship_ending("le", honnan, check_ship(selected_ship)), "le", false));
                 }
 
                 manual_counter++;
@@ -712,10 +715,11 @@ namespace Torpedo.View.pvp_view
             }
             else
             {
-                Pvp2ShipPlacement pvp2ShipPlacement = new Pvp2ShipPlacement(ref fields, ships_class, name, player2Name);
+                PvpGame pvpGame = new PvpGame(ref player1Fields, ref fields, player1Ships, ships_class, player1Name, name);
                 this.Close();
-                pvp2ShipPlacement.Show();
+                pvpGame.Show();
             }
         }
     }
 }
+
