@@ -1,11 +1,11 @@
-﻿<Window x:Class="Torpedo.View.single_view.Game"
+﻿<Window x:Class="Torpedo.View.pvp_view.PvpGame"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Torpedo.View.single_view"
         mc:Ignorable="d"
-        Title="Game" Height="550" Width="1250" Keyboard.KeyDown="Cheating">
+        Title="Game" Height="550" Width="1250">
 
 
 
@@ -394,7 +394,7 @@
 
 
             <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="488" Canvas.Top="78.24" Height="28.8" Stretch="Fill" Width="56.8"
-            		x:Name="destroyer" >
+            		x:Name="destroyer1" >
                 <Path.Data>
                     <GeometryGroup>
                         <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
@@ -403,7 +403,7 @@
                 </Path.Data>
             </Path>
             <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="382.2" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
-                	x:Name="cruiser">
+                	x:Name="cruiser1">
                 <Path.Data>
                     <GeometryGroup>
                         <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
@@ -413,7 +413,7 @@
                 </Path.Data>
             </Path>
             <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="290.5" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
-                	x:Name="submarine">
+                	x:Name="submarine1">
                 <Path.Data>
                     <GeometryGroup>
                         <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
@@ -423,7 +423,7 @@
                 </Path.Data>
             </Path>
             <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="10" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="116.8"
-                	x:Name="battleship">
+                	x:Name="battleship1">
                 <Path.Data>
                     <GeometryGroup>
                         <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
@@ -434,7 +434,7 @@
                 </Path.Data>
             </Path>
             <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="133" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="148"
-                	x:Name="carrier"  >
+                	x:Name="carrier1"  >
                 <Path.Data>
                     <GeometryGroup>
                         <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
@@ -471,7 +471,7 @@
 
 
             <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="488" Canvas.Top="78.24" Height="28.8" Stretch="Fill" Width="56.8"
-                x:Name="destroyer1" >
+                x:Name="destroyer2" >
                 <Path.Data>
                     <GeometryGroup>
                         <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
@@ -480,7 +480,7 @@
                 </Path.Data>
             </Path>
             <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="382.2" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
-                x:Name="cruiser1" >
+                x:Name="cruiser2" >
                 <Path.Data>
                     <GeometryGroup>
                         <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
@@ -490,7 +490,7 @@
                 </Path.Data>
             </Path>
             <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="290.5" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="74.4"
-                x:Name="submarine1" >
+                x:Name="submarine2" >
                 <Path.Data>
                     <GeometryGroup>
                         <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
@@ -500,7 +500,7 @@
                 </Path.Data>
             </Path>
             <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="10" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="116.8"
-                x:Name="battleship1" >
+                x:Name="battleship2" >
                 <Path.Data>
                     <GeometryGroup>
                         <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
@@ -511,7 +511,7 @@
                 </Path.Data>
             </Path>
             <Path Stroke="Black" StrokeThickness="2" Fill="#FFA2A2F1" Canvas.Left="133" Canvas.Top="79.84" Height="27.2" Stretch="Fill" Width="148"
-                x:Name="carrier1">
+                x:Name="carrier2">
                 <Path.Data>
                     <GeometryGroup>
                         <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />

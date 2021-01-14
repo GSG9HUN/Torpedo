@@ -19,6 +19,8 @@ namespace Torpedo.Modell.Multi_modell
         Grid[] player1Grids, player2Grids;
         List<Ship> player1Ships, player2Ships;
         PvpGame pvpGame;
+        public Ship[] player2_Ships;
+        public Ship[] player1_Ships;
         public Path[] player1Fleet, player2Fleet;
 
         public PvpGamemodell(ref Grid[] player1Grids, ref Grid[] player2Grids, List<Ship> player1Ships, List<Ship> player2Ships, ref Path[] player1Fleet, ref Path[] player2Fleet, PvpGame pvpGame)

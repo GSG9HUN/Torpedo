@@ -60,4 +60,11 @@ C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\
 C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.dll
 C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.pdb
 C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\Torpedo.genruntimeconfig.cache
-C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\pvp_view\Game.g.cs
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\pvp_view\MultiPlayer.g.cs
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\pvp_view\Pvp1ShipPlacement.g.cs
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\pvp_view\Pvp2ShipPlacement.g.cs
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\pvp_view\PvpGame.g.cs
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\pvp_view\MultiPlayer.baml
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\pvp_view\Pvp1ShipPlacement.baml
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\pvp_view\Pvp2ShipPlacement.baml
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\pvp_view\PvpGame.baml

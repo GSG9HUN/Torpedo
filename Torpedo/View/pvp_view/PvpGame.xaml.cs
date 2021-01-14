@@ -65,7 +65,7 @@ namespace Torpedo.View.pvp_view
 
         private void setLabels()
         {
-            timer = TimerCounter;
+            timer = Timer_counter;
         }
 
         private void setFleets()
@@ -280,7 +280,7 @@ namespace Torpedo.View.pvp_view
         }
 
 
-        private void gridPressed(object sender, MouseButtonEventArgs e)
+        private void grid_pressed(object sender, MouseButtonEventArgs e)
         {
             if (!isTimerStarted)
             {
@@ -297,7 +297,7 @@ namespace Torpedo.View.pvp_view
                     if (game.checkIfHeresShip(ref clicked_grid))
                     {
                         //set_player_hit_textblock();
-                        foreach (Ship p in game.ai_ships)
+                        foreach (Ship p in game.player2_Ships)
                         {
                             if (!p.isDestroyed)
                             {

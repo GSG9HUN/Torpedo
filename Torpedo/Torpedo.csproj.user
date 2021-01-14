@@ -13,6 +13,9 @@
     <Compile Update="View\pvp_view\Pvp1ShipPlacement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\pvp_view\Pvp2ShipPlacement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\single_view\Game.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -34,6 +37,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\pvp_view\Pvp1ShipPlacement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\pvp_view\Pvp2ShipPlacement.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\pvp_view\PvpGame.xaml">
