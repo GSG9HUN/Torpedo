@@ -46,7 +46,7 @@ namespace Torpedo.View.pvp_view
             this.name = player1Name;
             this.player2Name = player2Name;
             InitializeComponent();
-            string tb = player1Name + "'s ship placement";
+            string tb = player1Name + " seregének összeállítása";
             Who.Text = tb;
             irany = "fel";
             fields = new Grid[]

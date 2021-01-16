@@ -10,8 +10,8 @@
         <ListBox x:Name="listbox_winner" Height="235" Width="152" Canvas.Left="43" Canvas.Top="125"/>
         <Label Height="50" Width="127" Content="Győztesek" FontSize="20" Canvas.Left="68" Canvas.Top="75"/>
         <Label Height="50" Width="127" Content="Vesztesek" FontSize="20" Canvas.Left="300" Canvas.Top="75"/>
-        <TextBlock Width="300" Height="60" FontSize="35" Foreground="Darkred" Canvas.Left="100" Canvas.Top="10" TextAlignment="center" FontWeight="Bold">Results:</TextBlock>
-        <Button x:Name="Back" Width="200" Height="60" FontSize="25" Foreground="Darkred" Canvas.Left="150" Canvas.Top="380" FontStyle="Italic" Click="Back_Click">Back</Button>
+        <TextBlock Width="300" Height="60" FontSize="35" Foreground="Darkred" Canvas.Left="100" Canvas.Top="10" TextAlignment="center" FontWeight="Bold">Eredények:</TextBlock>
+        <Button x:Name="Back" Width="200" Height="60" FontSize="25" Foreground="Darkred" Canvas.Left="150" Canvas.Top="380" FontStyle="Italic" Click="Back_Click">Vissza</Button>
         <ListBox x:Name="listbox_loser" Height="235" Width="152" Canvas.Left="275" Canvas.Top="125"/>
     </Canvas>
 </Window>

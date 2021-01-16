@@ -378,7 +378,7 @@
         </Grid>
 
         <Canvas Margin="29,367,46,0">
-            <Label Canvas.Left="209" Width="132" FontWeight="Bold" FontSize="20" Canvas.Top="8" Foreground="DarkRed">A Te flottád:</Label>
+            <Label Canvas.Left="185" Width="180" FontWeight="Bold" FontSize="20" Canvas.Top="10" Foreground="DarkRed">Játékos1 flottája:</Label>
             <Label Canvas.Left="289" Width="80" FontWeight="Bold" FontSize="14" Content="Submarine" Canvas.Top="50"/>
             <Label Canvas.Left="180" Width="90" FontWeight="Bold" FontSize="16" Content="Carrier" Canvas.Top="45" Height="30"/>
             <Label  Width="132" FontWeight="Bold" FontSize="16" Content="Battleship" Canvas.Left="25" Canvas.Top="45"/>
@@ -441,20 +441,20 @@
         </Canvas>
         <Canvas Grid.ColumnSpan="2" Margin="357,52,421,168"/>
         <Label Margin="512,50,512,420" Grid.ColumnSpan="2" FontSize="25" Foreground="DarkRed">Idő:</Label>
-        <TextBlock x:Name="Timer_counter" Text="0" FontSize="25" Margin="572,57,616,410" Grid.ColumnSpan="2"/>
-        <TextBlock Margin="450,110,0,370" x:Name="playerMoves" FontSize="20" Foreground="DarkRed"/>
+        <TextBlock x:Name="Timer_counter" Text="0" FontSize="25" Margin="572,57,616,410" TextAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock Margin="445,116,10,0" x:Name="playerMoves" FontSize="25" VerticalAlignment="Top" TextAlignment="Right" Foreground="DarkRed"/>
         <TextBlock Margin="14,116,450,350" Text="lép" FontSize="25" Grid.Column="1" Foreground="DarkRed"/>
         <Label FontSize="25" Margin="10,52,548,422" Foreground="DarkRed" Content="s" Grid.Column="1"/>
-        <Label Margin="335,173,70,235" Foreground="DarkRed" FontSize="25">Player 1 találatok:</Label>
-        <TextBlock Margin="575,180,0,290" x:Name="player1Hit" Text="0" FontSize="25"/>
-        <Label Margin="0,173,370,258" Grid.Column="1" Foreground="DarkRed" FontSize="25">Player 2 találatok:</Label>
-        <TextBlock x:Name="player2Hit" Text="0" Grid.Column="1" Margin="203,180,374,300" FontSize="25"/>
-        <Label Margin="335,250,70,200" FontSize="20" Foreground="DarkRed" Content="Player 1 mellé lövések:"/>
-        <TextBlock Margin="577,255,0,220" x:Name="player1Miss" Text="0" FontSize="20"/>
+        <Label Margin="383,174,22,234" Foreground="DarkRed" FontSize="25" Content="Játékos1 találatok:"/>
+        <TextBlock Margin="395,206,180,264" x:Name="player1Hit" Text="0" FontSize="25"/>
+        <Label Margin="0,173,370,258" Grid.Column="1" Foreground="DarkRed" FontSize="25">Játékos2 találatok:</Label>
+        <TextBlock x:Name="player2Hit" Text="0" Grid.Column="1" Margin="10,206,567,274" FontSize="25"/>
+        <Label Margin="383,250,22,200" FontSize="20" Foreground="DarkRed" Content="Játékos1 mellé lövések:"/>
+        <TextBlock Margin="395,285,182,190" x:Name="player1Miss" Text="0" FontSize="20"/>
 
         <Canvas Margin="25,367,50,0" Grid.Column="1">
 
-            <Label Canvas.Left="204" Width="190" FontWeight="Bold" FontSize="20" Foreground="DarkRed" Content="Az ellenfél flottája:" Canvas.Top="8"/>
+            <Label Canvas.Left="204" Width="190" FontWeight="Bold" FontSize="20" Foreground="DarkRed" Content="Játékos2 flottája:" Canvas.Top="8"/>
             <Label Canvas.Left="287" Width="80" FontWeight="Bold" FontSize="14" Content="Submarine" Canvas.Top="50"/>
             <Label Canvas.Left="175" Width="90" FontWeight="Bold" FontSize="16" Content="Carrier" Canvas.Top="45" Height="30"/>
             <Label  Width="132" FontWeight="Bold" FontSize="16" Content="Battleship" Canvas.Left="25" Canvas.Top="45"/>
@@ -548,8 +548,8 @@
         <Label x:Name="lblVerticalI_Copy1" Content="I" Margin="312,309,223,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" Foreground="DarkRed" FontSize="15"/>
         <Label x:Name="lblVerticalJ_Copy1" Content="J" Margin="312,337,223,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" Foreground="DarkRed" FontSize="15" RenderTransformOrigin="8.609,0.198"/>
 
-        <Label Margin="0,250,380,200" Grid.Column="1" FontSize="20" Foreground="DarkRed" Content="Player 2 mellé lövések:"/>
-        <TextBlock  x:Name="player2Miss" Text="0" Grid.Column="1" Margin="212,255,360,220" FontSize="20"/>
+        <Label Margin="0,250,380,200" Grid.Column="1" FontSize="20" Foreground="DarkRed" Content="Játékos2 mellé lövések:"/>
+        <TextBlock  x:Name="player2Miss" Text="0" Grid.Column="1" Margin="10,285,562,190" FontSize="20"/>
 
     </Grid>
 
