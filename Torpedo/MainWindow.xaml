@@ -8,9 +8,9 @@
         Title="Battleship 1.0" Height="500" Width="500" ResizeMode="NoResize">
     <Canvas Background="Cornsilk">
 		<TextBlock Width="300" Height="60" FontSize="35" Foreground="Darkred" Canvas.Left="100" Canvas.Top="10" TextAlignment="center" FontWeight="Bold">BATTLESHIP</TextBlock>
-        <Button x:Name="Single" Width="200" Height="60" FontSize="25" Foreground="Darkred" Canvas.Left="150" Canvas.Top="80" FontStyle="Italic" Click="Single_Click">Single player</Button>
-        <Button x:Name="Multi" Width="200" Height="60" FontSize="25" Foreground="Darkred" Canvas.Left="150" Canvas.Top="150" FontStyle="Italic" Click="PvpClick">Multiplayer</Button>
-        <Button x:Name="Result" Width="200" Height="60" FontSize="25" Foreground="DarkRed" Canvas.Left="150" Canvas.Top="220" FontStyle="Italic" Click="Result_Click">Results</Button>
-        <Button x:Name="Exit" Width="200" Height="60" FontSize="25" Foreground="Darkred" Canvas.Left="150" Canvas.Top="350" FontStyle="Italic" Click="Exit_Click">Exit</Button>
+        <Button x:Name="Single" Width="200" Height="60" FontSize="25" Foreground="Darkred" Canvas.Left="150" Canvas.Top="80" FontStyle="Italic" Click="Single_Click">Egyjátékos</Button>
+        <Button x:Name="Multi" Width="200" Height="60" FontSize="25" Foreground="Darkred" Canvas.Left="150" Canvas.Top="150" FontStyle="Italic" Click="PvpClick">Többjátékos</Button>
+        <Button x:Name="Result" Width="200" Height="60" FontSize="25" Foreground="DarkRed" Canvas.Left="150" Canvas.Top="220" FontStyle="Italic" Click="Result_Click">Eredmények</Button>
+        <Button x:Name="Exit" Width="200" Height="60" FontSize="25" Foreground="Darkred" Canvas.Left="150" Canvas.Top="350" FontStyle="Italic" Click="Exit_Click">Kilépés</Button>
     </Canvas>
 </Window>

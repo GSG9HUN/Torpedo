@@ -25,7 +25,7 @@ namespace Torpedo.View.pvp_view
             this.pvpgame = pvpgame;
             this.winner = winnerName;
             InitializeComponent();
-            winnerNameTB.Text = winner;
+            winnerNameTB.Text = winner + "!";
         }
 
         private void MenuButtonClick(object sender, RoutedEventArgs e)

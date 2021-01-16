@@ -35,7 +35,7 @@
         </Grid.RowDefinitions>
 
         <Canvas Margin="-57,-150,0,55" Grid.ColumnSpan="10">
-            <TextBlock FontSize="30" Width="300" Foreground="DarkRed" Canvas.Left="125" Canvas.Top="20" TextAlignment="center" FontWeight="Bold" x:Name="Who"/>
+            <TextBlock FontSize="30" Width="537" Foreground="DarkRed" Canvas.Left="10" Canvas.Top="20" TextAlignment="center" FontWeight="Bold" x:Name="Who"/>
             <Label Canvas.Left="73" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">1</Label>
             <Label Canvas.Left="115" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">2</Label>
             <Label Canvas.Left="153" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">3</Label>
@@ -263,9 +263,9 @@
                 </Polygon>
 
             </Canvas>
-            <Button Canvas.Left="10" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="Random_button">Randomize</Button>
-            <Button Canvas.Left="100" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="Reset_clicked">Reset</Button>
-            <Button Canvas.Left="335" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="NextButton">Next</Button>
+            <Button Canvas.Left="10" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="Random_button">Random</Button>
+            <Button Canvas.Left="100" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="Reset_clicked">Alaphelyzet</Button>
+            <Button Canvas.Left="335" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="NextButton">Következő</Button>
         </Canvas>
     </Grid>
 </Window>

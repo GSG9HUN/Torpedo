@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="Winner Screen" Height="500" Width="500">
     <Canvas Background="Cornsilk">
-        <TextBlock Width="300" Height="50" FontSize="35" Foreground="Darkred" Canvas.Left="100" Canvas.Top="60" TextAlignment="center" FontWeight="Bold">Congratulation</TextBlock>
+        <TextBlock Width="300" Height="50" FontSize="35" Foreground="Darkred" Canvas.Left="100" Canvas.Top="60" TextAlignment="center" FontWeight="Bold">Gratulálok</TextBlock>
         <TextBlock x:Name="winnerNameTB" Text="" Width="300" Height="50" Foreground="DarkRed" Canvas.Left="100" Canvas.Top="120" TextAlignment="Center" FontWeight="Bold" FontSize="30"/>
-        <TextBlock Width="300" Height="50" FontSize="30" Foreground="Darkred" Canvas.Left="100" Canvas.Top="180" TextAlignment="center" FontWeight="Bold">You Won! :)</TextBlock>
-        <Button Width="100" Height="50" FontSize="25" Foreground="Darkred" Canvas.Left="200" Canvas.Top="300" FontStyle="Italic"  Click="MenuButtonClick">Menu</Button>
+        <TextBlock Width="300" Height="50" FontSize="30" Foreground="Darkred" Canvas.Left="100" Canvas.Top="180" TextAlignment="center" FontWeight="Bold">Te győztél! :)</TextBlock>
+        <Button Width="100" Height="50" FontSize="25" Foreground="Darkred" Canvas.Left="200" Canvas.Top="300" FontStyle="Italic"  Click="MenuButtonClick">Menü</Button>
     </Canvas>
 </Window>

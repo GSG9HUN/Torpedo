@@ -9,17 +9,17 @@
     <Grid Background="DarkBlue" Name="Fields" ShowGridLines="True" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="436" Height="486" RenderTransformOrigin="0.608,0.5" Margin="54,0,0,0">
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="48*"></ColumnDefinition>
-            <ColumnDefinition Width="48*"></ColumnDefinition>
-            <ColumnDefinition Width="48*"></ColumnDefinition>
-            <ColumnDefinition Width="48*"></ColumnDefinition>
-            <ColumnDefinition Width="48*"></ColumnDefinition>
-            <ColumnDefinition Width="48*"></ColumnDefinition>
-            <ColumnDefinition Width="48*"></ColumnDefinition>
-            <ColumnDefinition Width="48*"></ColumnDefinition>
-            <ColumnDefinition Width="48*"></ColumnDefinition>
-            <ColumnDefinition Width="48*"></ColumnDefinition>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="44*"></ColumnDefinition>
+            <ColumnDefinition Width="44*"></ColumnDefinition>
+            <ColumnDefinition Width="44*"></ColumnDefinition>
+            <ColumnDefinition Width="44*"></ColumnDefinition>
+            <ColumnDefinition Width="44*"></ColumnDefinition>
+            <ColumnDefinition Width="44*"></ColumnDefinition>
+            <ColumnDefinition Width="43.509"></ColumnDefinition>
+            <ColumnDefinition Width="44*"></ColumnDefinition>
+            <ColumnDefinition Width="44*"></ColumnDefinition>
+            <ColumnDefinition Width="44*"></ColumnDefinition>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -35,7 +35,7 @@
         </Grid.RowDefinitions>
 
         <Canvas Margin="-57,-150,48,55" Grid.ColumnSpan="10">
-            <TextBlock FontSize="35" Width="300" Foreground="DarkRed" Canvas.Left="125" Canvas.Top="20" TextAlignment="center" FontWeight="Bold">Set up your Army!</TextBlock>
+            <TextBlock FontSize="35" Width="406" Foreground="DarkRed" Canvas.Left="73" Canvas.Top="20" TextAlignment="center" FontWeight="Bold">Állítsd össze a sereged!</TextBlock>
             <Label Canvas.Left="73" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">1</Label>
             <Label Canvas.Left="115" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">2</Label>
             <Label Canvas.Left="153" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">3</Label>
@@ -274,8 +274,8 @@
                 </Polygon>
 
             </Canvas>
-            <Button Canvas.Left="10" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="Random_button">Randomize</Button>
-            <Button Canvas.Left="100" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="Reset_clicked">Reset</Button>
+            <Button Canvas.Left="10" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="Random_button">Random</Button>
+            <Button Canvas.Left="100" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="Reset_clicked">Alaphelyzet</Button>
             <Button Canvas.Left="335" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="Start_button">Start</Button>
         </Canvas>
     </Grid>

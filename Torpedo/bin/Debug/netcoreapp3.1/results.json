@@ -34,5 +34,17 @@
     "player_name2": "fsd",
     "message": "győzött",
     "message2": "vesztett"
+  },
+  {
+    "player_name": "fikusz",
+    "player_name2": "kukisz",
+    "message": "győzött",
+    "message2": "vesztett"
+  },
+  {
+    "player_name": "fortisszima",
+    "player_name2": "fingusz",
+    "message": "győzött",
+    "message2": "vesztett"
   }
 ]
