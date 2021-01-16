@@ -289,8 +289,8 @@ namespace Torpedo.View.pvp_view
                                             {
                                                 atimer.Stop();
                                                 msg(player1Name + " nyert!");
-                                                //Datas adatok = new Datas(player1Name, "győzött", player2Name, "vesztett");
-                                                //FileWriter.WriteToJSON(adatok);
+                                                Datas adatok = new Datas(player1Name, "győzött", player2Name, "vesztett");
+                                                FileWriter.WriteToJSON(adatok);
                                                 new PvpWinner(this, player1Name).Show();
                                                 //gridsDisable();
                                                 return;
@@ -348,8 +348,8 @@ namespace Torpedo.View.pvp_view
                                             {
                                                 atimer.Stop();
                                                 msg(player2Name + " nyert!");
-                                                //Datas adatok = new Datas(player2Name, "győzött", player1Name, "vesztett");
-                                                //FileWriter.WriteToJSON(adatok);
+                                                Datas adatok = new Datas(player2Name, "győzött", player1Name, "vesztett");
+                                                FileWriter.WriteToJSON(adatok);
                                                 new PvpWinner(this, player2Name).Show();
                                                 //gridsDisable();
                                                 return;

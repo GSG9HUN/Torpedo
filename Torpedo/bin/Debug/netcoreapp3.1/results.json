@@ -28,5 +28,11 @@
     "player_name2": "AI",
     "message": "Győzőtt",
     "message2": "Vesztett"
+  },
+  {
+    "player_name": "tst",
+    "player_name2": "fsd",
+    "message": "győzött",
+    "message2": "vesztett"
   }
 ]
