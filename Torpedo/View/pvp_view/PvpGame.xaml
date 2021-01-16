@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Torpedo.View.single_view"
+        xmlns:local="clr-namespace:Torpedo.View.pvp_view"
         mc:Ignorable="d"
         Title="Game" Height="550" Width="1250">
 
@@ -450,15 +450,15 @@
 
         </Canvas>
         <Canvas Grid.ColumnSpan="2" Margin="357,52,421,218"/>
-        <TextBlock Margin="462,92,10,413" Text="" x:Name="playerMoves" FontSize="25" />
-        <TextBlock Margin="14,92,499,413" Text="lép" FontSize="25" Grid.Column="1"/>
+        <TextBlock Margin="462,122,10,383" x:Name="playerMoves" FontSize="25" />
+        <TextBlock Margin="14,116,499,389" Text="lép" FontSize="25" Grid.Column="1"/>
         <Label Margin="512,50,512,443" Grid.ColumnSpan="2" FontSize="25">Idő:</Label>
         <TextBlock x:Name="Timer_counter" Text="0" FontSize="25" Margin="572,57,616,410" Grid.ColumnSpan="2"/>
-        <Label FontSize="25" Margin="9,52,579,410" Content="s" Grid.Column="1"/>
-        <Label Margin="357,119,58,335" FontSize="25">player1 találatok:</Label>
-        <TextBlock Margin="575,127,0,313" x:Name="player1Hit" Text="0" FontSize="25"/>
-        <Label Margin="3,119,421,339" Grid.Column="1" FontSize="25">player2 találatok:</Label>
-        <TextBlock  x:Name="player2Hit" Text="0" Grid.Column="1" Margin="162,155,421,335" FontSize="25"/>
+        <Label FontSize="25" Margin="10,52,578,442" Content="s" Grid.Column="1"/>
+        <Label Margin="357,153,58,335" FontSize="25">player1 találatok:</Label>
+        <TextBlock Margin="575,157,0,313" x:Name="player1Hit" Text="0" FontSize="25"/>
+        <Label Margin="0,150,424,308" Grid.Column="1" FontSize="25">player2 találatok:</Label>
+        <TextBlock  x:Name="player2Hit" Text="0" Grid.Column="1" Margin="159,194,424,296" FontSize="25"/>
         <Label Margin="357,225,22,232" FontSize="20" Content="player1 mellé lövések:"/>
         <TextBlock Margin="575,233,0,239" x:Name="player1Miss" Text="0" FontSize="20"/>
 

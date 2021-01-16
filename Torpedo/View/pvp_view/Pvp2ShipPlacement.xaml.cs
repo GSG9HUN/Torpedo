@@ -55,16 +55,16 @@ namespace Torpedo.View.pvp_view
             irany = "fel";
             fields = new Grid[]
             {
-                A1, A2, A3, A4, A5, A6, A7, A8, A9, A10,
-                B1, B2, B3, B4, B5, B6, B7, B8, B9, B10,
-                C1, C2, C3, C4, C5, C6, C7, C8, C9, C10,
-                D1, D2, D3, D4, D5, D6, D7, D8, D9, D10,
-                E1, E2, E3, E4, E5, E6, E7, E8, E9, E10,
-                F1, F2, F3, F4, F5, F6, F7, F8, F9, F10,
-                G1, G2, G3, G4, G5, G6, G7, G8, G9, G10,
-                H1, H2, H3, H4, H5, H6, H7, H8, H9, H10,
-                I1, I2, I3, I4, I5, I6, I7, I8, I9, I10,
-                J1, J2, J3, J4, J5, J6, J7, J8, J9, J10
+                P2A1, P2A2, P2A3, P2A4, P2A5, P2A6, P2A7, P2A8, P2A9, P2A10,
+                P2B1, P2B2, P2B3, P2B4, P2B5, P2B6, P2B7, P2B8, P2B9, P2B10,
+                P2C1, P2C2, P2C3, P2C4, P2C5, P2C6, P2C7, P2C8, P2C9, P2C10,
+                P2D1, P2D2, P2D3, P2D4, P2D5, P2D6, P2D7, P2D8, P2D9, P2D10,
+                P2E1, P2E2, P2E3, P2E4, P2E5, P2E6, P2E7, P2E8, P2E9, P2E10,
+                P2F1, P2F2, P2F3, P2F4, P2F5, P2F6, P2F7, P2F8, P2F9, P2F10,
+                P2G1, P2G2, P2G3, P2G4, P2G5, P2G6, P2G7, P2G8, P2G9, P2G10,
+                P2H1, P2H2, P2H3, P2H4, P2H5, P2H6, P2H7, P2H8, P2H9, P2H10,
+                P2I1, P2I2, P2I3, P2I4, P2I5, P2I6, P2I7, P2I8, P2I9, P2I10,
+                P2J1, P2J2, P2J3, P2J4, P2J5, P2J6, P2J7, P2J8, P2J9, P2J10
             };
 
             ships = new Path[] { cruiser, submarine, battleship, destroyer, carrier };
