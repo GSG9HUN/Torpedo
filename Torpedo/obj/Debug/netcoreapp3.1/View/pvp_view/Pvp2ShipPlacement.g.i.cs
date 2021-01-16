@@ -941,7 +941,7 @@ namespace Torpedo.View.pvp_view {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Torpedo;V1.0.0.0;component/view/pvp_view/pvp2shipplacement.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Torpedo;component/view/pvp_view/pvp2shipplacement.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\pvp_view\Pvp2ShipPlacement.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

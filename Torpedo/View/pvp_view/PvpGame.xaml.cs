@@ -35,11 +35,13 @@ namespace Torpedo.View.pvp_view
 
         public PvpGame(ref Grid[] player1Fields, ref Grid[] player2Fields, List<Ship> player1Ships, List<Ship> player2Ships, String player1Name, String player2Name)
         {
-            setPlayer1Grids(player1Fields);
-            setPlayer2Grids(player2Fields);
             player1Ships = player1Ships;
             player2Ships = player2Ships;
             InitializeComponent();
+            setPlayer1Grids(player1Fields);
+            //setPlayer2Grids(player2Fields);
+            //setPlayer1EnemyView();
+            setPlayer2EnemyView();
             player1Name = player1Name;
             player2Name = player2Name;
             setFleets();
@@ -297,7 +299,7 @@ namespace Torpedo.View.pvp_view
                     if (game.checkIfHeresShip(ref clicked_grid))
                     {
                         setPlayer1HitTB();
-                        foreach (Ship p in player2Ships)
+                        foreach (Ship p in player2Ships)    //bruh
                         {
                             if (!p.isDestroyed)
                             {
@@ -320,7 +322,7 @@ namespace Torpedo.View.pvp_view
                                                 msg(player1Name + " nyert!");
                                                 //Datas adatok = new Datas(username, "Győzőtt");
                                                 //FileWriter.WriteToJSON(adatok);
-                                                //new Winner(this).Show();
+                                                new PvpWinner(this, player1Name).Show();
                                                 gridsDisable();
                                                 return;
                                             }
@@ -329,6 +331,7 @@ namespace Torpedo.View.pvp_view
                                 }
                             }
                         }
+                        currentPlayer = 2;
                     }
                     else
                     {

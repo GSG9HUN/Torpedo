@@ -1,0 +1,14 @@
+﻿<Window x:Class="Torpedo.View.pvp_view.PvpWinner"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Torpedo.View.pvp_view"
+        mc:Ignorable="d"
+        Height="315" Width="250">
+    <Grid>
+        <TextBlock Margin="29,29,125,203" x:Name="winnerNameTB" Text="" FontWeight="Bold" FontSize="20" TextAlignment="Right"/>
+        <TextBlock Margin="130,29,10,203" FontSize="20" FontWeight="Bold" Text=" nyert!" />
+        <Button Margin="89,190,89,66" Click="MenuButtonClick" >Menu</Button>
+    </Grid>
+</Window>
