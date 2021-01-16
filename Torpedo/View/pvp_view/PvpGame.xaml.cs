@@ -296,7 +296,7 @@ namespace Torpedo.View.pvp_view
                 {
                     if (game.checkIfHeresShip(ref clicked_grid))
                     {
-                        //set_player_hit_textblock();
+                        setPlayer1HitTB();
                         foreach (Ship p in player2Ships)
                         {
                             if (!p.isDestroyed)
@@ -332,7 +332,7 @@ namespace Torpedo.View.pvp_view
                     }
                     else
                     {
-                        //setPlayer1MissTextblock();
+                        setPlayer1MissTB();
                     }
                     currentPlayer = 2;
                 }
@@ -343,7 +343,7 @@ namespace Torpedo.View.pvp_view
             }
             else
             {
-
+                ///////////////////////////////////////////////////////////////////////////////
             }
         }
 
@@ -366,6 +366,33 @@ namespace Torpedo.View.pvp_view
             }
         }
 
+        private void setPlayer1HitTB()
+        {
+            int p = Int32.Parse(player1Hit.Text);
+            p++;
+            player1Hit.Text = p.ToString();
+        }
+
+        private void setPlayer1MissTB()
+        {
+            int p = Int32.Parse(player1Miss.Text);
+            p++;
+            player1Miss.Text = p.ToString();
+        }
+
+        private void setPlayer2HitTB()
+        {
+            int p = Int32.Parse(player2Hit.Text);
+            p++;
+            player2Hit.Text = p.ToString();
+        }
+
+        private void setPlayer2MissTB()
+        {
+            int p = Int32.Parse(player2Miss.Text);
+            p++;
+            player2Miss.Text = p.ToString();
+        }
 
         private void msg(string szoveg)
         {

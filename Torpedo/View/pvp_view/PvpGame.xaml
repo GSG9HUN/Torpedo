@@ -453,12 +453,12 @@
         <Label Margin="512,50,512,420" Grid.ColumnSpan="2" FontSize="25">Idő:</Label>
         <TextBlock x:Name="Timer_counter" Text="0" FontSize="25" Margin="572,57,616,410" Grid.ColumnSpan="2"/>
         <Label FontSize="25" Margin="9,52,579,410" Content="s" Grid.Column="1"/>
-        <Label Margin="357,119,134,335" FontSize="25">Találataid:</Label>
-        <TextBlock Margin="575,127,0,313" x:Name="player_hit" Text="0" FontSize="25"/>
-        <Label Margin="3,119,463,339" Grid.Column="1" FontSize="25">Ellenfél Találatai:</Label>
-        <TextBlock  x:Name="opponent_hit" Text="0" Grid.Column="1" Margin="162,127,412,335" FontSize="25"/>
-        <Label Margin="357,225,22,232" FontSize="20" Content="Mellé lövések száma:"/>
-        <TextBlock Margin="575,233,0,239" x:Name="player_miss" Text="0" FontSize="20"/>
+        <Label Margin="357,119,58,335" FontSize="25">player1 találatok:</Label>
+        <TextBlock Margin="575,127,0,313" x:Name="player1Hit" Text="0" FontSize="25"/>
+        <Label Margin="3,119,421,339" Grid.Column="1" FontSize="25">player2 találatok:</Label>
+        <TextBlock  x:Name="player2Hit" Text="0" Grid.Column="1" Margin="162,155,421,335" FontSize="25"/>
+        <Label Margin="357,225,22,232" FontSize="20" Content="player1 mellé lövések:"/>
+        <TextBlock Margin="575,233,0,239" x:Name="player1Miss" Text="0" FontSize="20"/>
 
         <Canvas Margin="25,367,50,0" Grid.Column="1">
 
@@ -556,8 +556,8 @@
         <Label x:Name="lblVerticalH_Copy1" Content="H" Margin="312,276,223,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667"/>
         <Label x:Name="lblVerticalI_Copy1" Content="I" Margin="312,303,223,0" VerticalAlignment="Top" Height="26" FontFamily="Stencil" FontSize="14.667"/>
         <Label x:Name="lblVerticalJ_Copy1" Content="J" Margin="312,335,223,0" VerticalAlignment="Top" Height="27" FontFamily="Stencil" FontSize="14.667" RenderTransformOrigin="8.609,0.198"/>
-        <Label Margin="0,225,466,250" Grid.Column="1" FontSize="20" Content="Ellenfél mellé &#10; lövések:"/>
-        <TextBlock  x:Name="opponent_miss" Text="0" Grid.Column="1" Margin="162,236,421,225" FontSize="20"/>
+        <Label Margin="0,225,466,250" Grid.Column="1" FontSize="20" Content="player2 mellé &#10; lövések:"/>
+        <TextBlock  x:Name="player2Miss" Text="0" Grid.Column="1" Margin="162,236,421,225" FontSize="20"/>
 
 
 
