@@ -5450,19 +5450,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Stiegelmayer Máté\\.nuget\\packages\\": {}
+    "C:\\Users\\hiper\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#\\Stigi\\Torpedo\\TorpedoTest\\TorpedoTest.csproj",
+      "projectUniqueName": "C:\\Users\\hiper\\Dokumentumok\\beadando kesz\\Torpedo\\TorpedoTest\\TorpedoTest.csproj",
       "projectName": "TorpedoTest",
-      "projectPath": "D:\\C#\\Stigi\\Torpedo\\TorpedoTest\\TorpedoTest.csproj",
-      "packagesPath": "C:\\Users\\Stiegelmayer Máté\\.nuget\\packages\\",
-      "outputPath": "D:\\C#\\Stigi\\Torpedo\\TorpedoTest\\obj\\",
+      "projectPath": "C:\\Users\\hiper\\Dokumentumok\\beadando kesz\\Torpedo\\TorpedoTest\\TorpedoTest.csproj",
+      "packagesPath": "C:\\Users\\hiper\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\hiper\\Dokumentumok\\beadando kesz\\Torpedo\\TorpedoTest\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Stiegelmayer Máté\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hiper\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5474,10 +5478,9 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\C#\\Stigi\\Torpedo\\Torpedo\\Torpedo.csproj": {
-              "projectPath": "D:\\C#\\Stigi\\Torpedo\\Torpedo\\Torpedo.csproj"
+            "C:\\Users\\hiper\\Dokumentumok\\beadando kesz\\Torpedo\\Torpedo\\Torpedo.csproj": {
+              "projectPath": "C:\\Users\\hiper\\Dokumentumok\\beadando kesz\\Torpedo\\Torpedo\\Torpedo.csproj"
             }
           }
         }
@@ -5490,7 +5493,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "MSTest.TestAdapter": {
             "target": "Package",
@@ -5527,7 +5529,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
