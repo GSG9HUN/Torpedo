@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Torpedo.Modell.Multi_modell
 {
-    public class Ship
+    public class PvpShip
     {
         public String shipName { get; set; }
 
@@ -16,7 +16,7 @@ namespace Torpedo.Modell.Multi_modell
 
         public bool isDestroyed { get; set; }
         
-        public Ship(String shipName, int shipStart, int shipEnd, String shipAlign, bool isDestroyed)
+        public PvpShip(String shipName, int shipStart, int shipEnd, String shipAlign, bool isDestroyed)
         {
             this.shipName = shipName;
             this.shipStart = shipStart;

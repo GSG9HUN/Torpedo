@@ -30,8 +30,7 @@ namespace Torpedo.View.pvp_view
         bool contains = false;
         String irany { get; set; }
         String selected_ship { get; set; }
-        List<Ship> ships_class = new List<Ship>();
-        //public Ship[] ships_class;
+        List<PvpShip> ships_class = new List<PvpShip>();
         Path[] ships;
         Polygon[] arrows;
         Path lastship;
@@ -191,7 +190,7 @@ namespace Torpedo.View.pvp_view
             set_Tags();
             selected_ship = null;
             lastarrow = null;
-            ships_class = new List<Ship>();
+            ships_class = new List<PvpShip>();
             manual_counter = 0;
         }
 
@@ -346,14 +345,14 @@ namespace Torpedo.View.pvp_view
 
             if (ballra_mehet)
             {
-                foreach (Ship p in ships_class)
+                foreach (PvpShip p in ships_class)
                 {
                     if (p.shipName == selected_ship)
                         contains = true;
                 }
                 if (!contains)
                 {
-                    ships_class.Add(new Ship(selected_ship, honnan, ship_ending("bal", honnan, check_ship(selected_ship)), "bal", false));
+                    ships_class.Add(new PvpShip(selected_ship, honnan, ship_ending("bal", honnan, check_ship(selected_ship)), "bal", false));
                 }
 
                 i_go_left(honnan, meddig);
@@ -362,14 +361,14 @@ namespace Torpedo.View.pvp_view
             }
             else if (jobbra_mehet)
             {
-                foreach (Ship p in ships_class)
+                foreach (PvpShip p in ships_class)
                 {
                     if (p.shipName == selected_ship)
                         contains = true;
                 }
                 if (!contains)
                 {
-                    ships_class.Add(new Ship(selected_ship, honnan, ship_ending("jobb", honnan, check_ship(selected_ship)), "jobb", false));
+                    ships_class.Add(new PvpShip(selected_ship, honnan, ship_ending("jobb", honnan, check_ship(selected_ship)), "jobb", false));
                 }
                 i_go_right(honnan, meddig);
 
@@ -389,14 +388,14 @@ namespace Torpedo.View.pvp_view
 
             if (jobbra_mehet)
             {
-                foreach (Ship p in ships_class)
+                foreach (PvpShip p in ships_class)
                 {
                     if (p.shipName == selected_ship)
                         contains = true;
                 }
                 if (!contains)
                 {
-                    ships_class.Add(new Ship(selected_ship, honnan, ship_ending("jobb", honnan, check_ship(selected_ship)), "jobb", false));
+                    ships_class.Add(new PvpShip(selected_ship, honnan, ship_ending("jobb", honnan, check_ship(selected_ship)), "jobb", false));
                 }
 
                 i_go_right(honnan, meddig);
@@ -405,14 +404,14 @@ namespace Torpedo.View.pvp_view
             }
             else if (ballra_mehet)
             {
-                foreach (Ship p in ships_class)
+                foreach (PvpShip p in ships_class)
                 {
                     if (p.shipName == selected_ship)
                         contains = true;
                 }
                 if (!contains)
                 {
-                    ships_class.Add(new Ship(selected_ship, honnan, ship_ending("bal", honnan, check_ship(selected_ship)), "bal", false));
+                    ships_class.Add(new PvpShip(selected_ship, honnan, ship_ending("bal", honnan, check_ship(selected_ship)), "bal", false));
                 }
                 i_go_left(honnan, meddig);
                 manual_counter++;
@@ -519,14 +518,14 @@ namespace Torpedo.View.pvp_view
 
             if (felfele_mehet)
             {
-                foreach (Ship p in ships_class)
+                foreach (PvpShip p in ships_class)
                 {
                     if (p.shipName == selected_ship)
                         contains = true;
                 }
                 if (!contains)
                 {
-                    ships_class.Add(new Ship(selected_ship, honnan, ship_ending(irany, honnan, check_ship(selected_ship)), "fel", false));
+                    ships_class.Add(new PvpShip(selected_ship, honnan, ship_ending(irany, honnan, check_ship(selected_ship)), "fel", false));
                 }
 
                 i_go_up(honnan, meddig);
@@ -534,14 +533,14 @@ namespace Torpedo.View.pvp_view
             }
             else if (lefele_mehet)
             {
-                foreach (Ship p in ships_class)
+                foreach (PvpShip p in ships_class)
                 {
                     if (p.shipName == selected_ship)
                         contains = true;
                 }
                 if (!contains)
                 {
-                    ships_class.Add(new Ship(selected_ship, honnan, ship_ending("le", honnan, check_ship(selected_ship)), "le", false));
+                    ships_class.Add(new PvpShip(selected_ship, honnan, ship_ending("le", honnan, check_ship(selected_ship)), "le", false));
                 }
                 i_go_down(honnan, meddig);
                 manual_counter++;
@@ -558,28 +557,28 @@ namespace Torpedo.View.pvp_view
             lefele_mehet = check_if_i_can_go_down(honnan, meddig);
             if (lefele_mehet)
             {
-                foreach (Ship p in ships_class)
+                foreach (PvpShip p in ships_class)
                 {
                     if (p.shipName == selected_ship)
                         contains = true;
                 }
                 if (!contains)
                 {
-                    ships_class.Add(new Ship(selected_ship, honnan, ship_ending("le", honnan, check_ship(selected_ship)), "le", false));
+                    ships_class.Add(new PvpShip(selected_ship, honnan, ship_ending("le", honnan, check_ship(selected_ship)), "le", false));
                 }
                 i_go_down(honnan, meddig);
                 manual_counter++;
             }
             else if (felfele_mehet)
             {
-                foreach (Ship p in ships_class)
+                foreach (PvpShip p in ships_class)
                 {
                     if (p.shipName == selected_ship)
                         contains = true;
                 }
                 if (!contains)
                 {
-                    ships_class.Add(new Ship(selected_ship, honnan,  ship_ending("le", honnan, check_ship(selected_ship)), "le", false));
+                    ships_class.Add(new PvpShip(selected_ship, honnan,  ship_ending("le", honnan, check_ship(selected_ship)), "le", false));
                 }
 
                 manual_counter++;
@@ -633,7 +632,7 @@ namespace Torpedo.View.pvp_view
                         int random_grid = get_random_number(0, 99);
                         if (get_can_i_go_to_irany(irany, random_grid, check_ship(selected_ship)))
                         {
-                            ships_class.Add(new Ship(selected_ship, random_grid, ship_ending(irany, random_grid, check_ship(selected_ship)), irany, false));
+                            ships_class.Add(new PvpShip(selected_ship, random_grid, ship_ending(irany, random_grid, check_ship(selected_ship)), irany, false));
                             call_my_function(irany, random_grid, check_ship(selected_ship));
                             placed_ship[ship.Name.ToString()] = 1;
                         }

@@ -17,13 +17,13 @@ namespace Torpedo.Modell.Multi_modell
         SolidColorBrush miss = new SolidColorBrush(Colors.Gray);
         SolidColorBrush hit = new SolidColorBrush(Colors.Red);
         Grid[] player1Grids, player2Grids;
-        List<Ship> player1Ships, player2Ships;
+        List<PvpShip> player1Ships, player2Ships;
         PvpGame pvpGame;
-        public Ship[] player2_Ships;
-        public Ship[] player1_Ships;
+        public PvpShip[] player2_Ships;
+        public PvpShip[] player1_Ships;
         public Path[] player1Fleet, player2Fleet;
 
-        public PvpGamemodell(ref Grid[] player1Grids, ref Grid[] player2Grids, List<Ship> player1Ships, List<Ship> player2Ships, ref Path[] player1Fleet, ref Path[] player2Fleet, PvpGame pvpGame)
+        public PvpGamemodell(ref Grid[] player1Grids, ref Grid[] player2Grids, List<PvpShip> player1Ships, List<PvpShip> player2Ships, ref Path[] player1Fleet, ref Path[] player2Fleet, PvpGame pvpGame)
         {
             this.player1Grids = player1Grids;
             this.player2Grids = player2Grids;
