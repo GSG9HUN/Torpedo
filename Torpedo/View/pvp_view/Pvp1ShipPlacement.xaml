@@ -12,7 +12,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition ></ColumnDefinition>
-            <ColumnDefinition  ></ColumnDefinition>
+            <ColumnDefinition Width="43.6"  ></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -35,7 +35,7 @@
         </Grid.RowDefinitions>
 
         <Canvas Margin="-57,-150,0,55" Grid.ColumnSpan="9">
-            <Label FontSize="25">Ship Placement</Label>
+            <TextBlock FontSize="25" Margin="10,10,10,10" x:Name="Who"/>
             <Label Canvas.Left="73" Canvas.Top="118">1</Label>
             <Label Canvas.Left="115" Canvas.Top="118">2</Label>
             <Label Canvas.Left="153" Canvas.Top="118" >3</Label>

@@ -68,3 +68,5 @@ C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\
 C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\pvp_view\Pvp1ShipPlacement.baml
 C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\pvp_view\Pvp2ShipPlacement.baml
 C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\pvp_view\PvpGame.baml
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\pvp_view\PvpWinner.g.cs
+C:\Users\hiper\Dokumentumok\c# beadando\Torpedo\Torpedo\obj\Debug\netcoreapp3.1\View\pvp_view\PvpWinner.baml

@@ -47,6 +47,7 @@ namespace Torpedo.View.pvp_view
             setFleets();
             game = new PvpGamemodell(ref player1Grids, ref player2Grids, player1Ships, player2Ships, ref player1Fleet, ref player2Fleet, this);
             setLabels();
+            setPlayer1MovesTB();
             FileWriter.ReadFromJSON();
         }
 
@@ -395,6 +396,16 @@ namespace Torpedo.View.pvp_view
             int p = Int32.Parse(player2Miss.Text);
             p++;
             player2Miss.Text = p.ToString();
+        }
+
+        private void setPlayer1MovesTB()
+        {
+            playerMoves.Text = player1Name;
+        }
+
+        private void setPlayer2MovesTB()
+        {
+            playerMoves.Text = player2Name;
         }
 
         private void msg(string szoveg)
