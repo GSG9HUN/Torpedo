@@ -5455,11 +5455,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#\\Friss\\01_14\\Torpedo\\TorpedoTest\\TorpedoTest.csproj",
+      "projectUniqueName": "D:\\C#\\Stigi\\Torpedo\\TorpedoTest\\TorpedoTest.csproj",
       "projectName": "TorpedoTest",
-      "projectPath": "D:\\C#\\Friss\\01_14\\Torpedo\\TorpedoTest\\TorpedoTest.csproj",
+      "projectPath": "D:\\C#\\Stigi\\Torpedo\\TorpedoTest\\TorpedoTest.csproj",
       "packagesPath": "C:\\Users\\Stiegelmayer Máté\\.nuget\\packages\\",
-      "outputPath": "D:\\C#\\Friss\\01_14\\Torpedo\\TorpedoTest\\obj\\",
+      "outputPath": "D:\\C#\\Stigi\\Torpedo\\TorpedoTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Stiegelmayer Máté\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5476,8 +5476,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\C#\\Friss\\01_14\\Torpedo\\Torpedo\\Torpedo.csproj": {
-              "projectPath": "D:\\C#\\Friss\\01_14\\Torpedo\\Torpedo\\Torpedo.csproj"
+            "D:\\C#\\Stigi\\Torpedo\\Torpedo\\Torpedo.csproj": {
+              "projectPath": "D:\\C#\\Stigi\\Torpedo\\Torpedo\\Torpedo.csproj"
             }
           }
         }

@@ -57,11 +57,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#\\Friss\\01_14\\Torpedo\\Torpedo\\Torpedo.csproj",
+      "projectUniqueName": "D:\\C#\\Stigi\\Torpedo\\Torpedo\\Torpedo.csproj",
       "projectName": "Torpedo",
-      "projectPath": "D:\\C#\\Friss\\01_14\\Torpedo\\Torpedo\\Torpedo.csproj",
+      "projectPath": "D:\\C#\\Stigi\\Torpedo\\Torpedo\\Torpedo.csproj",
       "packagesPath": "C:\\Users\\Stiegelmayer Máté\\.nuget\\packages\\",
-      "outputPath": "D:\\C#\\Friss\\01_14\\Torpedo\\Torpedo\\obj\\",
+      "outputPath": "D:\\C#\\Stigi\\Torpedo\\Torpedo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Stiegelmayer Máté\\AppData\\Roaming\\NuGet\\NuGet.Config",

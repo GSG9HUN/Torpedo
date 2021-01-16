@@ -1,0 +1,18 @@
+﻿<Window x:Class="Torpedo.MultiPlayer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:local="clr-namespace:Torpedo"
+      mc:Ignorable="d" 
+      Title="Multiplayer" Height="500" Width="500" ResizeMode="NoResize" >
+    <Canvas Background="Cornsilk">
+        <TextBlock Width="500" Height="60" FontSize="30" Foreground="Darkred" Canvas.Left="0" Canvas.Top="25" TextAlignment="center" FontWeight="Bold">Welcome to game of Battleship!</TextBlock>
+        <TextBlock Width="500" Height="30" FontSize="15" Foreground="Darkred" Canvas.Left="0" Canvas.Top="160" TextAlignment="center" FontStyle="Italic">Player 1 name:</TextBlock>
+        <TextBox x:Name="player1NameTB"  Width="200" Height="25" FontSize="18" Canvas.Left="150" Canvas.Top="185"></TextBox>
+        <TextBlock Width="500" Height="30" FontSize="15" Foreground="Darkred" Canvas.Left="0" Canvas.Top="230" TextAlignment="center" FontStyle="Italic">Player 2 name:</TextBlock>
+        <TextBox x:Name="player2NameTB"  Width="200" Height="25" FontSize="18" Canvas.Left="150" Canvas.Top="255"></TextBox>
+        <Button Canvas.Top="310" Width="150" Canvas.Left="175" Height="40" FontSize="25" Foreground="Darkred" FontStyle="Italic" Click="StartClick">Start</Button>
+        <Button Canvas.Top="380" Width="100" Height="30" FontSize="20" Foreground="Darkred" Canvas.Left="200" FontStyle="Italic" Click="BackClick">Back</Button>
+    </Canvas>
+</Window>

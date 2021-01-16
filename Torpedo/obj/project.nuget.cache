@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HnXYeF211ad1ZlntaHroW19ga9Nw3TBtGf5YOPLRJqtfwzEhDj48dytumLkVcZ6wiOUWzolu59Qx/QKEok5w5Q==",
+  "dgSpecHash": "7UpNlZgAnKravxYHNPrk/rEtKc3k2yLoQZusBb6d+pK885lCivRjHkjyx0EamJpuLi489yXiqQ6PO3qloV/r4Q==",
   "success": true,
-  "projectFilePath": "D:\\C#\\Friss\\01_14\\Torpedo\\Torpedo\\Torpedo.csproj",
+  "projectFilePath": "D:\\C#\\Stigi\\Torpedo\\Torpedo\\Torpedo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Stiegelmayer Máté\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],

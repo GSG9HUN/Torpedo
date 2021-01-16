@@ -38,6 +38,13 @@ namespace Torpedo
             single_player.Show();
         }
 
+        private void PvpClick(object sender, RoutedEventArgs e)
+        {
+            MultiPlayer multiPlayer = new MultiPlayer();
+            this.Close();
+            multiPlayer.Show();
+        }
+
         private void Result_Click(object sender, RoutedEventArgs e)
         {
             Result result = new Result();

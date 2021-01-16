@@ -1,10 +1,15 @@
 ﻿
 
-FD:\C#\Friss\01_14\Torpedo\Torpedo\MainWindow.xaml;;
-FD:\C#\Friss\01_14\Torpedo\Torpedo\View\single_view\Game.xaml;;
-FD:\C#\Friss\01_14\Torpedo\Torpedo\View\single_view\Loser.xaml;;
-FD:\C#\Friss\01_14\Torpedo\Torpedo\View\single_view\Result.xaml;;
-FD:\C#\Friss\01_14\Torpedo\Torpedo\View\single_view\Ship_Placement.xaml;;
-FD:\C#\Friss\01_14\Torpedo\Torpedo\View\single_view\Single_player.xaml;;
-FD:\C#\Friss\01_14\Torpedo\Torpedo\View\single_view\Winner.xaml;;
+FD:\C#\Stigi\Torpedo\Torpedo\MainWindow.xaml;;
+FD:\C#\Stigi\Torpedo\Torpedo\View\pvp_view\MultiPlayer.xaml;;
+FD:\C#\Stigi\Torpedo\Torpedo\View\pvp_view\Pvp1ShipPlacement.xaml;;
+FD:\C#\Stigi\Torpedo\Torpedo\View\pvp_view\Pvp2ShipPlacement.xaml;;
+FD:\C#\Stigi\Torpedo\Torpedo\View\pvp_view\PvpGame.xaml;;
+FD:\C#\Stigi\Torpedo\Torpedo\View\pvp_view\PvpWinner.xaml;;
+FD:\C#\Stigi\Torpedo\Torpedo\View\single_view\Game.xaml;;
+FD:\C#\Stigi\Torpedo\Torpedo\View\single_view\Loser.xaml;;
+FD:\C#\Stigi\Torpedo\Torpedo\View\single_view\Result.xaml;;
+FD:\C#\Stigi\Torpedo\Torpedo\View\single_view\Ship_Placement.xaml;;
+FD:\C#\Stigi\Torpedo\Torpedo\View\single_view\Single_player.xaml;;
+FD:\C#\Stigi\Torpedo\Torpedo\View\single_view\Winner.xaml;;
 

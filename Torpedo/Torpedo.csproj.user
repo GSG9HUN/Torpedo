@@ -27,6 +27,21 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\pvp_view\MultiPlayer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\pvp_view\Pvp1ShipPlacement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\pvp_view\Pvp2ShipPlacement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\pvp_view\PvpGame.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\pvp_view\PvpWinner.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\single_view\Game.xaml">
       <SubType>Designer</SubType>
     </Page>

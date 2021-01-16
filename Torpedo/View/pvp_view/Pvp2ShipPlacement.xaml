@@ -1,0 +1,271 @@
+﻿<Window x:Class="Torpedo.View.pvp_view.Pvp2ShipPlacement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Torpedo.View.pvp_view"
+        mc:Ignorable="d"
+        Title="Ship Placement - Player 2" Width="550" Height="800" ResizeMode="NoResize" Background="Cornsilk">
+    <Grid Background="DarkBlue"
+          Name="Fields" ShowGridLines="True" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="436" Height="486" RenderTransformOrigin="0.608,0.5" Margin="54,0,0,0">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Canvas Margin="-57,-150,0,55" Grid.ColumnSpan="10">
+            <TextBlock FontSize="30" Width="300" Foreground="DarkRed" Canvas.Left="125" Canvas.Top="20" TextAlignment="center" FontWeight="Bold" x:Name="Who"/>
+            <Label Canvas.Left="73" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">1</Label>
+            <Label Canvas.Left="115" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">2</Label>
+            <Label Canvas.Left="153" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">3</Label>
+            <Label Canvas.Left="200" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">4</Label>
+            <Label Canvas.Left="246" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">5</Label>
+            <Label Canvas.Left="289" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">6</Label>
+            <Label Canvas.Left="330" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">7</Label>
+            <Label Canvas.Left="374" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">8</Label>
+            <Label Canvas.Left="417" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">9</Label>
+            <Label Canvas.Left="458" Canvas.Top="118" Foreground="DarkRed" FontWeight="Bold">10</Label>
+        </Canvas>
+
+        <Canvas Margin="-57,-1,49,0" Grid.RowSpan="10">
+            <Label Canvas.Left="33" Canvas.Top="13" Foreground="DarkRed" FontWeight="Bold">A</Label>
+            <Label Canvas.Left="33" Canvas.Top="58" Foreground="DarkRed" FontWeight="Bold">B</Label>
+            <Label Canvas.Left="32" Canvas.Top="109" Foreground="DarkRed" FontWeight="Bold">C</Label>
+            <Label Canvas.Left="33" Canvas.Top="164" Foreground="DarkRed" FontWeight="Bold">D</Label>
+            <Label Canvas.Top="205" Canvas.Left="33" Foreground="DarkRed" FontWeight="Bold">E</Label>
+            <Label Canvas.Left="33" Canvas.Top="256" Foreground="DarkRed" FontWeight="Bold">F</Label>
+            <Label Canvas.Left="32" Canvas.Top="302" Foreground="DarkRed" FontWeight="Bold">G</Label>
+            <Label Canvas.Left="31" Canvas.Top="350" Foreground="DarkRed" FontWeight="Bold">H</Label>
+            <Label Canvas.Left="34" Canvas.Top="403" Foreground="DarkRed" FontWeight="Bold">I</Label>
+            <Label Canvas.Left="33" Canvas.Top="451" Foreground="DarkRed" FontWeight="Bold">J</Label>
+        </Canvas>
+
+
+        <Grid Grid.Row="0" Grid.Column="0" Name="P2A1" MouseDown="grid_pressed" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="0" Name="P2B1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="0" Name="P2C1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="0" Name="P2D1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="0" Name="P2E1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="0" Name="P2F1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="0" Name="P2G1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="0" Name="P2H1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="0" Name="P2I1"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="0" Name="P2J1"/>
+
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="1" Name="P2A2"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="1" Name="P2B2" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="1" Name="P2C2" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="1" Name="P2D2" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="1" Name="P2E2"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="1" Name="P2F2"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="1" Name="P2G2" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="1" Name="P2H2"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="1" Name="P2I2" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="1" Name="P2J2"/>
+
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="2" Name="P2A3" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="2" Name="P2B3" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="2" Name="P2C3"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="2" Name="P2D3"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="2" Name="P2E3" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="2" Name="P2F3"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="2" Name="P2G3"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="2" Name="P2H3"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="2" Name="P2I3" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="2" Name="P2J3"/>
+
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="3" Name="P2A4"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="3" Name="P2B4" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="3" Name="P2C4" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="3" Name="P2D4" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="3" Name="P2E4"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="3" Name="P2F4"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="3" Name="P2G4" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="3" Name="P2H4" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="3" Name="P2I4" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="3" Name="P2J4"/>
+
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="4" Name="P2A5"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="4" Name="P2B5"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="4" Name="P2C5"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="4" Name="P2D5"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="4" Name="P2E5" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="4" Name="P2F5"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="4" Name="P2G5"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="4" Name="P2H5"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="4" Name="P2I5" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="4" Name="P2J5" />
+
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="5" Name="P2A6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="5" Name="P2B6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="5" Name="P2C6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="5" Name="P2D6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="5" Name="P2E6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="5" Name="P2F6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="5" Name="P2G6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="5" Name="P2H6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="5" Name="P2I6"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="5" Name="P2J6"/>
+
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="6" Name="P2A7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="6" Name="P2B7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="6" Name="P2C7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="6" Name="P2D7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="6" Name="P2E7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="6" Name="P2F7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="6" Name="P2G7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="6" Name="P2H7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="6" Name="P2I7"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="6" Name="P2J7"/>
+
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="7" Name="P2A8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="7" Name="P2B8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="7" Name="P2C8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="7" Name="P2D8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="7" Name="P2E8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="7" Name="P2F8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="7" Name="P2G8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="7" Name="P2H8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="7" Name="P2I8"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="7" Name="P2J8"/>
+
+
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="8" Name="P2A9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="8" Name="P2B9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="8" Name="P2C9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="8" Name="P2D9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="8" Name="P2E9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="8" Name="P2F9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="8" Name="P2G9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="8" Name="P2H9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="8" Name="P2I9"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="9" Grid.Column="8" Name="P2J9"/>
+
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="0" Grid.Column="9" Name="P2A10" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="1" Grid.Column="9" Name="P2B10" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="2" Grid.Column="9" Name="P2C10" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="3" Grid.Column="9" Name="P2D10" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="4" Grid.Column="9" Name="P2E10" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="5" Grid.Column="9" Name="P2F10"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="6" Grid.Column="9" Name="P2G10" />
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="7" Grid.Column="9" Name="P2H10"/>
+        <Grid MouseLeftButtonDown="grid_pressed"  Grid.Row="8" Grid.Column="9" Name="P2I10" />
+        <Grid Grid.Row="9" Grid.Column="9" Name="P2J10" MouseDown="grid_pressed" >
+        </Grid>
+
+        <Canvas Grid.ColumnSpan="10" Margin="0,45,0,-180" Grid.Row="9" >
+            <Canvas Width="422" Height="80">
+                <Path Stroke="Black" StrokeThickness="2" Fill="RosyBrown" Canvas.Left="38.4" Canvas.Top="19.4" Height="28.8" Stretch="Fill" Width="56.8"
+            		x:Name="destroyer" MouseLeftButtonDown="ship_MouseLeftButtonDown">
+                    <Path.Data>
+                        <GeometryGroup>
+                            <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
+                            <LineGeometry StartPoint="110 110" EndPoint="110 -90" />
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+                <Path Stroke="Black" StrokeThickness="2" Fill="RosyBrown" Canvas.Left="107.2" Canvas.Top="20.2" Height="27.2" Stretch="Fill" Width="74.4"
+                	x:Name="cruiser" MouseLeftButtonDown="ship_MouseLeftButtonDown">
+                    <Path.Data>
+                        <GeometryGroup>
+                            <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
+                            <LineGeometry StartPoint="140 90" EndPoint="140 -80" />
+                            <LineGeometry StartPoint="70 90" EndPoint="70 -80" />
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+                <Path Stroke="Black" StrokeThickness="2" Fill="RosyBrown" Canvas.Left="192.8" Canvas.Top="20.2" Height="27.2" Stretch="Fill" Width="74.4"
+                	x:Name="submarine" MouseLeftButtonDown="ship_MouseLeftButtonDown">
+                    <Path.Data>
+                        <GeometryGroup>
+                            <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
+                            <LineGeometry StartPoint="140 90" EndPoint="140 -80" />
+                            <LineGeometry StartPoint="70 90" EndPoint="70 -80" />
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+                <Path Stroke="Black" StrokeThickness="2" Fill="RosyBrown" Canvas.Left="13.6" Canvas.Top="52.2" Height="27.2" Stretch="Fill" Width="116.8"
+                	x:Name="battleship" MouseLeftButtonDown="ship_MouseLeftButtonDown">
+                    <Path.Data>
+                        <GeometryGroup>
+                            <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
+                            <LineGeometry StartPoint="150 90" EndPoint="150 -80" />
+                            <LineGeometry StartPoint="100 90" EndPoint="100 -80" />
+                            <LineGeometry StartPoint="50 80" EndPoint="50 -70" />
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+                <Path Stroke="Black" StrokeThickness="2" Fill="RosyBrown" Canvas.Left="137.6" Canvas.Top="52.2" Height="27.2" Stretch="Fill" Width="148"
+                	x:Name="carrier" MouseLeftButtonDown="ship_MouseLeftButtonDown" >
+                    <Path.Data>
+                        <GeometryGroup>
+                            <EllipseGeometry Center="110 10" RadiusX="100" RadiusY="90" />
+                            <LineGeometry StartPoint="160 90" EndPoint="160 -80" />
+                            <LineGeometry StartPoint="120 90" EndPoint="120 -80" />
+                            <LineGeometry StartPoint="80 90" EndPoint="80 -80" />
+                            <LineGeometry StartPoint="50 80" EndPoint="50 -70" />
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+
+                <Polygon Points="0,15 25,15, 14,0" Stroke="Black" Fill="White" Name ="jobb" Canvas.Left="382" Canvas.Top="40" MouseDown="orientationMouseDown" RenderTransformOrigin="0.5,0.5">
+                    <Polygon.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90.114"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Polygon.RenderTransform>
+                </Polygon>
+                <Polygon Points="0,15 25,15, 14,0" Stroke="Black" Fill="White" Name ="le" Canvas.Left="355" Canvas.Top="64" RenderTransformOrigin="0.506,-0.051" MouseDown="orientationMouseDown">
+                    <Polygon.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-181.007"/>
+                            <TranslateTransform X="-0.159" Y="17.081"/>
+                        </TransformGroup>
+                    </Polygon.RenderTransform>
+                </Polygon>
+
+                <Polygon Points="0,15 25,15, 14,0" Stroke="Black" Fill="White" Name ="fel" Canvas.Left="356" Canvas.Top="15" MouseDown="orientationMouseDown"/>
+                <Polygon Points="0,15 25,15, 14,0" Stroke="Black" Fill="White" Name ="bal" Canvas.Left="328" Canvas.Top="40" MouseDown="orientationMouseDown" RenderTransformOrigin="0.5,0.5">
+                    <Polygon.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-90.992"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Polygon.RenderTransform>
+                </Polygon>
+
+            </Canvas>
+            <Button Canvas.Left="10" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="Random_button">Randomize</Button>
+            <Button Canvas.Left="100" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="Reset_clicked">Reset</Button>
+            <Button Canvas.Left="335" Canvas.Top="100" Width="70" Height="30" Foreground="DarkRed" FontStyle="Italic" Click="NextButton">Next</Button>
+        </Canvas>
+    </Grid>
+</Window>

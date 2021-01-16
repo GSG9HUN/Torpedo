@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Torpedo.Modell.Single_modell;
+using Torpedo.Modell.Multi_modell;
 
 namespace Torpedo.View.single_view
 {
