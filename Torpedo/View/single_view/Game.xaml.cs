@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Interop;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using Torpedo.Modell.Single_modell;
@@ -32,7 +25,7 @@ namespace Torpedo.View.single_view
         bool timer_started = false;
         static TextBlock  timer;
         static TextBlock ai_miss_tb, ai_hit_tb;
-        static DispatcherTimer atimer;
+        public static DispatcherTimer atimer;
 
         public bool first_key_pressed { get; set; }
         public String username { get; set; }

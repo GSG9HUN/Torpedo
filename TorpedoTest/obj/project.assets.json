@@ -5450,24 +5450,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hiper\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\GSG9HUN\\.nuget\\packages\\": {},
+    "D:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hiper\\Dokumentumok\\beadando kesz\\Torpedo\\TorpedoTest\\TorpedoTest.csproj",
+      "projectUniqueName": "C:\\Users\\GSG9HUN\\Documents\\GitHub\\Torpedo\\TorpedoTest\\TorpedoTest.csproj",
       "projectName": "TorpedoTest",
-      "projectPath": "C:\\Users\\hiper\\Dokumentumok\\beadando kesz\\Torpedo\\TorpedoTest\\TorpedoTest.csproj",
-      "packagesPath": "C:\\Users\\hiper\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hiper\\Dokumentumok\\beadando kesz\\Torpedo\\TorpedoTest\\obj\\",
+      "projectPath": "C:\\Users\\GSG9HUN\\Documents\\GitHub\\Torpedo\\TorpedoTest\\TorpedoTest.csproj",
+      "packagesPath": "C:\\Users\\GSG9HUN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\GSG9HUN\\Documents\\GitHub\\Torpedo\\TorpedoTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "D:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\hiper\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\GSG9HUN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5478,9 +5479,10 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\hiper\\Dokumentumok\\beadando kesz\\Torpedo\\Torpedo\\Torpedo.csproj": {
-              "projectPath": "C:\\Users\\hiper\\Dokumentumok\\beadando kesz\\Torpedo\\Torpedo\\Torpedo.csproj"
+            "C:\\Users\\GSG9HUN\\Documents\\GitHub\\Torpedo\\Torpedo\\Torpedo.csproj": {
+              "projectPath": "C:\\Users\\GSG9HUN\\Documents\\GitHub\\Torpedo\\Torpedo\\Torpedo.csproj"
             }
           }
         }
@@ -5493,6 +5495,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "MSTest.TestAdapter": {
             "target": "Package",
@@ -5529,7 +5532,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

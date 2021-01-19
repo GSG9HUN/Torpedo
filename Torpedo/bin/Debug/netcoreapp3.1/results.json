@@ -46,5 +46,23 @@
     "player_name2": "fingusz",
     "message": "győzött",
     "message2": "vesztett"
+  },
+  {
+    "player_name": "AI",
+    "player_name2": "gsg",
+    "message": "Győzött",
+    "message2": "Vesztett"
+  },
+  {
+    "player_name": "gsg",
+    "player_name2": "gsg2",
+    "message": "győzött",
+    "message2": "vesztett"
+  },
+  {
+    "player_name": "AI",
+    "player_name2": "asder",
+    "message": "Győzött",
+    "message2": "Vesztett"
   }
 ]

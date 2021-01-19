@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using Torpedo.View.single_view;
@@ -239,6 +236,7 @@ namespace Torpedo.Modell.Single_modell
                                 if (ship_sank_counter == 5)
                                 {
                                     grids_disable();
+                                    Game.atimer.Stop();
                                     msg("Sajnos Vesztettél!");                                 
                                     Datas adatok = new Datas("AI","Győzött",username,"Vesztett");
                                     FileWriter.WriteToJSON(adatok);
